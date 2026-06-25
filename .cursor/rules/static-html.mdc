@@ -1,0 +1,24 @@
+---
+description: Rules for static HTML files
+globs: "*.html"
+---
+
+# Static HTML Rules
+
+## Relative CSS/JS Paths
+Ensure all CSS and JS paths are correctly scoped relative to the HTML file's depth. Base relative paths on depth. (e.g., `../../styles.css` for nested files). Use plain semantic HTML and reuse the existing root `styles.css` and `script.js` without adding external frameworks.
+
+## Semantic Sections
+Use semantic HTML. Exactly one H1 per page. Use appropriate tags like `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`.
+
+## Metadata
+Ensure unique titles and meta descriptions for all pages. Include valid JSON-LD schema (e.g., Article and FAQPage). All canonical URLs, Open Graph URLs (`og:url`), and Open Graph image URLs (`og:image`) must use absolute paths pointing to the deployed site URL (https://smb-ai-builder.vercel.app).
+
+## CTA Bands
+Include a CTA band near the end of the page. The CTA link should be the primary URL.
+
+## FAQ Sections
+Include 4-6 FAQs per page. Use descriptive headings for FAQs and valid schema.
+
+## Link Comments
+Preserve existing URLs unless instructed otherwise. Maintain logical internal linking structures based on depth.

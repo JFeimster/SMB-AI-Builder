@@ -1,0 +1,19 @@
+---
+description: Hard rule against fake proof, testimonials, and claims
+globs: "*"
+---
+
+# No Fake Proof Rule
+
+**Strict Rule:** Do not invent or generate fake proof elements under any circumstances.
+
+This includes:
+- Fake testimonials
+- Fake logos
+- Fake ratings or stars
+- Fake reviews
+- Fake revenue or ROI claims
+- Fake compliance statements or guarantees
+- Fake user counts or usage metrics
+
+Always rely on factual information and explicit disclaimers. Use placeholders for templates, but never present them as real evidence.
