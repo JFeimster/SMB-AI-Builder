@@ -1,0 +1,7 @@
+{
+  "workflowName": "Automated Quote Generation",
+  "riskLevel": "medium",
+  "customerFacing": true,
+  "touchesSensitiveData": false,
+  "failureImpact": "medium"
+}

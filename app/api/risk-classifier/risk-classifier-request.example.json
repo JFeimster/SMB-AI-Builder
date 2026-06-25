@@ -1,0 +1,8 @@
+{
+  "workflowName": "Automated Refund Processing",
+  "workflowDescription": "Customer requests a refund via email, AI checks policy and issues the refund via Stripe.",
+  "touchesCustomers": true,
+  "touchesMoney": true,
+  "touchesSensitiveData": false,
+  "failureImpact": "high"
+}
