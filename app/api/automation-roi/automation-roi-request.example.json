@@ -1,0 +1,15 @@
+{
+  "workflowName": "Lead qualification",
+  "timePerTaskMinutes": 15,
+  "taskFrequency": {
+    "count": 10,
+    "period": "day"
+  },
+  "laborCostPerHour": 25,
+  "automationSetupCostEstimate": 1500,
+  "automationMaintenanceCostMonthly": 50,
+  "humanReviewTimeMinutes": 2,
+  "expectedAutomationCoveragePercent": 80,
+  "riskLevel": "low",
+  "touchesSensitiveWorkflow": false
+}
