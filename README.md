@@ -372,7 +372,7 @@ Use placeholder server URLs while developing:
 {
   "servers": [
     {
-      "url": "https://YOUR-VERCEL-DOMAIN.vercel.app"
+      "url": "https://smb-ai-builder.vercel.app/"
     }
   ]
 }
@@ -433,13 +433,13 @@ Vercel
 Typical public endpoint format:
 
 ```txt
-https://YOUR-VERCEL-DOMAIN.vercel.app/api/readiness-score
+https://smb-ai-builder.vercel.app/api/readiness-score
 ```
 
 Typical OpenAPI schema endpoint format:
 
 ```txt
-https://YOUR-VERCEL-DOMAIN.vercel.app/api/openapi/readiness-score
+https://smb-ai-builder.vercel.app/api/openapi/readiness-score
 ```
 
 ---
