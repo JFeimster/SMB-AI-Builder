@@ -1,5 +1,5 @@
 {
-  "domainOrSitemapUrl": "Example",
-  "maxUrls": 0,
+  "domainOrSitemapUrl": "https://example.com/sitemap.xml",
+  "maxUrls": 25,
   "includePageTypeGuesses": true
 }
