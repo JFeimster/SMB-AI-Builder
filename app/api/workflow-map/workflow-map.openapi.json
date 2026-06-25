@@ -1,0 +1,210 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow & Agent Builder - Generate Workflow Map",
+    "description": "Convert structured workflow steps into a clean current-state or future-state workflow map.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://smb-ai-builder.vercel.app/",
+      "description": "Current deployment base URL."
+    }
+  ],
+  "paths": {
+    "/api/workflow-map": {
+      "post": {
+        "operationId": "generateWorkflowMap",
+        "summary": "Generate Workflow Map",
+        "description": "Accepts a list of steps and returns a plain text map and/or a Mermaid diagram.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowMapRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Workflow map result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowMapResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WorkflowStep": {
+        "type": "object",
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "tool": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "task",
+              "decision",
+              "handoff",
+              "ai_task",
+              "human_review",
+              "output"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "WorkflowMapRequest": {
+        "type": "object",
+        "required": [
+          "workflowName",
+          "mapType",
+          "steps"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "workflowName": {
+            "type": "string"
+          },
+          "mapType": {
+            "type": "string",
+            "enum": [
+              "current_state",
+              "future_state",
+              "pilot_state"
+            ]
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowStep"
+            }
+          },
+          "bottlenecks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "humanReviewPoints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "desiredOutputFormat": {
+            "type": "string",
+            "enum": [
+              "plain_text",
+              "mermaid",
+              "both"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "WorkflowMapResponse": {
+        "type": "object",
+        "properties": {
+          "workflowName": {
+            "type": "string"
+          },
+          "mapType": {
+            "type": "string"
+          },
+          "plainTextMap": {
+            "type": "string"
+          },
+          "mermaidDiagram": {
+            "type": "string"
+          },
+          "bottleneckMarkers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "humanReviewMarkers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cleanupSuggestions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "nextStep": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

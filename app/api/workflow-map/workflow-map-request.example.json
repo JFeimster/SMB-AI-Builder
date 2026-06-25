@@ -1,0 +1,31 @@
+{
+  "workflowName": "Customer Onboarding",
+  "mapType": "current_state",
+  "steps": [
+    {
+      "label": "Customer signs contract",
+      "owner": "Sales",
+      "tool": "DocuSign",
+      "type": "task"
+    },
+    {
+      "label": "Email sent to implementation team",
+      "owner": "Sales",
+      "type": "handoff"
+    },
+    {
+      "label": "Create project in PM tool",
+      "owner": "Implementation Manager",
+      "tool": "Asana",
+      "type": "task"
+    },
+    {
+      "label": "Send welcome email to customer",
+      "owner": "Implementation Manager",
+      "tool": "Gmail",
+      "type": "task"
+    }
+  ],
+  "bottlenecks": ["Handoff email often delayed"],
+  "desiredOutputFormat": "both"
+}

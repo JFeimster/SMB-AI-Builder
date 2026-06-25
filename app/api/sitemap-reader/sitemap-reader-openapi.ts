@@ -1,0 +1,209 @@
+export function buildAnalyzeSitemapOpenApiSchema(serverUrl: string) {
+  const schema = {
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow Actions - AnalyzeSitemap",
+    "version": "1.0.0",
+    "description": "No-auth OpenAPI schema for: Read a public sitemap to help understand a business website structure."
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+      "description": "Replace with your deployed Vercel base URL."
+    }
+  ],
+  "paths": {
+    "/api/sitemap-reader": {
+      "get": {
+        "operationId": "getAnalyzeSitemapActionInfo",
+        "summary": "Get sitemap-reader endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "analyzeSitemap",
+        "summary": "Read a public sitemap to help understand a business website structure.",
+        "description": "Read a public sitemap to help understand a business website structure.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeSitemapRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyzeSitemapResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalyzeSitemapRequest": {
+        "type": "object",
+        "required": [
+          "domainOrSitemapUrl"
+        ],
+        "properties": {
+          "domainOrSitemapUrl": {
+            "type": "string"
+          },
+          "maxUrls": {
+            "type": "number"
+          },
+          "includePageTypeGuesses": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AnalyzeSitemapResponse": {
+        "type": "object",
+        "properties": {
+          "sitemapUrl": {
+            "type": "string"
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pageTypeGuesses": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyServicePages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyResourcePages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyContactPages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyOnboardingPages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ActionInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+};
+
+  schema.servers = [
+    {
+      url: serverUrl,
+      description: "Current deployment base URL.",
+    },
+  ];
+
+  return schema;
+}

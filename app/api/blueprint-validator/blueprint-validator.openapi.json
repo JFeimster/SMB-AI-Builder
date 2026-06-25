@@ -1,0 +1,237 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow & Agent Builder - Validate Automation Blueprint",
+    "description": "Validate whether an automation blueprint is complete and safe enough for pilot planning.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://smb-ai-builder.vercel.app/",
+      "description": "Current deployment base URL."
+    }
+  ],
+  "paths": {
+    "/api/blueprint-validator": {
+      "post": {
+        "operationId": "validateAutomationBlueprint",
+        "summary": "Validate automation blueprint",
+        "description": "Checks required fields, human review points, risk levels, and returns validation status and recommended automation mode.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AutomationBlueprintRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Blueprint validation result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AutomationBlueprintResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AutomationBlueprintRequest": {
+        "type": "object",
+        "required": [
+          "workflowName",
+          "automationGoal",
+          "trigger",
+          "inputs",
+          "tools",
+          "workflowSteps",
+          "aiTasks",
+          "humanReviewPoints",
+          "outputs",
+          "successMetrics",
+          "rollbackPlan"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "workflowName": {
+            "type": "string"
+          },
+          "automationGoal": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "workflowSteps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aiTasks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "humanReviewPoints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exceptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "successMetrics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rollbackPlan": {
+            "type": "string"
+          },
+          "riskLevel": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "touchesCustomers": {
+            "type": "boolean"
+          },
+          "touchesMoney": {
+            "type": "boolean"
+          },
+          "touchesSensitiveData": {
+            "type": "boolean"
+          },
+          "touchesLegalComplianceHRMedicalOrFinance": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "AutomationBlueprintResponse": {
+        "type": "object",
+        "properties": {
+          "workflowName": {
+            "type": "string"
+          },
+          "validationStatus": {
+            "type": "string",
+            "enum": [
+              "ready_for_pilot",
+              "needs_cleanup",
+              "not_ready"
+            ]
+          },
+          "missingFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "weakFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "riskWarnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "humanReviewRequired": {
+            "type": "boolean"
+          },
+          "recommendedAutomationMode": {
+            "type": "string"
+          },
+          "pilotReadinessSummary": {
+            "type": "string"
+          },
+          "nextStep": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}
