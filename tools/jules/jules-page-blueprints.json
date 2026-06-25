@@ -1,0 +1,73 @@
+{
+  "workflowAuditPage": {
+    "requiredSections": [
+      "Why this workflow is tempting to automate",
+      "What can go wrong",
+      "What the GPT checks",
+      "Readiness factors",
+      "Suggested safe pilot",
+      "Human review checkpoints",
+      "CTA",
+      "FAQ"
+    ]
+  },
+  "seoGuidePage": {
+    "requiredSections": [
+      "Hero",
+      "Problem explanation",
+      "Framework",
+      "Example",
+      "CTA",
+      "FAQ"
+    ]
+  },
+  "comparisonPage": {
+    "requiredSections": [
+      "Definitions",
+      "When to use each option",
+      "Decision table",
+      "Audit first",
+      "CTA",
+      "FAQ"
+    ]
+  },
+  "sitePage": {
+    "requiredSections": [
+      "Hero",
+      "Why it matters",
+      "What the GPT checks",
+      "What users get",
+      "CTA"
+    ]
+  },
+  "embedPage": {
+    "requiredSections": [
+      "Mini hero",
+      "Readiness self-check",
+      "Score preview",
+      "What the full GPT gives you",
+      "CTA",
+      "Disclaimer"
+    ]
+  },
+  "toolPage": {
+    "requiredSections": [
+      "Hero",
+      "What the tool helps create",
+      "File map",
+      "Prompt library",
+      "QA checks",
+      "CTA"
+    ]
+  },
+  "commonRequirements": [
+    "uniqueTitle",
+    "uniqueMetaDescription",
+    "oneH1",
+    "ctaBand",
+    "internalLinks",
+    "accessibilityChecks",
+    "noFakeProof",
+    "sensitiveDisclaimerWhenRelevant"
+  ]
+}

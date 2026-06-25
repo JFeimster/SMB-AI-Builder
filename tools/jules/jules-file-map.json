@@ -1,0 +1,18 @@
+{
+  "sitePages": "pages/site/",
+  "seoPages": "pages/seo/",
+  "comparisonPages": "pages/seo/comparisons/",
+  "workflowPages": "pages/seo/workflows/",
+  "seoSupport": "pages/seo-support/",
+  "embeds": "embeds/",
+  "nextApp": "app/",
+  "styles": "styles.css",
+  "scripts": "script.js",
+  "julesPrompts": "prompts/jules/",
+  "julesTools": "tools/jules/",
+  "publicToolPages": "pages/tools/",
+  "openapi": "openapi/",
+  "docsActions": "docs/actions/",
+  "examples": "examples/",
+  "assets": "assets/"
+}
