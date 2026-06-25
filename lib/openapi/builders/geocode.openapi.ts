@@ -12,10 +12,12 @@ export function getGeocodeLocationPathItem(): PathItem {
           "application/json": {
             schema: {
               type: "object",
-              required: ["name"],
+              required: ["query"],
               properties: {
-                name: { type: "string", description: "The location name to geocode." },
+                query: { type: "string", description: "City, postal code, or public location text to geocode." },
                 count: { type: "integer", default: 5, description: "Number of results to return." },
+                language: { type: "string", default: "en", description: "Language code for geocoding results." },
+                countryCode: { type: "string", description: "Optional country code filter for returned matches." },
               },
             },
           },
@@ -29,39 +31,34 @@ export function getGeocodeLocationPathItem(): PathItem {
               schema: {
                 type: "object",
                 properties: {
-                  success: { type: "boolean" },
-                  data: {
-                    type: "object",
-                    properties: {
-                      results: {
-                        type: "array",
-                        items: {
-                          type: "object",
-                          properties: {
-                            id: { type: "integer" },
-                            name: { type: "string" },
-                            latitude: { type: "number" },
-                            longitude: { type: "number" },
-                            elevation: { type: "number" },
-                            country: { type: "string" },
-                            timezone: { type: "string" },
-                          },
-                        },
-                      },
-                      bestMatch: {
-                        type: "object",
-                        properties: {
-                          id: { type: "integer" },
-                          name: { type: "string" },
-                          latitude: { type: "number" },
-                          longitude: { type: "number" },
-                          elevation: { type: "number" },
-                          country: { type: "string" },
-                          timezone: { type: "string" },
-                        },
+                  query: { type: "string" },
+                  matches: {
+                    type: "array",
+                    items: {
+                      type: "object",
+                      additionalProperties: true,
+                      properties: {
+                        name: { type: "string" },
+                        latitude: { type: "number" },
+                        longitude: { type: "number" },
+                        country: { type: "string" },
+                        admin1: { type: "string" },
+                        timezone: { type: "string" },
                       },
                     },
                   },
+                  bestMatch: {
+                    anyOf: [
+                      {
+                        type: "object",
+                        additionalProperties: true,
+                      },
+                      { type: "null" },
+                    ],
+                  },
+                  sourceNote: { type: "string" },
+                  warnings: { type: "array", items: { type: "string" } },
+                  assumptions: { type: "array", items: { type: "string" } },
                 },
               },
             },
@@ -74,8 +71,9 @@ export function getGeocodeLocationPathItem(): PathItem {
               schema: {
                 type: "object",
                 properties: {
-                  success: { type: "boolean" },
                   error: { type: "string" },
+                  message: { type: "string" },
+                  details: { type: "object", additionalProperties: true },
                 },
               },
             },
