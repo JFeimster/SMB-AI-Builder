@@ -4,15 +4,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Automation Opportunity Matrix</title>
-<meta content="Use our 2x2 matrix to prioritize the best and safest workflow candidates for AI automation." name="description"/>
+<title>Automation Pattern Library</title>
+<meta content="Reusable automation patterns showing when to use, avoid, and require human review." name="description"/>
 <meta content="#050505" name="theme-color"/>
-<meta content="Automation Opportunity Matrix" property="og:title"/>
-<meta content="Use our 2x2 matrix to prioritize the best and safest workflow candidates for AI automation." property="og:description"/>
+<meta content="Automation Pattern Library" property="og:title"/>
+<meta content="Reusable automation patterns showing when to use, avoid, and require human review." property="og:description"/>
 <meta content="website" property="og:type"/>
-<meta content="https://smb-ai-builder.vercel.app/pages/site/automation-opportunity-matrix.html" property="og:url"/>
+<meta content="https://smb-ai-builder.vercel.app/pages/directories/automation-patterns.html" property="og:url"/>
 <meta content="https://smb-ai-builder.vercel.app/og-image-placeholder.png" property="og:image"/>
-<link href="https://smb-ai-builder.vercel.app/pages/site/automation-opportunity-matrix.html" rel="canonical"/>
+<link href="https://smb-ai-builder.vercel.app/pages/directories/automation-patterns.html" rel="canonical"/>
 <link href="../../styles.css" rel="stylesheet"/>
 <script defer="" src="../../script.js"></script>
 </head>
@@ -43,16 +43,30 @@
 </nav>
 </div>
 </header>
-<main id="main"><h1 class="glitch-text" id="hero-title">Find the Best Workflow to Automate First</h1><p class="mono-label">Opportunity Matrix</p>
+<main id="main"><h1 class="glitch-text" id="hero-title">Automation Patterns You Can Reuse Without Overbuilding</h1><p class="mono-label">Automation Pattern Library</p>
 <div class="shell">
-<div class="matrix-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-<div class="brutal-card"><h3>High Value, Low Effort</h3><p>Quick wins. Do these first.</p></div>
-<div class="brutal-card"><h3>High Value, High Effort</h3><p>Strategic projects. Plan carefully.</p></div>
-<div class="brutal-card"><h3>Low Value, Low Effort</h3><p>Fillers. Do when bored.</p></div>
-<div class="brutal-card"><h3>Low Value, High Effort</h3><p>Time sinks. Avoid.</p></div>
+<div class="card-grid">
+<div class="brutal-card">
+<h3>Draft-Only Asssitant</h3>
+<p>Use when: High risk, sensitive data.</p>
+<p>Avoid when: Perfect accuracy isn't critical.</p>
+<p>Checkpoint: Human approves every action.</p>
 </div>
-<div class="cta-band"><a class="cta-button" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Find What To Automate First</a></div>
-<div class="internal-links"><a href="readiness-scorecard.html">Scorecard</a> | <a href="use-cases.html">Use Cases</a> | <a href="../directories/workflow-library.html">Workflow Library</a></div>
+<div class="brutal-card">
+<h3>Exception Router</h3>
+<p>Use when: Most tasks are standard, some are edge cases.</p>
+<p>Avoid when: Every task is unique.</p>
+<p>Checkpoint: Human handles the exceptions.</p>
+</div>
+<div class="brutal-card">
+<h3>Straight-Through Processing</h3>
+<p>Use when: Zero risk, deterministic data.</p>
+<p>Avoid when: LLMs are making decisions.</p>
+<p>Checkpoint: Periodic audits.</p>
+</div>
+</div>
+<div class="cta-band"><a class="cta-button" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Build My AI Agent Pilot Plan</a></div>
+<div class="internal-links"><a href="workflow-library.html">Workflow Library</a> | <a href="../site/ai-agent-blueprint.html">Agent Blueprint</a></div>
 </div>
 </main>
 <footer aria-labelledby="footer-title" class="site-footer">
