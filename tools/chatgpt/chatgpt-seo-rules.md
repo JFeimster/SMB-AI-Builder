@@ -19,7 +19,8 @@ Every workflow audit page must include these specific sections:
 - **Human review checkpoints:** Exactly where a human must stay in the loop.
 
 ## 3. FAQs
-- **Requirement:** Every SEO page MUST include 4-6 relevant Frequently Asked Questions.
+- **General SEO and comparison pages:** Include 4-6 relevant Frequently Asked Questions.
+- **Workflow audit pages:** Pages under `pages/seo/workflows/` should include 3-5 relevant Frequently Asked Questions.
 - **Tone:** Answer directly and practically. Do not invent features or claim the tool does the building.
 
 ## 4. Internal Linking
