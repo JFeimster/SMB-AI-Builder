@@ -3,93 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jules Build System | SMB AI Workflow & Agent Builder</title>
-  <meta name="description" content="Jules is the builder-ops layer for generating and QA-checking product pages, workflow audit pages, partner embeds, and more for the SMB AI Workflow & Agent Builder.">
+  <title>Jules Build System for SMB AI Workflow & Agent Builder</title>
+  <meta name="description" content="Explore the Jules build system for SMB AI Workflow & Agent Builder: prompt libraries, page blueprints, file maps, SEO rules, accessibility checks, and safe builder-ops guidance.">
   <link rel="canonical" href="https://example.com/pages/tools/jules.html">
-  <meta property="og:title" content="Jules Build System | SMB AI Workflow & Agent Builder">
-  <meta property="og:description" content="Jules is the builder-ops layer for generating and QA-checking product pages, workflow audit pages, partner embeds, and more for the SMB AI Workflow & Agent Builder.">
+  <meta property="og:title" content="Jules Build System for SMB AI Workflow & Agent Builder">
+  <meta property="og:description" content="A public guide to the Jules builder-ops layer for static pages, SEO clusters, workflow audit pages, comparison guides, partner embeds, and QA checks.">
   <link rel="stylesheet" href="../../styles.css">
   <script src="../../script.js" defer></script>
 </head>
-<body class="neobrutalist-theme">
+<body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header role="banner">
-    <div class="container">
-      <div class="logo">SMB AI Builder</div>
-      <nav aria-label="Main Navigation">
-        <ul>
-          <li><a href="../../index.html">Home</a></li>
-        </ul>
+
+  <header class="site-header">
+    <div class="shell header-grid">
+      <a class="brand" href="../../index.html" aria-label="SMB AI Builder home">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">
+          <strong>SMB AI Builder</strong>
+          <small>Workflow readiness system</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="../../index.html">Home</a>
+        <a href="#file-map">File map</a>
+        <a href="#qa-rules">QA checks</a>
+        <a class="nav-cta" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Launch GPT</a>
       </nav>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+        <span class="nav-toggle-line" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
-  <main id="main-content" role="main">
-    <section class="hero-section dashboard-card hard-shadow">
-      <div class="container">
-        <p class="eyebrow monospace">Builder Tools</p>
-        <h1>Jules Build System for SMB AI Workflow &amp; Agent Builder</h1>
-        <p class="hero-subtitle">Jules is a builder-ops layer for generating and QA-checking assets for the SMB AI Workflow &amp; Agent Builder project.</p>
-        <div class="cta-band">
-          <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" class="btn btn-primary cta-link">Launch SMB AI Workflow &amp; Agent Builder</a>
-          <a href="https://github.com/JFeimster/SMB-AI-Builder" class="btn btn-secondary cta-link">View GitHub Resource</a>
-          <a href="https://feimster.notion.site/smb-ai-builder" class="btn btn-tertiary cta-link">View Notion Resource</a>
+  <main id="main-content">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="shell hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="punch">Builder ops layer</span></p>
+          <h1 id="page-title">Jules Build System for SMB AI Workflow &amp; Agent Builder</h1>
+          <p class="hero-subhead">A public map of the repo rules, prompt library, page blueprints, and QA checks Jules uses to create useful assets without inventing proof or automating the mess blindly.</p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="btn btn-primary btn-xl" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Launch SMB AI Workflow &amp; Agent Builder</a>
+            <a class="btn btn-secondary btn-xl" href="https://github.com/JFeimster/SMB-AI-Builder">View GitHub Resource</a>
+            <a class="btn btn-ghost btn-xl" href="https://feimster.notion.site/smb-ai-builder">View Notion Resource</a>
+          </div>
+          <p class="trust-microcopy">Safety stance: plan the workflow, score readiness, keep humans in the loop where the risk gets spicy.</p>
+        </div>
+
+        <aside class="hero-visual cockpit-panel" aria-label="Jules system preview">
+          <div class="panel-toolbar" aria-hidden="true">
+            <span class="dot dot-pink"></span>
+            <span class="dot dot-lime"></span>
+            <span class="dot dot-cyan"></span>
+            <span class="toolbar-label">JULES / TOOL RULES</span>
+          </div>
+          <div class="decision-stack">
+            <div class="decision-card decision-now"><strong>Source</strong><span>JULES.md + jules.json</span></div>
+            <div class="decision-card decision-clean"><strong>Build</strong><span>Pages, prompts, embeds</span></div>
+            <div class="decision-card decision-human"><strong>Review</strong><span>Claims, safety, paths</span></div>
+          </div>
+          <div class="terminal-snippet">
+            <p><span>&gt;</span> stop_automating_broken_workflows()</p>
+            <p><span>&gt;</span> audit_first = true</p>
+            <p><span>&gt;</span> fake_proof = false</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="what-jules-creates">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="section-kicker">What Jules helps create</p>
+          <h2 id="what-jules-creates">Builder assets without the SaaS fog machine.</h2>
+          <p class="section-lede center-lede">Jules is used as a repeatable builder-ops layer for creating repo assets, static pages, search pages, embed packages, and QA passes from the same rules.</p>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome-card">
+            <h3>Static page generation</h3>
+            <p>Creates semantic product and resource pages that explain what the GPT checks, why readiness matters, and what users get.</p>
+          </article>
+          <article class="outcome-card">
+            <h3>SEO page generation</h3>
+            <p>Builds search-intent aligned guides with unique metadata, useful structure, internal links, FAQs, and safe schema rules.</p>
+          </article>
+          <article class="outcome-card">
+            <h3>Workflow page generation</h3>
+            <p>Creates workflow audit pages that explain what can go wrong, what the GPT checks, and where human review belongs.</p>
+          </article>
+          <article class="outcome-card">
+            <h3>Comparison guides</h3>
+            <p>Frames balanced comparisons without attacking tools, inventing benchmarks, or pretending this GPT replaces automation platforms.</p>
+          </article>
+          <article class="outcome-card">
+            <h3>Partner embeds</h3>
+            <p>Prepares compact readiness widgets and affiliate-friendly embed instructions without fake partner or access claims.</p>
+          </article>
+          <article class="outcome-card">
+            <h3>Prompt libraries</h3>
+            <p>Standardizes future Jules tasks so each pass knows the folder rules, CTA rules, safety language, and final QA checks.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="what-it-does-section dashboard-card hard-shadow thick-border">
-      <div class="container">
-        <h2>What Jules Helps Create</h2>
-        <ul class="feature-list">
-          <li><strong>Static page generation:</strong> Semantic HTML pages.</li>
-          <li><strong>SEO page generation:</strong> Search intent-aligned content clusters.</li>
-          <li><strong>Workflow page generation:</strong> Audit pages to score automation readiness.</li>
-          <li><strong>Embed generation:</strong> Partner embeds and readiness self-checks.</li>
-          <li><strong>QA and deployment checks:</strong> Accessibility passes, conversion-copy passes, and deployment readiness checks.</li>
-        </ul>
+    <section class="section dark-slab" id="qa-rules" aria-labelledby="qa-heading">
+      <div class="shell split-layout">
+        <div>
+          <p class="section-kicker">QA and deployment checks</p>
+          <h2 id="qa-heading">The rules are the seatbelt.</h2>
+          <p class="section-lede">Every build pass should check file paths, metadata, H1 usage, CTAs, accessibility, schema, safety disclaimers, and unsupported claims before anything ships.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Launch SMB AI Workflow &amp; Agent Builder</a>
+            <a class="btn btn-secondary" href="https://github.com/JFeimster/SMB-AI-Builder">View GitHub Resource</a>
+          </div>
+        </div>
+        <div class="warning-board">
+          <h3>Do not ship this nonsense</h3>
+          <ul class="check-list">
+            <li>Fake testimonials, reviews, ratings, logos, or partner claims.</li>
+            <li>Guarantees, compliance claims, fake benchmarks, or invented integrations.</li>
+            <li>Thin doorway pages, copied boilerplate, or keyword-stuffed goblin bait.</li>
+            <li>Automation copy that removes qualified human review from sensitive workflows.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="how-to-use-section dashboard-card hard-shadow thick-border">
-      <div class="container">
-        <h2>How Builders Can Reuse Prompts</h2>
-        <p>You can find reusable prompts in the <code>prompts/jules/</code> directory. These prompts standardize static page generation, SEO content clusters, and embed files.</p>
-
-        <h3>File Map Preview</h3>
-        <p>Jules maps the project files accurately. A preview of the map structure:</p>
-        <pre class="monospace ink-black-bg vivid-accent">
-{
+    <section class="section builder-resource" id="file-map" aria-labelledby="file-map-heading">
+      <div class="shell resource-layout">
+        <div class="repo-card">
+          <p class="section-kicker">File map preview</p>
+          <h2 id="file-map-heading">Where Jules puts the work.</h2>
+          <p>The tool rules layer gives Jules a machine-readable map for static pages, SEO pages, workflow pages, comparison pages, embed files, prompt files, and public tool pages.</p>
+          <a class="btn btn-secondary" href="https://github.com/JFeimster/SMB-AI-Builder">View GitHub Resource</a>
+        </div>
+        <div class="repo-terminal" aria-label="File map preview">
+<pre>{
   "sitePages": "pages/site/",
   "seoPages": "pages/seo/",
+  "comparisonPages": "pages/seo/comparisons/",
+  "workflowPages": "pages/seo/workflows/",
+  "julesPrompts": "prompts/jules/",
   "julesTools": "tools/jules/",
-  ...
-}
-        </pre>
+  "publicToolPages": "pages/tools/"
+}</pre>
+        </div>
       </div>
     </section>
 
-    <section class="safety-rules-section dashboard-card hard-shadow thick-border">
-      <div class="container">
-        <h2>Safety and Claims Rules</h2>
-        <p>This build system supports planning, documentation, page generation, and QA. It should not be used to invent proof, fabricate claims, or remove human review from sensitive workflows.</p>
-        <p><strong>Disclaimer:</strong> This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.</p>
+    <section class="section" aria-labelledby="reuse-heading">
+      <div class="shell access-layout">
+        <div>
+          <p class="section-kicker">How builders can reuse the prompts</p>
+          <h2 id="reuse-heading">Copy the pattern, not the chaos.</h2>
+          <p class="section-lede">Builders can reuse the prompt files in <code>prompts/jules/</code> and the rule files in <code>tools/jules/</code> to create consistent pages, embeds, and QA passes across future build rounds.</p>
+        </div>
+        <div class="access-card">
+          <ol class="access-list">
+            <li>Read <code>JULES.md</code> and <code>jules.json</code>.</li>
+            <li>Pick the matching prompt from <code>prompts/jules/</code>.</li>
+            <li>Use the file map and page blueprints.</li>
+            <li>Run copy, SEO, accessibility, and claims QA.</li>
+          </ol>
+          <a class="btn btn-primary full-width" href="https://feimster.notion.site/smb-ai-builder">View Notion Resource</a>
+        </div>
       </div>
     </section>
 
-    <section class="final-cta-section dashboard-card hard-shadow">
-      <div class="container cta-band">
-        <h2>Start Building</h2>
-        <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" class="btn btn-primary cta-link">Launch SMB AI Workflow &amp; Agent Builder</a>
-        <a href="https://github.com/JFeimster/SMB-AI-Builder" class="btn btn-secondary cta-link">View GitHub Resource</a>
+    <section class="section safety-section" aria-labelledby="safety-heading">
+      <div class="shell safety-layout">
+        <div>
+          <p class="section-kicker">Safety and claims rules</p>
+          <h2 id="safety-heading">Planning support, not proof fabrication.</h2>
+          <p class="section-lede">This build system supports planning, documentation, page generation, and QA. It should not be used to invent proof, fabricate claims, or remove human review from sensitive workflows.</p>
+        </div>
+        <div class="safety-grid">
+          <article>
+            <h3>Keep humans in the loop</h3>
+            <p>This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.</p>
+          </article>
+          <article>
+            <h3>No fake proof</h3>
+            <p>Do not invent testimonials, reviews, ratings, logos, partner claims, revenue numbers, guarantees, certifications, benchmarks, integrations, or case studies.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta-section" aria-labelledby="final-cta-heading">
+      <div class="shell final-cta">
+        <p class="section-kicker">Build with rules</p>
+        <h2 id="final-cta-heading">Audit the workflow before AI touches it.</h2>
+        <p>Use the GPT to plan the workflow, score readiness, and design a safer pilot before the tool stack gets expensive.</p>
+        <div class="center-actions">
+          <a class="btn btn-primary btn-xl" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Launch SMB AI Workflow &amp; Agent Builder</a>
+          <a class="btn btn-secondary btn-xl" href="https://github.com/JFeimster/SMB-AI-Builder">View GitHub Resource</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <div class="container">
-      <p>&copy; 2024 SMB AI Builder</p>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <h2>SMB AI Builder</h2>
+        <p>Stop automating broken workflows. Audit the mess first.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../../index.html">Home</a>
+        <a href="https://github.com/JFeimster/SMB-AI-Builder">GitHub</a>
+        <a href="https://feimster.notion.site/smb-ai-builder">Notion</a>
+        <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Launch GPT</a>
+      </nav>
+    </div>
+    <div class="shell footer-bottom">
+      <span>&copy; <span data-current-year></span> SMB AI Builder</span>
+      <span>Planning, readiness, and pilot-design support.</span>
     </div>
   </footer>
+
+  <div class="sticky-cta" data-sticky-cta aria-label="Sticky launch prompt">
+    <span>Score the workflow first.</span>
+    <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Launch GPT</a>
+  </div>
 </body>
 </html>
