@@ -1,0 +1,16 @@
+{
+  "actionName": "checkRobotsTxt",
+  "route": "/api/robots-check",
+  "method": "POST",
+  "summary": "Check public robots.txt restrictions for a domain.",
+  "description": "Fetch and summarize robots.txt for a public HTTPS domain before planning crawl-sensitive workflows.",
+  "inputs": [
+    { "name": "domain", "type": "string", "required": true }
+  ],
+  "outputs": [
+    { "name": "allowedSummary", "type": "string" },
+    { "name": "disallowedPaths", "type": "array" }
+  ],
+  "serverUrl": "https://smb-ai-builder.vercel.app",
+  "authentication": "none"
+}

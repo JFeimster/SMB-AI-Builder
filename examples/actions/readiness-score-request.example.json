@@ -1,0 +1,22 @@
+{
+  "workflowName": "Lead follow-up after website inquiry",
+  "workflowDescription": "A new website inquiry is reviewed, qualified, and followed up by email.",
+  "userGoal": "Respond faster while keeping human approval before customer-facing replies.",
+  "scores": {
+    "workflowClarity": 2,
+    "processConsistency": 2,
+    "dataQuality": 2,
+    "toolAccess": 2,
+    "ownership": 3,
+    "riskLevel": 2,
+    "humanReviewPlan": 2,
+    "customerExperienceImpact": 3,
+    "measurementPlan": 1,
+    "rollbackPlan": 1
+  },
+  "categoryNotes": {
+    "measurementPlan": "No baseline response-time metric yet.",
+    "rollbackPlan": "Manual fallback exists but is not documented."
+  },
+  "notes": "Initial pilot should be draft-only."
+}
