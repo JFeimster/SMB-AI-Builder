@@ -1,0 +1,21 @@
+---
+description: SEO page rules
+globs: pages/seo/**/*.html
+---
+
+# SEO Page Rules
+
+## Useful Content
+Write direct, practical, operator-friendly language. Avoid fluffy deployment theory. Do not invent facts.
+
+## Search Intent
+Address the user's intent clearly and concisely. Format H1s properly (e.g., 'Audit Your [Workflow] Before Automating It With AI' for audit pages). Ensure descriptive H2s.
+
+## FAQ/Schema
+Include 4-6 FAQs per page. Include valid JSON-LD schema (Article and FAQPage).
+
+## Internal Links
+Maintain internal link structures based on directory depth. Maintain consistent navigation headers and footers across pages.
+
+## No Thin Doorway Pages
+Provide substantive value on every SEO page. No auto-generated low-value pages.

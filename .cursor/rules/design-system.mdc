@@ -1,0 +1,20 @@
+---
+description: Visual design rules for UI
+globs: *.{css,tsx,jsx,html}
+---
+
+# Design System Rules
+
+## Visual Style
+- **Aesthetic**: Neobrutalist + futurist fintech + cyberpunk style.
+- **Borders**: Use thick borders.
+- **Shadows**: Use hard offset shadows.
+- **Backgrounds**: Use ink black backgrounds.
+- **Accents**: Vivid accent colors (Acid lime, cyber pink, electric cyan).
+
+## Typography
+- Use monospace fonts for labels and data displays.
+
+## Components
+- **Dashboard Panels**: Design with distinct boundaries and high contrast.
+- Keep structures semantic and mobile-first.

@@ -1,0 +1,25 @@
+---
+description: Project-wide rules for SMB AI Workflow & Agent Builder
+globs: *
+---
+
+# Project-Wide Rules
+
+## Product Context
+SMB AI Workflow & Agent Builder. A tool to help audit business workflows, identify automation opportunities, design practical AI-powered automations, and build safe AI agent plans before investing in tools or development work.
+
+## Audience
+Small business owners, operators, freelancers, agencies, and lean teams.
+
+## CTA Links
+Primary CTA URL: https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder
+
+## Tone
+Keep the voice direct, practical, anti-hype, and SMB-friendly. Avoid heavy buzzwords.
+
+## Safety Stance
+For sensitive workflows, always include explicit disclaimers: 'This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.'
+
+## Do-Not-Invent Rules
+- Do not invent testimonials, logos, ratings, reviews, revenue claims, compliance claims, guarantees, or user counts.
+- Never invent benchmarks, direct integrations, or unsupported claims.

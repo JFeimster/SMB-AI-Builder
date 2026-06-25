@@ -1,0 +1,19 @@
+---
+description: Partner embed rules
+globs: embeds/**/*.{html,js,css,tsx}
+---
+
+# Embeds Rules
+
+## Dimensions
+- **Max Width**: 940px
+- **Max Height**: 1200px
+
+## Security and Access
+Static config is not real access control. Ensure no sensitive business data or secrets are exposed through embeds.
+
+## Partner Attribution
+Ensure clear partner attribution where necessary without making false claims or inventing partnerships.
+
+## UTM/Ref Handling
+Handle UTM parameters and referrers safely and accurately. Do not overwrite or lose critical tracking info.

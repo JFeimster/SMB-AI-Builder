@@ -1,0 +1,21 @@
+---
+description: Rules for Next.js App Router files
+globs: app/**/*.{ts,tsx,css}
+---
+
+# Next.js App Router Rules
+
+## app/page.tsx
+Follow Next.js App Router conventions. Ensure default exports for server components where applicable.
+
+## app/layout.tsx
+Use RootLayout correctly to structure the main page layout, navigation, and footer. Add proper html/body wrappers and metadata.
+
+## app/globals.css
+Maintain the neobrutalist + futurist fintech + cyberpunk style. Ensure styling works smoothly across all pages. Reuse global css without adding heavy dependencies.
+
+## Client Component Rules
+Use `"use client"` directive strictly only when React hooks (useState, useEffect) or browser APIs are required. Default to server components.
+
+## Metadata Rules
+Use Next.js Metadata API for titles, descriptions, open graph settings, and canonical URLs. All open graph and canonical URLs must use the absolute domain https://smb-ai-builder.vercel.app.
