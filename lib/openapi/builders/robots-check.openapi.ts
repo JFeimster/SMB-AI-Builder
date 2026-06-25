@@ -12,10 +12,10 @@ export function getCheckRobotsTxtPathItem(): PathItem {
           "application/json": {
             schema: {
               type: "object",
-              required: ["url"],
+              required: ["domain"],
               properties: {
-                url: { type: "string", description: "The URL of the website to check." },
-                targetPath: { type: "string", description: "Optional specific path to check against the rules." },
+                domain: { type: "string", description: "HTTPS domain or URL whose robots.txt should be checked." },
+                userAgent: { type: "string", description: "Optional target user agent to evaluate." },
               },
             },
           },
@@ -29,21 +29,23 @@ export function getCheckRobotsTxtPathItem(): PathItem {
               schema: {
                 type: "object",
                 properties: {
-                  success: { type: "boolean" },
-                  data: {
-                    type: "object",
-                    properties: {
-                      isAllowed: { type: "boolean" },
-                      disallowedPaths: {
-                        type: "array",
-                        items: { type: "string" },
-                      },
-                      sitemapLinks: {
-                        type: "array",
-                        items: { type: "string" },
-                      },
-                    },
+                  robotsUrl: { type: "string" },
+                  exists: { type: "boolean" },
+                  allowedSummary: { type: "string" },
+                  disallowedPaths: {
+                    type: "array",
+                    items: { type: "string" },
                   },
+                  sitemapLinks: {
+                    type: "array",
+                    items: { type: "string" },
+                  },
+                  crawlWarnings: {
+                    type: "array",
+                    items: { type: "string" },
+                  },
+                  sourceNote: { type: "string" },
+                  assumptions: { type: "array", items: { type: "string" } },
                 },
               },
             },
@@ -56,8 +58,9 @@ export function getCheckRobotsTxtPathItem(): PathItem {
               schema: {
                 type: "object",
                 properties: {
-                  success: { type: "boolean" },
                   error: { type: "string" },
+                  message: { type: "string" },
+                  details: { type: "object", additionalProperties: true },
                 },
               },
             },
