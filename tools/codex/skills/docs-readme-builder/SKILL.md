@@ -1,79 +1,30 @@
+---
+name: docs-readme-builder
+description: Use when creating or revising README files, documentation indexes, folder docs, usage guides, and repo operating instructions.
+---
+
 # Docs README Builder
 
 ## Purpose
+Create clear repo documentation and README files that match the existing SMB AI Builder structure.
 
-Create comprehensive repository documentation and READMEs.
-
-## When to use this skill
-
-- When initializing the repo.
-- When adding major new features that require setup.
-
-## When not to use this skill
-
-- For end-user marketing copy.
-
-## Inputs Codex should collect
-
-- Repo status.
-- Setup instructions.
-
-## Files and folders this skill may touch
-
-- `README.md`
-- `docs/*.md`
+## Use this skill when
+- Adding README files to new folders.
+- Creating docs for prompts, tools, embeds, skills, schemas, or deployment layers.
+- Explaining how to run, review, or use static repo assets.
 
 ## Source-of-truth files to read first
-
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/file-map.json`
+- `tools/jules/qa-checklist.md`
 
 ## Process
+1. Identify the audience for the doc.
+2. Explain purpose, files, usage, QA, and guardrails.
+3. Link to adjacent repo docs using correct relative paths.
+4. Keep docs implementation-grounded and free of fake capabilities.
 
-1. Document repo overview and setup.
-2. Include the folder map.
-3. Add local development and deployment instructions.
-4. Document GPT Action setup.
-5. Add prompt usage guidelines.
-6. Include safety notes and contribution notes.
-7. Avoid fake status claims.
-
-## Output requirements
-
-A clear, accurate README.md file.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-- No fake version or status claims.
-
-## QA checklist
-
-- [ ] Setup instructions are accurate.
-- [ ] Folder map is included.
-- [ ] Safety notes highlighted.
-
-## Common mistakes to avoid
-
-- Documenting features that don't exist yet.
-- Missing deployment instructions.
-
-## Final response format
-
-Confirm documentation updates.
+## Guardrails
+- Do not document features that do not exist.
+- Do not include private credentials, fake IDs, or unsupported deployment claims.
