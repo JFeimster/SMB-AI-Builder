@@ -1,0 +1,40 @@
+{
+  "project": "SMB AI Workflow & Agent Builder",
+  "primaryCtaUrl": "https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder",
+  "notionUrl": "https://feimster.notion.site/smb-ai-builder",
+  "githubUrl": "https://github.com/JFeimster/SMB-AI-Builder",
+  "style": "neobrutalist futurist fintech cyberpunk",
+  "rootCss": "styles.css",
+  "rootJs": "script.js",
+  "staticPageRoots": {
+    "site": "pages/site/",
+    "seo": "pages/seo/",
+    "comparisons": "pages/seo/comparisons/",
+    "workflows": "pages/seo/workflows/",
+    "seoSupport": "pages/seo-support/",
+    "tools": "pages/tools/",
+    "embeds": "embeds/"
+  },
+  "nextAppRoots": {
+    "app": "app/",
+    "tools": "app/tools/"
+  },
+  "defaultCtas": [
+    "Audit My First Workflow",
+    "Score My Automation Readiness",
+    "Build My AI Agent Pilot Plan",
+    "Find What To Automate First"
+  ],
+  "forbiddenClaims": [
+    "fake testimonials",
+    "fake logos",
+    "fake revenue numbers",
+    "fake user counts",
+    "fake case studies",
+    "fake guarantees",
+    "fake compliance claims",
+    "fake ratings",
+    "fake reviews"
+  ],
+  "sensitiveDisclaimer": "This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, or compliance advice. Sensitive decisions should stay under qualified human review."
+}
