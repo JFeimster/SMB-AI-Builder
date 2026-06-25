@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Embeds Demo - SMB AI Builder</title>
+  <style>
+    :root {
+      --ink: #050505;
+      --off-white: #F8F4E8;
+      --cyan: #00E5FF;
+      --pink: #FF2BD6;
+      --font-main: Inter, system-ui, sans-serif;
+    }
+    body {
+      font-family: var(--font-main);
+      background: var(--off-white);
+      color: var(--ink);
+      margin: 0;
+      padding: 40px;
+    }
+    h1, h2 {
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+    .demo-section {
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 4px solid var(--ink);
+    }
+    .demo-section h2 {
+      margin-bottom: 8px;
+    }
+    .demo-desc {
+      margin-bottom: 24px;
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+    .demo-grid {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 1000px) {
+      .demo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .links {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .links a {
+      display: inline-block;
+      padding: 10px 16px;
+      background: var(--ink);
+      color: var(--off-white);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 var(--pink);
+    }
+    .links a:hover {
+      background: var(--cyan);
+      color: var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    /* Simulate a container in partner site */
+    .partner-site-container {
+      background: #eee;
+      border: 2px dashed #999;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Partner Embeds Demo</h1>
+  <div class="demo-desc">
+    This page demonstrates the various embed formats for the SMB AI Workflow & Agent Builder partner package.
+  </div>
+
+  <div class="links">
+    <a href="EMBED-README.md">View Documentation</a>
+    <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank">Primary GPT URL</a>
+    <a href="https://feimster.notion.site/smb-ai-builder" target="_blank">Notion Resource</a>
+    <a href="https://github.com/JFeimster/SMB-AI-Builder" target="_blank">GitHub Resource</a>
+  </div>
+
+  <div class="demo-section">
+    <h2>1. Full Iframe Embed</h2>
+    <div class="demo-desc">
+      Shows the complete widget. Uses <code>?partner=agencyPartner</code> to demonstrate dynamic attribution.
+    </div>
+    <div class="partner-site-container" style="max-width: 980px; margin: 0 auto;">
+      <iframe
+        src="iframe.html?partner=agencyPartner"
+        width="940"
+        height="1200"
+        style="border:0; max-width:100%; display:block; margin: 0 auto;"
+        title="SMB AI Workflow & Agent Builder">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>2. Compact Iframe Embed</h2>
+    <div class="demo-desc">
+      A narrower version, great for sidebars. <code>?partner=consultantPartner</code>
+    </div>
+    <div class="partner-site-container" style="max-width: 460px;">
+      <iframe
+        src="iframe-compact.html?partner=consultantPartner"
+        width="420"
+        height="680"
+        style="border:0; max-width:100%; display:block; margin: 0 auto;"
+        title="SMB AI Workflow Readiness Check">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>3. Affiliate Card Iframe</h2>
+    <div class="demo-desc">
+      Very small shareable snippet. <code>?partner=builderPartner</code>
+    </div>
+    <div class="partner-site-container" style="max-width: 440px;">
+      <iframe
+        src="affiliate-card.html?partner=builderPartner"
+        width="400"
+        height="380"
+        style="border:0; max-width:100%; display:block; margin: 0 auto;"
+        title="SMB AI Affiliate Card">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>4. Script Embed Demo</h2>
+    <div class="demo-desc">
+      Using the <code>embed-loader.js</code> script to inject a full size widget into a div container. Using a fallback ID not in config to show fallback logic: <code>data-partner="awesome-agency"</code>.
+    </div>
+    <div class="partner-site-container">
+      <div
+        id="smb-ai-builder-widget"
+        data-partner="awesome-agency"
+        data-size="full">
+      </div>
+      <!-- For local testing, path is relative -->
+      <script src="embed-loader.js" defer></script>
+    </div>
+  </div>
+
+</body>
+</html>

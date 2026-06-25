@@ -1,0 +1,22 @@
+{
+  "default": {
+    "name": "SMB AI Builder",
+    "ref": "direct",
+    "allowed": true
+  },
+  "agency-partner": {
+    "name": "Agency Partner",
+    "ref": "agency-partner",
+    "allowed": true
+  },
+  "consultant-partner": {
+    "name": "Consultant Partner",
+    "ref": "consultant-partner",
+    "allowed": true
+  },
+  "automation-builder-partner": {
+    "name": "Automation Builder Partner",
+    "ref": "automation-builder-partner",
+    "allowed": true
+  }
+}
