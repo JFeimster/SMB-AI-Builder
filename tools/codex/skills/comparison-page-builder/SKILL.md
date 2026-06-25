@@ -1,78 +1,31 @@
+---
+name: comparison-page-builder
+description: Use when creating balanced SEO comparison pages under pages/seo/comparisons/ for SMB automation, AI agents, GPTs, workflow audits, or tool-selection decisions.
+---
+
 # Comparison Page Builder
 
 ## Purpose
+Create balanced comparison pages that help users choose a workflow-planning path without attacking other tools or inventing claims.
 
-Create balanced comparison pages that act as decision guides, positioning the GPT as a readiness/planning layer rather than a direct replacement.
-
-## When to use this skill
-
-- When building 'Tool A vs Tool B' pages.
-- When comparing automation approaches.
-
-## When not to use this skill
-
-- For attacking competitors.
-
-## Inputs Codex should collect
-
-- Tools/approaches to compare.
-
-## Files and folders this skill may touch
-
-- `pages/seo/comparisons/*.html`
+## Use this skill when
+- Building pages under `pages/seo/comparisons/`.
+- Comparing AI agents, Custom GPTs, workflow audits, Zapier, Make, or automation builds.
+- Creating decision tables, use-case guidance, and FAQs.
 
 ## Source-of-truth files to read first
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/file-map.json`
+- `tools/jules/seo-rules.md`
+- `tools/jules/copy-rules.md`
+- `tools/jules/qa-checklist.md`
 
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+## Path rules
+- Pages in `pages/seo/comparisons/` use `../../../styles.css` and `../../../script.js`.
+- Canonical URLs use `https://smb-ai-builder.vercel.app/pages/seo/comparisons/<filename>`.
 
-## Process
-
-1. Draft balanced definitions of each option.
-2. Create 'Use this when...' and 'Audit first when...' sections.
-3. Design a comparison table or card grid.
-4. Position our GPT as the planning/readiness layer before building.
-5. Add a CTA band and FAQ (4-6 questions).
-6. Do not claim integrations unless confirmed.
-
-## Output requirements
-
-A balanced, objective comparison HTML page.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-- Be balanced. Do not attack competitors. Do not claim product replaces tools.
-
-## QA checklist
-
-- [ ] Tone is objective and not an attack.
-- [ ] Comparison table/grid included.
-- [ ] GPT positioned as planning layer.
-- [ ] 'Use this when' sections included.
-
-## Common mistakes to avoid
-
-- Claiming our GPT does the automation directly.
-- Inventing fake benchmarks.
-- Trashing competitors.
-
-## Final response format
-
-Confirm page creation and summarize the comparison logic.
+## Guardrails
+- Do not attack third-party tools.
+- Do not invent pricing, integrations, benchmarks, ratings, or test results.
+- Position the GPT as the planning/readiness layer before choosing the build path.
