@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>SMB AI Workflow & Agent Builder</title>
+  <link rel="stylesheet" href="partner-widget.css">
+  <script src="partner-config.js" defer></script>
+  <script src="partner-widget.js" defer></script>
+  <style>
+    /* Reset for iframe host */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden; /* Prevent double scrollbars; the widget handles scrolling */
+    }
+  </style>
+</head>
+<body>
+  <!-- Identical to partner-widget.html body -->
+  <div class="smb-ai-builder-embed-wrapper">
+    <div class="smb-ai-widget-shell">
+
+      <!-- Header Badge -->
+      <div class="smb-ai-badge">Partner workflow readiness tool</div>
+
+      <!-- Mini Hero -->
+      <div class="smb-ai-hero">
+        <h1>Score the workflow before you let AI touch it.</h1>
+        <p>Answer three quick questions, get a readiness direction, then launch the GPT to audit the workflow and build a safer pilot plan.</p>
+      </div>
+
+      <!-- 3-Question Readiness Picker -->
+      <div class="smb-ai-questions">
+        <div class="smb-ai-question-card">
+          <h3>1. Is the workflow documented?</h3>
+          <div class="smb-ai-answers" role="group" aria-label="Is the workflow documented?">
+            <button class="smb-ai-btn-answer" data-q="q1" data-val="yes" aria-pressed="false">Yes</button>
+            <button class="smb-ai-btn-answer" data-q="q1" data-val="sort-of" aria-pressed="false">Sort of</button>
+            <button class="smb-ai-btn-answer" data-q="q1" data-val="no" aria-pressed="false">No</button>
+          </div>
+        </div>
+
+        <div class="smb-ai-question-card">
+          <h3>2. Is the data reliable?</h3>
+          <div class="smb-ai-answers" role="group" aria-label="Is the data reliable?">
+            <button class="smb-ai-btn-answer" data-q="q2" data-val="yes" aria-pressed="false">Yes</button>
+            <button class="smb-ai-btn-answer" data-q="q2" data-val="sort-of" aria-pressed="false">Sort of</button>
+            <button class="smb-ai-btn-answer" data-q="q2" data-val="no" aria-pressed="false">No</button>
+          </div>
+        </div>
+
+        <div class="smb-ai-question-card">
+          <h3>3. Is there a human review point?</h3>
+          <div class="smb-ai-answers" role="group" aria-label="Is there a human review point?">
+            <button class="smb-ai-btn-answer" data-q="q3" data-val="yes" aria-pressed="false">Yes</button>
+            <button class="smb-ai-btn-answer" data-q="q3" data-val="sort-of" aria-pressed="false">Sort of</button>
+            <button class="smb-ai-btn-answer" data-q="q3" data-val="no" aria-pressed="false">No</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Preview (Hidden until answered) -->
+      <div id="smb-ai-result-panel" class="smb-ai-result-panel">
+        <div class="smb-ai-recommendation">
+          <span class="smb-ai-rec-label">Initial Recommendation</span>
+          <span id="smb-ai-rec-value" class="smb-ai-rec-value" aria-live="polite">...</span>
+        </div>
+
+        <div class="smb-ai-gpt-features">
+          <h4>What the full GPT gives you:</h4>
+          <ul>
+            <li>Process audit</li>
+            <li>Readiness score</li>
+            <li>Opportunity ranking</li>
+            <li>Agent blueprint</li>
+            <li>Pilot plan</li>
+          </ul>
+        </div>
+
+        <div class="smb-ai-actions">
+          <a id="smb-ai-primary-cta" href="#" class="smb-ai-btn smb-ai-btn-primary" target="_blank" rel="noopener noreferrer">Launch GPT + Audit This Workflow</a>
+          <a id="smb-ai-secondary-cta" href="#" class="smb-ai-btn smb-ai-btn-secondary" target="_blank" rel="noopener noreferrer">View Builder Resource</a>
+        </div>
+      </div>
+
+      <!-- Footer & Trust -->
+      <div class="smb-ai-footer">
+        <div class="smb-ai-attribution" id="smb-ai-attribution-name">Shared by SMB AI Builder</div>
+        <div class="smb-ai-disclaimer">
+          For planning support only. Sensitive business decisions need qualified human review.<br>
+          This is not legal, financial, tax, HR, lending, accounting, or compliance advice.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
