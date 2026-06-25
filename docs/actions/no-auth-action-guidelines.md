@@ -44,7 +44,7 @@ No-auth Actions are GPT endpoints that do not require the user to log in, provid
 - When an Action returns a plan, score, or recommendation, the response text should include a disclaimer stating the output is a draft and requires human review.
 
 ## Examples of safe Actions
-- `POST /api/score-readiness`: Accepts a JSON workflow description and returns a 0-30 score.
+- `POST /api/readiness-score`: Accepts a JSON workflow description and returns a 0-30 score.
 - `GET /api/public-holidays`: Returns public holiday dates for scheduling.
 - `POST /api/format-blueprint`: Takes messy text and returns a structured JSON blueprint.
 
