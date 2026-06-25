@@ -1,76 +1,31 @@
+---
+name: changelog-release-notes-builder
+description: Use when creating changelogs, release notes, PR summaries, merge summaries, or deployment notes for SMB AI Workflow & Agent Builder changes.
+---
+
 # Changelog Release Notes Builder
 
 ## Purpose
+Create clear, useful changelogs and release notes from repo changes.
 
-Create clear, formatted changelogs and release notes.
-
-## When to use this skill
-
-- When preparing for a release or after completing a large task.
-
-## When not to use this skill
-
-- For tracking individual minor commits.
-
-## Inputs Codex should collect
-
-- Git history.
-- Task summaries.
-
-## Files and folders this skill may touch
-
-- `CHANGELOG.md`
+## Use this skill when
+- Summarizing merged PRs.
+- Writing release notes for a deployment.
+- Preparing a change summary for users, builders, or operators.
 
 ## Source-of-truth files to read first
-
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/qa-checklist.md`
+- `tools/vercel/vercel-release-template.md`
 
 ## Process
+1. Identify changed files and the purpose of the change.
+2. Group changes by feature, fix, docs, safety, SEO, or deployment impact.
+3. Mention user-visible impact before internal implementation details.
+4. Flag manual QA, deployment notes, and rollback concerns where relevant.
 
-1. Use Added/Changed/Fixed format.
-2. Handle dates correctly.
-3. Write implementation summaries.
-4. Include migration notes if applicable.
-5. Document known limitations.
-6. Do not include fake version claims.
-
-## Output requirements
-
-An updated changelog file.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-- No fake version claims.
-
-## QA checklist
-
-- [ ] Format is consistent.
-- [ ] Dates are correct.
-- [ ] Migration notes included if needed.
-
-## Common mistakes to avoid
-
-- Over-exaggerating bug fixes.
-- Using inconsistent date formats.
-
-## Final response format
-
-Provide the drafted release notes.
+## Guardrails
+- Do not invent shipped features or integrations.
+- Do not claim performance, revenue, compliance, or accessibility outcomes unless verified.
+- Keep notes concise and operator-friendly.
