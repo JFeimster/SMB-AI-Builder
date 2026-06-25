@@ -1,6 +1,6 @@
 ---
 description: Hard rule against fake proof, testimonials, and claims
-globs: *
+alwaysApply: true
 ---
 
 # No Fake Proof Rule
@@ -10,10 +10,13 @@ globs: *
 This includes:
 - Fake testimonials
 - Fake logos
-- Fake ratings or stars
+- Fake ratings
 - Fake reviews
-- Fake revenue or ROI claims
-- Fake compliance statements or guarantees
-- Fake user counts or usage metrics
+- Fake revenue claims
+- Fake compliance claims
+- Fake guarantees
+- Fake user counts
+- Fake partner names
+- Fake screenshots or UI output
 
-Always rely on factual information and explicit disclaimers. Use placeholders for templates, but never present them as real evidence.
+Use evidence-based language only. If a claim cannot be proven from repo content or user-provided source material, do not include it.

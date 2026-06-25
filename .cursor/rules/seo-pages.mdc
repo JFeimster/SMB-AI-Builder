@@ -1,6 +1,6 @@
 ---
 description: SEO page rules
-globs: pages/seo/**/*.html
+globs: "pages/seo/**/*.html"
 ---
 
 # SEO Page Rules

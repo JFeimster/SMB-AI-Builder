@@ -1,0 +1,179 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow Actions - GetWeatherByLocation",
+    "version": "1.0.0",
+    "description": "No-auth OpenAPI schema for: Look up weather for scheduling-sensitive SMB workflows such as field service, landscaping, construction, delivery, and events."
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+      "description": "Replace with your deployed Vercel base URL."
+    }
+  ],
+  "paths": {
+    "/api/weather": {
+      "get": {
+        "operationId": "getGetWeatherByLocationActionInfo",
+        "summary": "Get weather endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "getWeatherByLocation",
+        "summary": "Look up weather for scheduling-sensitive SMB workflows such as field service, landscaping, construction, delivery, and events.",
+        "description": "Look up weather for scheduling-sensitive SMB workflows such as field service, landscaping, construction, delivery, and events.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWeatherByLocationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWeatherByLocationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetWeatherByLocationRequest": {
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "locationName": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "endDate": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          }
+        }
+      },
+      "GetWeatherByLocationResponse": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "forecastSummary": {
+            "type": "string"
+          },
+          "dailyForecast": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "operationalImpactFlags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ActionInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

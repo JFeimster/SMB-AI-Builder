@@ -1,6 +1,6 @@
 ---
 description: Rules for Next.js App Router files
-globs: app/**/*.{ts,tsx,css}
+globs: "app/**/*.{ts,tsx,css}"
 ---
 
 # Next.js App Router Rules

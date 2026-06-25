@@ -1,6 +1,6 @@
 ---
 description: Partner embed rules
-globs: embeds/**/*.{html,js,css,tsx}
+globs: "embeds/**/*.{html,js,css,tsx}"
 ---
 
 # Embeds Rules

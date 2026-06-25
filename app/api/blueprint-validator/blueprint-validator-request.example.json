@@ -1,0 +1,17 @@
+{
+  "workflowName": "Client Intake Processing",
+  "automationGoal": "Extract data from intake forms to CRM",
+  "trigger": "New form submission",
+  "inputs": ["PDF Intake Form", "Client Email"],
+  "tools": ["Zapier", "HubSpot", "ChatGPT"],
+  "workflowSteps": ["Receive email", "Extract PDF data", "Create CRM record"],
+  "aiTasks": ["Parse unstructured PDF data into JSON"],
+  "humanReviewPoints": ["Review parsed data before saving to CRM"],
+  "outputs": ["New Contact in HubSpot"],
+  "exceptions": ["Unreadable PDF", "Missing required fields"],
+  "successMetrics": ["Processing time reduced by 50%"],
+  "rollbackPlan": "Disable Zap and revert to manual data entry from email inbox.",
+  "riskLevel": "medium",
+  "touchesCustomers": true,
+  "touchesSensitiveData": true
+}
