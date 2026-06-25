@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "github": {
+    "autoAlias": true
+  },
   "git": {
     "deploymentEnabled": true
   }
