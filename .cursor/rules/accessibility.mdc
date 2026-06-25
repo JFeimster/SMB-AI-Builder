@@ -1,6 +1,6 @@
 ---
-description: Accessibility rules for all UI elements
-globs: "*.{html,tsx,jsx}"
+description: Accessibility rules for UI files
+globs: "**/*.{html,tsx,jsx}"
 ---
 
 # Accessibility Rules
