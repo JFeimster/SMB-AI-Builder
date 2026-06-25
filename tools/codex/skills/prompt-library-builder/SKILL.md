@@ -1,76 +1,32 @@
+---
+name: prompt-library-builder
+description: Use when creating reusable prompt files for Jules, Codex, GPT builders, QA passes, page generation, embeds, schemas, or deployment workflows.
+---
+
 # Prompt Library Builder
 
 ## Purpose
+Create reusable prompt files that are specific, scoped, and aligned with repo rules.
 
-Create reusable prompt files for Jules, Codex, GPT Builders, and QA processes.
-
-## When to use this skill
-
-- When adding new system prompts or task instructions to the repository.
-
-## When not to use this skill
-
-- For general documentation.
-
-## Inputs Codex should collect
-
-- Prompt goal.
-- Constraints.
-
-## Files and folders this skill may touch
-
-- `prompts/jules/*.md`
-- `prompts/codex/*.md`
-- `docs/prompts/*.md`
+## Use this skill when
+- Building prompts under `tools/jules/prompts/` or related prompt folders.
+- Turning a manual workflow into a reusable builder prompt.
+- Adding final QA requirements to generated prompts.
 
 ## Source-of-truth files to read first
-
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/file-map.json`
+- `tools/jules/copy-rules.md`
+- `tools/jules/qa-checklist.md`
+- `tools/jules/style-guide.md`
 
 ## Process
+1. Define task purpose, allowed files, forbidden files, path rules, and QA checklist.
+2. Include CTA, safety, copy, SEO, accessibility, and no-fake-proof rules where relevant.
+3. Keep prompts copy/paste-ready for Jules or Codex.
+4. Require a final summary of changed files and assumptions.
 
-1. Write the prompt clearly and concisely.
-2. Keep prompts single-block and copy-pasteable.
-3. Include source-of-truth references within the prompt.
-4. Categorize as a Jules, Codex, GPT Builder, QA, SEO, or Page generation prompt.
-5. Run a final QA on the prompt language.
-
-## Output requirements
-
-A reusable prompt file in Markdown.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-
-## QA checklist
-
-- [ ] Prompt is copy-pasteable.
-- [ ] Constraints are clearly defined.
-- [ ] Variables/placeholders are obvious.
-
-## Common mistakes to avoid
-
-- Making the prompt too complex or multi-part without need.
-- Omitting context or role definitions.
-
-## Final response format
-
-Confirm prompt creation and provide a brief preview of its capabilities.
+## Guardrails
+- Do not write vague prompts that allow scope creep.
+- Do not omit path-depth rules for nested pages.
