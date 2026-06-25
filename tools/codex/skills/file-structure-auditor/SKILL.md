@@ -1,77 +1,31 @@
+---
+name: file-structure-auditor
+description: Use when auditing repo folders, file placement, path depth, naming, static asset references, and whether generated files match the project file map.
+---
+
 # File Structure Auditor
 
 ## Purpose
+Audit expected folders and files against the repo architecture and file map.
 
-Audit expected folders and files to ensure they conform to the repo's architectural rules and `jules.json` file maps.
-
-## When to use this skill
-
-- When validating a deployment.
-- After creating new pages to ensure they are in the right folder.
-- To find missing required assets.
-
-## When not to use this skill
-
-- For modifying file contents.
-
-## Inputs Codex should collect
-
-- Expected file map (`tools/jules/file-map.json`).
-
-## Files and folders this skill may touch
-
-- (Read-only) Repo directories
+## Use this skill when
+- Reviewing PR scope.
+- Checking whether files were added to the intended folder.
+- Verifying static path depth for CSS, JS, sitemap, robots, embeds, skills, and support docs.
 
 ## Source-of-truth files to read first
-
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/file-map.json`
+- `tools/jules/qa-checklist.md`
 
 ## Process
+1. List changed files.
+2. Compare paths against the file map and task scope.
+3. Check for duplicate, orphaned, or superseded files.
+4. Verify relative paths by folder depth.
+5. Recommend move, rename, close-as-superseded, or merge.
 
-1. List files in the target directory.
-2. Detect missing directories based on requirements.
-3. Detect duplicate or conflicting paths (e.g., static vs Next.js conflicts).
-4. Verify relative CSS and JS paths.
-5. Confirm expected files were actually created.
-6. Report missing files without inventing them.
-
-## Output requirements
-
-A structural audit report.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-- Do not invent files that do not exist to satisfy an audit.
-
-## QA checklist
-
-- [ ] Confirmed relative paths for static pages.
-- [ ] Identified any missing directories.
-- [ ] Detected conflicting files.
-
-## Common mistakes to avoid
-
-- Assuming a file exists without listing the directory.
-- Failing to verify depth-based relative paths.
-
-## Final response format
-
-Provide a list of missing, conflicting, or verified files.
+## Guardrails
+- Do not restructure the repo unless explicitly asked.
+- Do not create parallel duplicate folders when an established folder already exists.
