@@ -1,4 +1,4 @@
 {
-  "domain": "Example",
-  "userAgent": "Example"
+  "domain": "https://example.com",
+  "userAgent": "*"
 }
