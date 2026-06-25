@@ -1,81 +1,38 @@
+---
+name: workflow-seo-page-builder
+description: Use when creating workflow-specific SEO audit pages under pages/seo/workflows/ with readiness factors, safe pilot plans, human review checkpoints, FAQs, and disclaimers.
+---
+
 # Workflow SEO Page Builder
 
 ## Purpose
+Create workflow-specific audit pages that explain automation risks, readiness factors, and safe AI pilot design.
 
-Create workflow-specific audit pages that warn users about automation risks, score readiness, and suggest safe pilot plans.
-
-## When to use this skill
-
-- When writing SEO pages targeting a specific business workflow (e.g., 'Automate Invoice Processing').
-
-## When not to use this skill
-
-- For general site pages or guides.
-
-## Inputs Codex should collect
-
-- Specific workflow name.
-- Known risks of automating this workflow.
-
-## Files and folders this skill may touch
-
-- `pages/seo/workflows/*.html`
+## Use this skill when
+- Building files under `pages/seo/workflows/`.
+- Creating pages for lead follow-up, quote follow-up, document collection, finance summaries, invoice reminders, onboarding, or other SMB workflows.
+- Reviewing workflow pages for required sections and safety language.
 
 ## Source-of-truth files to read first
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/file-map.json`
+- `tools/jules/seo-rules.md`
+- `tools/jules/copy-rules.md`
+- `tools/jules/qa-checklist.md`
 
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+## Path rules
+- Workflow pages use `../../../styles.css` and `../../../script.js`.
+- Canonicals use `https://smb-ai-builder.vercel.app/pages/seo/workflows/<filename>`.
 
-## Process
+## Required page ingredients
+- Why this workflow is tempting to automate.
+- What can go wrong.
+- Readiness factors.
+- Suggested safe pilot.
+- Human review checkpoints.
+- CTA and FAQ.
 
-1. Format H1 exactly as: `Audit Your [Workflow] Before Automating It With AI`.
-2. Draft section: Why this workflow is tempting to automate.
-3. Draft section: What can go wrong.
-4. Draft section: What the GPT checks.
-5. Draft section: Readiness factors.
-6. Draft section: Suggested safe pilot (as cards).
-7. Draft section: Human review checkpoints (as cards).
-8. Add CTA and FAQ (3-5 questions).
-9. Add sensitive disclaimers if applicable.
-
-## Output requirements
-
-A workflow audit HTML page following the exact section structure.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-- Include sensitive disclaimers for money/customer/private-data workflows.
-
-## QA checklist
-
-- [ ] H1 matches required pattern.
-- [ ] All required sections are present.
-- [ ] Human review checkpoints included.
-- [ ] Sensitive disclaimers added if relevant.
-
-## Common mistakes to avoid
-
-- Missing the exact H1 format.
-- Encouraging reckless automation instead of auditing.
-- Omitting human review steps.
-
-## Final response format
-
-Confirm page creation and list the workflow risks covered.
+## Guardrails
+- Do not promise automation outcomes.
+- Include the full sensitive-workflow disclaimer where the workflow touches money, private data, customer communication, legal, HR, medical, lending, underwriting, accounting, tax, or compliance.
