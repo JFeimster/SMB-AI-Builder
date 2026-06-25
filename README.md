@@ -1,3 +1,5 @@
+<img width="2033" height="773" alt="Image" src="https://github.com/user-attachments/assets/e5b05a79-f315-470a-8a79-e64fac2b3176" />
+
 # SMB AI Builder
 
 Optional knowledge files, no-auth GPT Actions, demo assets, prompts, and implementation references for **SMB AI Workflow & Agent Builder**.
@@ -5,6 +7,16 @@ Optional knowledge files, no-auth GPT Actions, demo assets, prompts, and impleme
 This repository supports a Custom GPT that helps small business owners, operators, freelancers, agencies, and lean teams audit business workflows, identify automation opportunities, design practical AI-powered automations, and build safe AI agent plans before investing in tools or development work.
 
 > This repo is designed as a supporting asset library. It does not replace the GPT's builder instructions.
+
+---
+
+## Access & Links
+
+| Site | URL |
+| --- | --- |
+| `ChatGPT` | https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder |
+| `Notion` | https://feimster.notion.site/smb-ai-builder |
+| `GitHub` | https://github.com/JFeimster/SMB-AI-Builder |
 
 ---
 
@@ -554,14 +566,6 @@ score-automation-readiness.openapi.json
 - Privacy and terms pages
 
 ---
-
-## Sites
-
-| Site | URL |
-| --- | --- |
-| `ChatGPT` | https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder |
-| `Notion` | https://feimster.notion.site/smb-ai-builder |
-| `GitHub` | https://github.com/JFeimster/SMB-AI-Builder |
 
 ## License
 
