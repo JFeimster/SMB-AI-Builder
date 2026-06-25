@@ -1,0 +1,183 @@
+export function buildCheckRobotsTxtOpenApiSchema(serverUrl: string) {
+  const schema = {
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow Actions - CheckRobotsTxt",
+    "version": "1.0.0",
+    "description": "No-auth OpenAPI schema for: Check public robots.txt before suggesting crawl-like automations."
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+      "description": "Replace with your deployed Vercel base URL."
+    }
+  ],
+  "paths": {
+    "/api/robots-check": {
+      "get": {
+        "operationId": "getCheckRobotsTxtActionInfo",
+        "summary": "Get robots-check endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "checkRobotsTxt",
+        "summary": "Check public robots.txt before suggesting crawl-like automations.",
+        "description": "Check public robots.txt before suggesting crawl-like automations.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckRobotsTxtRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckRobotsTxtResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CheckRobotsTxtRequest": {
+        "type": "object",
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "type": "string"
+          },
+          "userAgent": {
+            "type": "string"
+          }
+        }
+      },
+      "CheckRobotsTxtResponse": {
+        "type": "object",
+        "properties": {
+          "robotsUrl": {
+            "type": "string"
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "allowedSummary": {
+            "type": "string"
+          },
+          "disallowedPaths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sitemapLinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "crawlWarnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ActionInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+};
+
+  schema.servers = [
+    {
+      url: serverUrl,
+      description: "Current deployment base URL.",
+    },
+  ];
+
+  return schema;
+}

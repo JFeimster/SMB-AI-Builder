@@ -1,0 +1,153 @@
+export function buildAutomationRoiOpenApiSchema(serverUrl: string) {
+  const schema: any = {
+    openapi: "3.1.0",
+    info: {
+      title: "SMB AI Workflow & Agent Builder - Calculate Automation ROI",
+      description:
+        "Estimate potential time savings, cost savings, and payback period for an SMB workflow automation.",
+      version: "1.0.0",
+    },
+    paths: {
+      "/api/automation-roi": {
+        post: {
+          operationId: "calculateAutomationROI",
+          summary: "Estimate workflow automation ROI",
+          description:
+            "Returns estimated monthly and annual value, time savings, and payback period, along with safety and risk flags for sensitive workflows.",
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  $ref: "#/components/schemas/AutomationRoiRequest",
+                },
+              },
+            },
+          },
+          responses: {
+            "200": {
+              description: "ROI calculation result.",
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/AutomationRoiResponse",
+                  },
+                },
+              },
+            },
+            "400": {
+              description: "Invalid request.",
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/ErrorResponse",
+                  },
+                },
+              },
+            },
+            "500": {
+              description: "Unexpected server error.",
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/ErrorResponse",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    components: {
+      schemas: {
+        TaskFrequency: {
+          type: "object",
+          required: ["count", "period"],
+          additionalProperties: false,
+          properties: {
+            count: {
+              type: "number",
+            },
+            period: {
+              type: "string",
+              enum: ["day", "week", "month", "quarter", "year"],
+            },
+          },
+        },
+        AutomationRoiRequest: {
+          type: "object",
+          required: [
+            "workflowName",
+            "timePerTaskMinutes",
+            "taskFrequency",
+            "laborCostPerHour",
+          ],
+          additionalProperties: false,
+          properties: {
+            workflowName: { type: "string" },
+            timePerTaskMinutes: { type: "number" },
+            taskFrequency: { $ref: "#/components/schemas/TaskFrequency" },
+            laborCostPerHour: { type: "number" },
+            automationSetupCostEstimate: { type: "number" },
+            automationMaintenanceCostMonthly: { type: "number" },
+            humanReviewTimeMinutes: { type: "number" },
+            expectedAutomationCoveragePercent: { type: "number", minimum: 0, maximum: 100 },
+            notes: { type: "string" },
+            riskLevel: { type: "string", enum: ["low", "medium", "high"] },
+            touchesSensitiveWorkflow: { type: "boolean" },
+          },
+        },
+        AutomationRoiResponse: {
+          type: "object",
+          properties: {
+            workflowName: { type: "string" },
+            monthlyTaskVolume: { type: "number" },
+            currentMonthlyHours: { type: "number" },
+            estimatedAutomatedHours: { type: "number" },
+            humanReviewHours: { type: "number" },
+            netMonthlyHoursSaved: { type: "number" },
+            estimatedMonthlyValue: { type: "number" },
+            estimatedAnnualValue: { type: "number" },
+            setupCostEstimate: { type: "number" },
+            maintenanceCostMonthly: { type: "number" },
+            estimatedMonthlyNetValue: { type: "number" },
+            paybackMonths: { type: "number" },
+            sensitivityNotes: {
+              type: "array",
+              items: { type: "string" },
+            },
+            assumptions: {
+              type: "array",
+              items: { type: "string" },
+            },
+            riskFlags: {
+              type: "array",
+              items: { type: "string" },
+            },
+            humanReviewRequired: { type: "boolean" },
+            recommendation: { type: "string" },
+            nextStep: { type: "string" },
+          },
+        },
+        ErrorResponse: {
+          type: "object",
+          properties: {
+            error: { type: "string" },
+            message: { type: "string" },
+            details: { type: "object" },
+          },
+        },
+      },
+    },
+  };
+
+  schema.servers = [
+    {
+      url: serverUrl,
+      description: "Current deployment base URL.",
+    },
+  ];
+
+  return schema;
+}

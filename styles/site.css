@@ -1,0 +1,107 @@
+/*
+ * site.css - Main project styles
+ * Note: This file is intended as supplemental CSS to the existing root styles.css,
+ * capturing specific neobrutalist and futurist fintech design tokens.
+ */
+
+:root {
+  /* Neobrutalist + Cyberpunk Fintech Palette */
+  --ink: #050505;
+  --paper: #f8fafc; /* slightly cooler off-white for fintech feel */
+  --lime: #a3e635; /* Acid lime */
+  --cyan: #22d3ee;
+  --pink: #ff2bd6; /* Cyber pink */
+  --orange: #fb923c;
+  --violet: #6d28d9;
+  --border: var(--ink);
+  --shadow: 4px 4px 0px var(--ink);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+/* Base Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Cards & Dashboard Panels */
+.panel, .fintech-card {
+  background-color: var(--paper);
+  border: 3px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Buttons */
+.btn-brutal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--lime);
+  color: var(--ink);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-sm);
+  box-shadow: 3px 3px 0px var(--ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.1s ease;
+}
+
+.btn-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--ink);
+}
+
+.btn-brutal:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px var(--ink);
+}
+
+/* Accessible Focus */
+:focus-visible {
+  outline: 3px dashed var(--cyan);
+  outline-offset: 4px;
+}
+
+/* Badges */
+.badge-brutal {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  font-size: 0.85em;
+  font-weight: bold;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 2px 2px 0px var(--ink);
+  background-color: var(--cyan);
+  color: var(--ink);
+}
+
+/* Callouts */
+.callout {
+  padding: 1rem;
+  border-left: 6px solid var(--pink);
+  background-color: rgba(255, 43, 214, 0.1);
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

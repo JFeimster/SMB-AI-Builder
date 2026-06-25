@@ -1,0 +1,179 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow Actions - GetLaborMarketSeries",
+    "version": "1.0.0",
+    "description": "No-auth OpenAPI schema for: Pull public labor/economic series for staffing, wage, or market-context discussions."
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+      "description": "Replace with your deployed Vercel base URL."
+    }
+  ],
+  "paths": {
+    "/api/bls-series": {
+      "get": {
+        "operationId": "getGetLaborMarketSeriesActionInfo",
+        "summary": "Get bls-series endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "getLaborMarketSeries",
+        "summary": "Pull public labor/economic series for staffing, wage, or market-context discussions.",
+        "description": "Pull public labor/economic series for staffing, wage, or market-context discussions.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLaborMarketSeriesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetLaborMarketSeriesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetLaborMarketSeriesRequest": {
+        "type": "object",
+        "required": [
+          "seriesId",
+          "startYear",
+          "endYear"
+        ],
+        "properties": {
+          "seriesId": {
+            "type": "string"
+          },
+          "startYear": {
+            "type": "number"
+          },
+          "endYear": {
+            "type": "number"
+          }
+        }
+      },
+      "GetLaborMarketSeriesResponse": {
+        "type": "object",
+        "properties": {
+          "seriesId": {
+            "type": "string"
+          },
+          "startYear": {
+            "type": "number"
+          },
+          "endYear": {
+            "type": "number"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "latestValue": {
+            "type": "number",
+            "nullable": true
+          },
+          "trendSummary": {
+            "type": "string"
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ActionInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}
