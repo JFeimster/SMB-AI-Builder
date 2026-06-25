@@ -7,7 +7,8 @@
 
 ## Content Structure
 - **Consistency:** SEO pages must include a consistent header, navigation, and footer.
-- **FAQs:** Every SEO page must include 4-6 FAQs relevant to the topic.
+- **FAQs:** General SEO and comparison pages should include 4-6 FAQs relevant to the topic.
+- **Workflow FAQs:** Workflow audit pages under `pages/seo/workflows/` should include 3-5 FAQs relevant to the workflow.
 - **CTA:** Include a clear CTA band near the end of the page using the core CTA language ("Audit My First Workflow", "Score My Automation Readiness").
 
 ## Technical SEO
@@ -18,4 +19,4 @@
 ## Internal Linking
 - Base relative paths on depth.
 - From `pages/seo/` (2 levels deep): Home is `../../index.html`, Site is `../site/[file].html`, Peer SEO pages are `[file].html`, nested pages are `workflows/[file].html` or `comparisons/[file].html`.
-- From nested directories like `pages/seo/workflows/` (3 levels deep): Home is `../../../index.html`, Site is `../../site/[file].html`, Main SEO pages are `../[file].html`, and peer directories are `../[dir]/[file].html`.
+- From nested directories like `pages/seo/workflows/` (3 levels deep): Home is `../../../index.html`, Site is `../../site/[file].html`, Main SEO pages are `../[file].html`, workflow peer pages are `[file].html` or `./[file].html`, and comparison pages are `../comparisons/[file].html`.
