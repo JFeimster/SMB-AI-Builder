@@ -1,0 +1,32 @@
+/*
+ * demo.css - Shared utility styles for demo pages
+ *
+ * Note: This file provides shared styles across various demos. It complements
+ * public/demo/workflow-demo-styles-v1.css which contains specific demo implementations.
+ */
+
+.demo-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.demo-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.demo-note {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 2rem;
+}
