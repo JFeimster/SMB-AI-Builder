@@ -1,172 +1,87 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Automation Readiness Scorecard</title>
-  <meta name="description" content="Score your workflow before AI touches it. Use the 0-30 readiness model to see if you should automate now, clean up first, or keep it human." />
-  <meta name="theme-color" content="#050505" />
-
-  <meta property="og:title" content="AI Automation Readiness Scorecard" />
-  <meta property="og:description" content="Score your workflow before AI touches it. Use the 0-30 readiness model to see if you should automate now, clean up first, or keep it human." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="og-image-placeholder.png" />
-
-  <link rel="canonical" href="https://smb-ai-builder.vercel.app/pages/site/readiness-scorecard.html" />
-
-  <link rel="stylesheet" href="../../styles.css" />
-  <script defer src="../../script.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Automation Readiness Scorecard</title>
+<meta content="Self-diagnose your workflow's readiness for automation. Evaluate risk flags and next steps." name="description"/>
+<meta content="#050505" name="theme-color"/>
+<meta content="Automation Readiness Scorecard" property="og:title"/>
+<meta content="Self-diagnose your workflow's readiness for automation. Evaluate risk flags and next steps." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://smb-ai-builder.vercel.app/pages/site/readiness-scorecard.html" property="og:url"/>
+<meta content="https://smb-ai-builder.vercel.app/og-image-placeholder.png" property="og:image"/>
+<link href="https://smb-ai-builder.vercel.app/pages/site/readiness-scorecard.html" rel="canonical"/>
+<link href="../../styles.css" rel="stylesheet"/>
+<script defer="" src="../../script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" data-sticky-header>
-    <div class="shell header-grid">
-      <a class="brand" href="../../index.html" aria-label="SMB AI Workflow and Agent Builder home">
-        <span class="brand-mark" aria-hidden="true">AI</span>
-        <span class="brand-text">
-          <strong>SMB AI Builder</strong>
-          <small>workflow audit cockpit</small>
-        </span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        <a href="../../index.html#scorecard">Readiness Score</a>
-        <a href="../../index.html#matrix">Matrix</a>
-        <a href="../../index.html#blueprint">Blueprint</a>
-        <a href="../../index.html#faq">FAQ</a>
-        <a class="nav-cta" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">Launch GPT</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-
-    <section class="hero section-grid" id="top" aria-labelledby="hero-title">
-      <div class="grid-bg" aria-hidden="true"></div>
-      <div class="shell hero-content">
-        <p class="mono-label">Readiness Scorecard</p>
-        <h1 id="hero-title" class="glitch-text">AI Automation Readiness Scorecard</h1>
-        <p class="hero-lede">Score the workflow before AI touches it. The 0–30 model helps you spot whether a workflow is ready for a pilot, needs cleanup, or should stay human.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">Launch GPT</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="model">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>0–30 readiness model</h2>
-          <p>We score your process across 10 categories, awarding 0-3 points each.</p>
-        </div>
-
-        <div class="score-table-card" style="margin-bottom: 2rem;">
-          <div class="score-header">
-            <span class="mono-label">Category breakdown</span>
-          </div>
-          <div class="score-grid">
-            <div><span>Workflow clarity</span></div>
-            <div><span>Process consistency</span></div>
-            <div><span>Data quality</span></div>
-            <div><span>Tool access</span></div>
-            <div><span>Ownership</span></div>
-            <div><span>Risk level</span></div>
-            <div><span>Human review plan</span></div>
-            <div><span>Customer experience impact</span></div>
-            <div><span>Measurement plan</span></div>
-            <div><span>Rollback plan</span></div>
-          </div>
-        </div>
-
-        <div class="band-stack" aria-label="Readiness score bands">
-          <div class="band band-danger"><strong>0–10</strong><span>Do not automate yet</span></div>
-          <div class="band band-warning"><strong>11–20</strong><span>Clean up first</span></div>
-          <div class="band band-pilot"><strong>21–26</strong><span>Pilot carefully</span></div>
-          <div class="band band-ready"><strong>27–30</strong><span>Ready for automation pilot</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section scorecard-section" id="sample">
-      <div class="shell scorecard-layout">
-        <div>
-          <h2>Sample scorecard visual</h2>
-          <p>Here is what an evaluation looks like for an internal reporting process.</p>
-        </div>
-
-        <div class="score-table-card">
-          <div class="score-header">
-            <span class="mono-label">10 categories / 3 points each</span>
-            <span class="status-chip status-clean">Sample score: 18/30</span>
-          </div>
-          <div class="score-grid" aria-label="Sample Readiness scoring">
-            <div><span>Workflow clarity</span><strong>2/3</strong></div>
-            <div><span>Process consistency</span><strong>2/3</strong></div>
-            <div><span>Data quality</span><strong>1/3</strong></div>
-            <div><span>Tool access</span><strong>2/3</strong></div>
-            <div><span>Ownership</span><strong>2/3</strong></div>
-            <div><span>Risk level</span><strong>1/3</strong></div>
-            <div><span>Human review plan</span><strong>1/3</strong></div>
-            <div><span>Customer experience impact</span><strong>2/3</strong></div>
-            <div><span>Measurement plan</span><strong>1/3</strong></div>
-            <div><span>Rollback plan</span><strong>1/3</strong></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="shell">
-        <div class="section-heading">
-          <h2>FAQ</h2>
-        </div>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              What does a score of 12 mean? <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>A score of 12 falls in the "Clean up first" band. It means your workflow is too messy to automate safely right now. You need to standardize the process, improve data inputs, or define clear rules before introducing AI.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer" aria-labelledby="footer-title">
-    <div class="shell footer-grid">
-      <div>
-        <h2 id="footer-title">SMB AI Workflow & Agent Builder</h2>
-        <p>Audit the mess before you wire it into your business.</p>
-      </div>
-
-      <nav class="footer-links" aria-label="Footer links">
-        <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">Launch GPT</a>
-        <a href="https://feimster.notion.site/smb-ai-builder" target="_blank" rel="noopener">Notion Resource</a>
-        <a href="https://github.com/JFeimster/SMB-AI-Builder" target="_blank" rel="noopener">GitHub Repo</a>
-        <a href="../../index.html#faq">FAQ</a>
-      </nav>
-    </div>
-
-    <div class="shell footer-bottom">
-      <small>Educational workflow planning aid. Not legal, financial, tax, HR, compliance, or professional advice.</small>
-      <small>© <span data-current-year></span> SMB AI Workflow & Agent Builder. All rights reserved.</small>
-    </div>
-  </footer>
-
-  <div class="sticky-cta" data-sticky-cta>
-    <span>Score one messy workflow.</span>
-    <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">Launch GPT</a>
-  </div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-sticky-header="">
+<div class="shell header-grid">
+<a aria-label="SMB AI Workflow and Agent Builder home" class="brand" href="../../index.html">
+<span aria-hidden="true" class="brand-mark">AI</span>
+<span class="brand-text">
+<strong>SMB AI Builder</strong>
+<small>workflow audit cockpit</small>
+</span>
+</a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="nav-toggle-line"></span>
+<span class="nav-toggle-line"></span>
+<span class="nav-toggle-line"></span>
+</button>
+<nav aria-label="Primary navigation" class="site-nav" id="site-nav">
+<a href="../../pages/site/start-here.html">Start Here</a>
+<a href="../../pages/site/use-cases.html">Use Cases</a>
+<a href="../../pages/tools/prompts.html">Prompts</a>
+<a href="../../pages/tools/actions.html">Actions</a>
+<a href="../../pages/directories/gpt-stack.html">GPT Stack</a>
+<a class="nav-cta" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" rel="noopener" target="_blank">Audit My First Workflow</a>
+</nav>
+</div>
+</header>
+<main id="main"><h1 class="glitch-text" id="hero-title">Score Your Automation Readiness Before AI Touches the Workflow</h1><p class="mono-label">Readiness Scorecard</p>
+<div class="shell">
+<div class="score-card">
+<div class="brutal-card"><h3>Level 1: Do Not Automate</h3><p>Process is chaotic.</p></div>
+<div class="brutal-card"><h3>Level 2: Clean Up First</h3><p>Process exists but data is dirty.</p></div>
+<div class="brutal-card"><h3>Level 3: Pilot Carefully</h3><p>Good process, sensitive data.</p></div>
+<div class="brutal-card"><h3>Level 4: Ready</h3><p>Clear process, low risk.</p></div>
+</div>
+<div class="warning-panel">Risk Flags: Customer facing, compliance, money movement.</div>
+<div class="cta-band"><a class="cta-button" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Score My Automation Readiness</a></div>
+<div class="internal-links"><a href="workflow-audit.html">Workflow Audit</a> | <a href="automation-opportunity-matrix.html">Opportunity Matrix</a> | <a href="../tools/risk-classifier.html">Risk Classifier</a></div>
+</div>
+</main>
+<footer aria-labelledby="footer-title" class="site-footer">
+<div class="shell footer-grid">
+<div>
+<h2 id="footer-title">SMB AI Workflow &amp; Agent Builder</h2>
+<p>Stop automating broken workflows. Audit the mess first.</p>
+</div>
+<nav aria-label="Footer links" class="footer-links">
+<a href="../../pages/directories/workflow-library.html">Workflow Library</a>
+<a href="../../pages/directories/automation-patterns.html">Automation Patterns</a>
+<a href="../../pages/watch/index.html">Watch</a>
+<a href="../../pages/blog/index.html">Field Notes</a>
+<a href="../../pages/legal/privacy.html">Legal</a>
+<a href="../../pages/site/contact.html">Contact</a>
+<a href="https://github.com/JFeimster/SMB-AI-Builder" rel="noopener" target="_blank">GitHub</a>
+<a href="https://feimster.notion.site/smb-ai-builder" rel="noopener" target="_blank">Notion</a>
+<a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" rel="noopener" target="_blank">ChatGPT</a>
+</nav>
+</div>
+<div class="shell footer-bottom">
+<small>Educational workflow planning aid. Not legal, financial, tax, HR, compliance, or professional advice.</small>
+<small>© <span data-current-year="">2024</span> SMB AI Workflow &amp; Agent Builder. All rights reserved.</small>
+</div>
+</footer>
+<div class="sticky-cta" data-sticky-cta="">
+<span>Score one messy workflow.</span>
+<a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" rel="noopener" target="_blank">Score My Automation Readiness</a>
+</div>
 </body>
 </html>
