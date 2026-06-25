@@ -1,6 +1,6 @@
 {
-  "amount": 0,
-  "fromCurrency": "Example",
-  "toCurrency": "Example",
-  "date": "Example"
+  "amount": 1500,
+  "fromCurrency": "USD",
+  "toCurrency": "EUR",
+  "date": "2026-06-25"
 }
