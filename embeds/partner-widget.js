@@ -4,7 +4,6 @@
   const GPT_URL = "https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder";
   const NOTION_URL = "https://feimster.notion.site/smb-ai-builder";
 
-  // Local fallback config
   const FALLBACK_CONFIG = {
     default: {
       name: "SMB AI Builder",
@@ -18,70 +17,79 @@
     return urlParams.get(param);
   }
 
-  function getPartnerConfig(partnerId) {
-    let configObj = FALLBACK_CONFIG.default;
+  function formatPartnerName(partnerId) {
+    if (!partnerId) return FALLBACK_CONFIG.default.name;
 
-    // Check if global config exists
-    if (window.SMB_AI_BUILDER_PARTNERS) {
-      if (partnerId && window.SMB_AI_BUILDER_PARTNERS[partnerId]) {
-        configObj = window.SMB_AI_BUILDER_PARTNERS[partnerId];
-      } else if (window.SMB_AI_BUILDER_PARTNERS['default']) {
-        configObj = window.SMB_AI_BUILDER_PARTNERS['default'];
-      }
-    } else if (partnerId) {
-      // Fallback behavior if config js is missing but partner is in url
-      configObj = {
-        name: partnerId,
-        referral: partnerId,
-        ctaLabel: FALLBACK_CONFIG.default.ctaLabel
+    return partnerId
+      .trim()
+      .replace(/[_-]+/g, " ")
+      .replace(/\s+/g, " ")
+      .replace(/\b\w/g, char => char.toUpperCase());
+  }
+
+  function getPartnerConfig(partnerId) {
+    const defaultConfig = (window.SMB_AI_BUILDER_PARTNERS && window.SMB_AI_BUILDER_PARTNERS.default)
+      ? window.SMB_AI_BUILDER_PARTNERS.default
+      : FALLBACK_CONFIG.default;
+
+    if (partnerId && window.SMB_AI_BUILDER_PARTNERS && window.SMB_AI_BUILDER_PARTNERS[partnerId]) {
+      return {
+        ...defaultConfig,
+        ...window.SMB_AI_BUILDER_PARTNERS[partnerId],
+        referral: window.SMB_AI_BUILDER_PARTNERS[partnerId].referral || partnerId
       };
     }
 
-    return configObj;
+    if (partnerId) {
+      return {
+        ...defaultConfig,
+        name: formatPartnerName(partnerId),
+        referral: partnerId,
+        ctaLabel: defaultConfig.ctaLabel || FALLBACK_CONFIG.default.ctaLabel
+      };
+    }
+
+    return defaultConfig;
   }
 
   function updateAttributionAndLinks() {
     const partnerId = getQueryParam('partner');
     const partnerData = getPartnerConfig(partnerId);
+    const trackingId = partnerId || partnerData.referral;
 
-    // Update attribution text
     const attributionEl = document.getElementById('smb-ai-attribution-name');
     if (attributionEl && partnerData) {
       attributionEl.textContent = `Shared by ${partnerData.name}`;
-
-      // Also update CTA label if the element supports it
-      const primaryCta = document.getElementById('smb-ai-primary-cta');
-      if (primaryCta && partnerData.ctaLabel) {
-        primaryCta.textContent = partnerData.ctaLabel;
-      }
     }
 
-    // Append UTM/ref params
     const primaryCta = document.getElementById('smb-ai-primary-cta');
+    if (primaryCta && partnerData && partnerData.ctaLabel) {
+      primaryCta.textContent = partnerData.ctaLabel;
+    }
+
     const secondaryCta = document.getElementById('smb-ai-secondary-cta');
 
     if (primaryCta) {
       const gptUrlObj = new URL(GPT_URL);
-      if (partnerId) {
+      if (trackingId && trackingId !== 'direct') {
         gptUrlObj.searchParams.set('utm_source', 'partner');
         gptUrlObj.searchParams.set('utm_medium', 'embed');
         gptUrlObj.searchParams.set('utm_campaign', 'smb_ai_builder');
-        gptUrlObj.searchParams.set('utm_content', partnerId);
-        gptUrlObj.searchParams.set('ref', partnerId);
+        gptUrlObj.searchParams.set('utm_content', trackingId);
+        gptUrlObj.searchParams.set('ref', trackingId);
       }
       primaryCta.href = gptUrlObj.toString();
     }
 
     if (secondaryCta) {
       const notionUrlObj = new URL(NOTION_URL);
-      if (partnerId) {
-        notionUrlObj.searchParams.set('ref', partnerId);
+      if (trackingId && trackingId !== 'direct') {
+        notionUrlObj.searchParams.set('ref', trackingId);
       }
       secondaryCta.href = notionUrlObj.toString();
     }
   }
 
-  // Scoring Logic
   let scores = {
     q1: null,
     q2: null,
@@ -95,7 +103,6 @@
   };
 
   function updateScore() {
-    // Only calculate if all questions are answered
     if (scores.q1 === null || scores.q2 === null || scores.q3 === null) return;
 
     const total = pointMap[scores.q1] + pointMap[scores.q2] + pointMap[scores.q3];
@@ -123,13 +130,8 @@
     if (panel && recValue) {
       recValue.textContent = recommendation;
       recValue.className = `smb-ai-rec-value ${cssClass}`;
-
-      // Accessibility update
       recValue.setAttribute('aria-live', 'polite');
-
       panel.classList.add('is-visible');
-
-      // Scroll to result slightly if it was hidden
       panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
@@ -141,13 +143,11 @@
       const btns = document.querySelectorAll(`button[data-q="${q}"]`);
       btns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-          // Clear selected state in this group
           btns.forEach(b => {
             b.classList.remove('is-selected');
             b.setAttribute('aria-pressed', 'false');
           });
 
-          // Set new state
           const target = e.currentTarget;
           target.classList.add('is-selected');
           target.setAttribute('aria-pressed', 'true');
@@ -159,7 +159,6 @@
     });
   }
 
-  // Initialize
   document.addEventListener('DOMContentLoaded', () => {
     updateAttributionAndLinks();
     initQuestions();
