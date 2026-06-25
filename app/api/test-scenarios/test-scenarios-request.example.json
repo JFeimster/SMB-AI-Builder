@@ -1,0 +1,20 @@
+{
+  "workflowName": "Customer Support Ticket Routing",
+  "workflowType": "Email Triage",
+  "riskLevel": "medium",
+  "inputs": [
+    "Customer email subject",
+    "Customer email body",
+    "Customer email address"
+  ],
+  "outputs": [
+    "Department tag",
+    "Urgency score"
+  ],
+  "humanHandoffRules": [
+    "Confidence score below 80%",
+    "Email contains threats or legal action"
+  ],
+  "touchesCustomers": true,
+  "touchesSensitiveData": true
+}
