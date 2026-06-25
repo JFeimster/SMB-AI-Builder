@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "<img width=\"2033\" height=\"773\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/e5b05a79-f315-470a-8a79-e64fac2b3176\" />",
+  "main": "fix_generator.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JFeimster/SMB-AI-Builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JFeimster/SMB-AI-Builder/issues"
+  },
+  "homepage": "https://github.com/JFeimster/SMB-AI-Builder#readme",
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "typescript": "^6.0.3"
+  }
+}

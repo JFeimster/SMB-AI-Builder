@@ -1,0 +1,11 @@
+{
+  "actionName": "Example",
+  "route": "Example",
+  "method": "Example",
+  "summary": "Example",
+  "description": "Example",
+  "inputs": [],
+  "outputs": [],
+  "serverUrl": "Example",
+  "authentication": "Example"
+}
