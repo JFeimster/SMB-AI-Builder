@@ -1,6 +1,6 @@
 # Prompt | Agent Launch Site Builder
 
-GPT Link: https://chatgpt.com/g/g-6a266d799fac819194b8088eb5feb9de-agent-launch-site-builder
+https://chatgpt.com/g/g-6a266d799fac819194b8088eb5feb9de-agent-launch-site-builder
 
 Create a stunning, high-converting landing page package for this Custom GPT.
 
