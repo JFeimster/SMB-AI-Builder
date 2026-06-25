@@ -1,28 +1,41 @@
 {
-  "name": "app",
+  "name": "smb-ai-builder",
   "version": "1.0.0",
-  "description": "<img width=\"2033\" height=\"773\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/e5b05a79-f315-470a-8a79-e64fac2b3176\" />",
-  "main": "fix_generator.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "private": true,
+  "description": "Knowledge files, no-auth GPT Actions, prompts, templates, and Vercel-ready utilities for an SMB AI workflow and agent builder.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JFeimster/SMB-AI-Builder.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": [
+    "smb",
+    "ai",
+    "automation",
+    "gpt-actions",
+    "workflow-audit"
+  ],
+  "author": "JFeimster",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/JFeimster/SMB-AI-Builder/issues"
   },
   "homepage": "https://github.com/JFeimster/SMB-AI-Builder#readme",
+  "dependencies": {
+    "next": "^15.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "devDependencies": {
-    "@types/node": "^26.0.1",
-    "typescript": "^6.0.3"
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "typescript": "^5.8.3"
   }
 }
