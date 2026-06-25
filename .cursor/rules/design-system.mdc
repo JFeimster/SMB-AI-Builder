@@ -1,6 +1,6 @@
 ---
-description: Visual design rules for UI
-globs: "*.{css,tsx,jsx,html}"
+description: Visual design rules for UI files
+globs: "**/*.{css,tsx,jsx,html}"
 ---
 
 # Design System Rules
