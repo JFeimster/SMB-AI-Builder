@@ -1,3 +1,5 @@
+import { assertPublicHttpUrl, fetchPublicText } from "../../../lib/security/url-safety";
+
 export class ValidationError extends Error {
   details?: Record<string, unknown>;
 
@@ -34,6 +36,10 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function stripTags(value: string): string {
+  return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
 export function validateExtractWebsiteMetadataRequest(input: unknown): ExtractWebsiteMetadataRequest {
   if (!isPlainObject(input)) {
     throw new ValidationError("Request body must be a JSON object.");
@@ -44,28 +50,26 @@ export function validateExtractWebsiteMetadataRequest(input: unknown): ExtractWe
   }
 
   if (typeof input.url !== "string") {
-      throw new ValidationError("url must be a string.");
+    throw new ValidationError("url must be a string.");
   }
 
   try {
-      const url = new URL(input.url);
-      if (url.protocol !== "http:" && url.protocol !== "https:") {
-          throw new ValidationError("url must be http or https.");
-      }
-
-      const hostname = url.hostname;
-      if (hostname === "localhost" || hostname.startsWith("127.") || hostname.startsWith("192.168.") || hostname.startsWith("10.") || hostname.match(/^172\.(1[6-9]|2[0-9]|3[0-1])\./)) {
-          throw new ValidationError("url cannot be localhost or a private IP.");
-      }
-  } catch (e) {
-      throw new ValidationError("url must be a valid URL.");
+    const url = new URL(input.url);
+    if (url.protocol !== "https:") {
+      throw new ValidationError("url must use https.");
+    }
+    if (url.username || url.password) {
+      throw new ValidationError("url credentials are not allowed.");
+    }
+  } catch {
+    throw new ValidationError("url must be a valid HTTPS URL.");
   }
 
   return {
-      url: input.url,
-      includeHeadings: typeof input.includeHeadings === "boolean" ? input.includeHeadings : undefined,
-      includeFormsDetected: typeof input.includeFormsDetected === "boolean" ? input.includeFormsDetected : undefined,
-      includeContactLinks: typeof input.includeContactLinks === "boolean" ? input.includeContactLinks : undefined,
+    url: input.url,
+    includeHeadings: typeof input.includeHeadings === "boolean" ? input.includeHeadings : undefined,
+    includeFormsDetected: typeof input.includeFormsDetected === "boolean" ? input.includeFormsDetected : undefined,
+    includeContactLinks: typeof input.includeContactLinks === "boolean" ? input.includeContactLinks : undefined,
   };
 }
 
@@ -75,55 +79,46 @@ export async function extractWebsiteMetadata(input: ExtractWebsiteMetadataReques
   let finalUrl = input.url;
 
   try {
-    const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), 5000);
-    const response = await fetch(input.url, { signal: controller.signal, headers: { "User-Agent": "SMB-AI-Builder-Action/1.0" } });
-    clearTimeout(id);
-
-    finalUrl = response.url;
-    if (!response.ok) {
-      warnings.push(`Fetch failed with status ${response.status}`);
-    } else {
-      const arrayBuffer = await response.arrayBuffer();
-      const text = new TextDecoder().decode(arrayBuffer.slice(0, 500 * 1024)); // limit to 500KB
-      html = text;
-      if (arrayBuffer.byteLength > 500 * 1024) warnings.push("Response truncated to 500KB.");
-    }
-  } catch (err: any) {
-    warnings.push(`Fetch error: ${err.message}`);
+    await assertPublicHttpUrl(input.url);
+    const fetched = await fetchPublicText(input.url, {
+      allowedContentTypes: ["text/html", "application/xhtml", "text/plain"],
+      maxBytes: 500 * 1024,
+      timeoutMs: 5000,
+    });
+    html = fetched.text;
+    finalUrl = fetched.finalUrl;
+    if (fetched.truncated) warnings.push("Response truncated to 500KB.");
+  } catch (err) {
+    warnings.push(`Fetch error: ${err instanceof Error ? err.message : "Unknown error."}`);
   }
 
   const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
-  const title = titleMatch ? titleMatch[1].trim() : null;
+  const title = titleMatch ? stripTags(titleMatch[1]) : null;
 
   const metaDescMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i) ||
-                        html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["'][^>]*>/i);
-  const metaDescription = metaDescMatch ? metaDescMatch[1].trim() : null;
+    html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["'][^>]*>/i);
+  const metaDescription = metaDescMatch ? stripTags(metaDescMatch[1]) : null;
 
   let headings: string[] | null = null;
   if (input.includeHeadings) {
     headings = [];
-    const h1s = html.match(/<h1[^>]*>(.*?)<\/h1>/gi) || [];
-    const h2s = html.match(/<h2[^>]*>(.*?)<\/h2>/gi) || [];
-    for (const h of [...h1s, ...h2s]) {
-      const clean = h.replace(/<[^>]+>/g, '').trim();
+    const headingMatches = html.match(/<h[12][^>]*>(.*?)<\/h[12]>/gi) || [];
+    for (const heading of headingMatches) {
+      const clean = stripTags(heading);
       if (clean && headings.length < 20) headings.push(clean);
     }
   }
 
-  let formsDetected: boolean | null = null;
-  if (input.includeFormsDetected) {
-    formsDetected = /<form/i.test(html);
-  }
+  const formsDetected = input.includeFormsDetected ? /<form\b/i.test(html) : null;
 
   let contactLinks: string[] | null = null;
   if (input.includeContactLinks) {
     contactLinks = [];
-    const aTags = html.match(/<a[^>]+href=["']([^"']+)["']/gi) || [];
-    for (const a of aTags) {
-      const m = a.match(/href=["']([^"']+)["']/i);
-      if (m && (m[1].startsWith("mailto:") || m[1].startsWith("tel:"))) {
-        if (!contactLinks.includes(m[1]) && contactLinks.length < 10) contactLinks.push(m[1]);
+    const anchorTags = html.match(/<a[^>]+href=["']([^"']+)["']/gi) || [];
+    for (const anchor of anchorTags) {
+      const match = anchor.match(/href=["']([^"']+)["']/i);
+      if (match && (match[1].startsWith("mailto:") || match[1].startsWith("tel:"))) {
+        if (!contactLinks.includes(match[1]) && contactLinks.length < 10) contactLinks.push(match[1]);
       }
     }
   }
@@ -139,7 +134,7 @@ export async function extractWebsiteMetadata(input: ExtractWebsiteMetadataReques
     contactLinks,
     socialLinks: [],
     warnings,
-    sourceNote: "Fetched website directly",
-    assumptions: ["Public URLs only. Max 500KB parsed."]
+    sourceNote: "Fetched public HTTPS website with redirect, size, timeout, and private-network safeguards.",
+    assumptions: ["Public HTTPS URLs only.", "Max 500KB parsed.", "Metadata extraction is best-effort and does not execute JavaScript."],
   };
 }
