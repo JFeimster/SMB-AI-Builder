@@ -53,7 +53,7 @@ function isPrivateIp(ip: string): boolean {
   return true;
 }
 
-export async function assertPublicHttpUrl(rawUrl: string, options: PublicUrlOptions = {}): Promise<URL> {
+export async function assertSafePublicUrl(rawUrl: string, options: PublicUrlOptions = {}): Promise<URL> {
   let parsed: URL;
 
   try {
@@ -91,7 +91,7 @@ export async function fetchPublicText(rawUrl: string, options: PublicUrlOptions 
   let currentUrl = rawUrl;
 
   for (let redirectCount = 0; redirectCount <= maxRedirects; redirectCount += 1) {
-    const safeUrl = await assertPublicHttpUrl(currentUrl, options);
+    const safeUrl = await assertSafePublicUrl(currentUrl, options);
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
