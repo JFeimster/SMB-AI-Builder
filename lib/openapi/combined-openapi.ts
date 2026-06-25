@@ -5,10 +5,6 @@ import { getCalculateAutomationRoiPathItem } from "./builders/automation-roi.ope
 import { getValidateAutomationBlueprintPathItem } from "./builders/blueprint-validator.openapi";
 import { getValidateAgentBlueprintPathItem } from "./builders/agent-validator.openapi";
 import { getGenerateWorkflowMapPathItem } from "./builders/workflow-map.openapi";
-import { getBuildPilotTestPlanPathItem } from "./builders/pilot-plan.openapi";
-import { getGenerateTestScenariosPathItem } from "./builders/test-scenarios.openapi";
-import { getClassifyWorkflowRiskPathItem } from "./builders/risk-classifier.openapi";
-import { getSuggestHumanReviewPatternPathItem } from "./builders/human-review-pattern.openapi";
 import { getGetPublicHolidaysPathItem } from "./builders/public-holidays.openapi";
 import { getGetWeatherByLocationPathItem } from "./builders/weather.openapi";
 import { getGeocodeLocationPathItem } from "./builders/geocode.openapi";
@@ -24,10 +20,6 @@ export function buildCombinedOpenApi(serverUrl: string = "https://YOUR-VERCEL-DO
     "/api/blueprint-validator": getValidateAutomationBlueprintPathItem(),
     "/api/agent-validator": getValidateAgentBlueprintPathItem(),
     "/api/workflow-map": getGenerateWorkflowMapPathItem(),
-    "/api/pilot-plan": getBuildPilotTestPlanPathItem(),
-    "/api/test-scenarios": getGenerateTestScenariosPathItem(),
-    "/api/risk-classifier": getClassifyWorkflowRiskPathItem(),
-    "/api/human-review-pattern": getSuggestHumanReviewPatternPathItem(),
     "/api/public-holidays": getGetPublicHolidaysPathItem(),
     "/api/weather": getGetWeatherByLocationPathItem(),
     "/api/geocode": getGeocodeLocationPathItem(),
