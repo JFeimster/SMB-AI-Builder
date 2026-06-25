@@ -1,0 +1,212 @@
+{
+  "metadata": {
+    "title": "Automation Readiness Scorecard",
+    "description": "JSON schema for scoring SMB automation readiness.",
+    "author": "SMB AI Workflow & Agent Builder"
+  },
+  "version": "1.0",
+  "scoringScale": "0-3 (0 = Not ready, 1 = Needs cleanup, 2 = Mostly ready, 3 = Ready for pilot)",
+  "readinessCategories": [
+    "workflowClarity",
+    "processConsistency",
+    "dataQuality",
+    "toolAccess",
+    "ownership",
+    "riskLevel",
+    "humanReviewPlan",
+    "customerExperienceImpact",
+    "measurementPlan",
+    "rollbackPlan"
+  ],
+  "readinessBands": {
+    "0-10": "Do not automate yet",
+    "11-20": "Clean up first",
+    "21-26": "Pilot carefully",
+    "27-30": "Ready for automation pilot"
+  },
+  "categoryDefinitions": {
+    "workflowClarity": {
+      "label": "Workflow Clarity",
+      "description": "How well defined and documented is the process?",
+      "score0": "No documentation, steps change every time.",
+      "score1": "Vague understanding, resides in one person's head.",
+      "score2": "Mostly documented, some exceptions.",
+      "score3": "Clear SOP, standardized steps.",
+      "redFlags": [
+        "No clear trigger",
+        "Unpredictable steps"
+      ],
+      "improvementSuggestions": [
+        "Write a basic step-by-step SOP"
+      ]
+    },
+    "processConsistency": {
+      "label": "Process Consistency",
+      "description": "How often does the process follow the exact same steps?",
+      "score0": "Never, always requires custom handling.",
+      "score1": "Rarely, many exceptions.",
+      "score2": "Usually, few predictable exceptions.",
+      "score3": "Always, highly repetitive.",
+      "redFlags": [
+        "High exception rate"
+      ],
+      "improvementSuggestions": [
+        "Standardize inputs and rules"
+      ]
+    },
+    "dataQuality": {
+      "label": "Data Quality",
+      "description": "Is the required data accurate, accessible, and structured?",
+      "score0": "Data is missing or completely unstructured (e.g., messy handwritten notes).",
+      "score1": "Data exists but requires manual cleanup before use.",
+      "score2": "Data is mostly structured but spread across systems.",
+      "score3": "Data is clean, structured, and centralized.",
+      "redFlags": [
+        "Inaccurate data",
+        "Missing inputs"
+      ],
+      "improvementSuggestions": [
+        "Enforce data entry rules",
+        "Use structured forms"
+      ]
+    },
+    "toolAccess": {
+      "label": "Tool Access",
+      "description": "Do the tools support automation (APIs, Webhooks, Integrations)?",
+      "score0": "Legacy tools with no access.",
+      "score1": "Limited export only.",
+      "score2": "Some integrations available (e.g., Zapier/Make).",
+      "score3": "Full API/Webhook support.",
+      "redFlags": [
+        "Closed ecosystems"
+      ],
+      "improvementSuggestions": [
+        "Evaluate modern tool alternatives if necessary"
+      ]
+    },
+    "ownership": {
+      "label": "Ownership",
+      "description": "Is there a clear owner responsible for the process and its outcomes?",
+      "score0": "No clear owner.",
+      "score1": "Shared ownership, often confusing.",
+      "score2": "Clear owner, but lacks authority to change process.",
+      "score3": "Clear owner with authority.",
+      "redFlags": [
+        "Bystander effect"
+      ],
+      "improvementSuggestions": [
+        "Assign a single accountable owner"
+      ]
+    },
+    "riskLevel": {
+      "label": "Risk Level",
+      "description": "What happens if the automation fails or hallucinates?",
+      "score0": "High risk (legal, financial, compliance, medical damage).",
+      "score1": "Moderate risk (customer trust damage, significant time loss).",
+      "score2": "Low risk (internal confusion, minor delay).",
+      "score3": "Negligible risk.",
+      "redFlags": [
+        "Unregulated sensitive data access"
+      ],
+      "improvementSuggestions": [
+        "Implement draft-only mode",
+        "Require human approval"
+      ]
+    },
+    "humanReviewPlan": {
+      "label": "Human Review Plan",
+      "description": "Is there a plan for humans to review sensitive outputs?",
+      "score0": "No plan, fully autonomous blindly.",
+      "score1": "Reactive review only when customers complain.",
+      "score2": "Periodic batch review.",
+      "score3": "Built-in review step before action for sensitive tasks.",
+      "redFlags": [
+        "No oversight on customer comms"
+      ],
+      "improvementSuggestions": [
+        "Add a 'Draft' state requiring human click to send"
+      ]
+    },
+    "customerExperienceImpact": {
+      "label": "Customer Experience Impact",
+      "description": "How will automation affect the customer?",
+      "score0": "Frustrating, robotic, tone-deaf.",
+      "score1": "Noticeably automated but tolerable.",
+      "score2": "Neutral, helpful but clearly AI.",
+      "score3": "Positive, faster response, accurate.",
+      "redFlags": [
+        "Trapping customers in loops"
+      ],
+      "improvementSuggestions": [
+        "Ensure easy human handoff"
+      ]
+    },
+    "measurementPlan": {
+      "label": "Measurement Plan",
+      "description": "How will success be measured?",
+      "score0": "No idea.",
+      "score1": "Vague feelings of time saved.",
+      "score2": "Tracking time or output volume.",
+      "score3": "Clear metrics (e.g., response time, error rate).",
+      "redFlags": [
+        "No visibility into performance"
+      ],
+      "improvementSuggestions": [
+        "Define 1-2 key metrics before pilot"
+      ]
+    },
+    "rollbackPlan": {
+      "label": "Rollback Plan",
+      "description": "Can you revert to the manual process easily if the automation breaks?",
+      "score0": "No, manual process knowledge is lost.",
+      "score1": "Yes, but it would be very painful.",
+      "score2": "Yes, with some disruption.",
+      "score3": "Yes, seamless fallback.",
+      "redFlags": [
+        "Burning the boats"
+      ],
+      "improvementSuggestions": [
+        "Keep the manual SOP updated"
+      ]
+    }
+  },
+  "scoringGuidance": "Score each category from 0 to 3. Sum the scores for the total. Use the readiness bands to determine the recommendation.",
+  "outputFields": [
+    "totalScore",
+    "readinessLevel",
+    "biggestBlocker",
+    "recommendation"
+  ],
+  "exampleScorecard": {
+    "workflow": "Invoice Reminders",
+    "scores": {
+      "workflowClarity": 3,
+      "processConsistency": 3,
+      "dataQuality": 2,
+      "toolAccess": 3,
+      "ownership": 3,
+      "riskLevel": 1,
+      "humanReviewPlan": 2,
+      "customerExperienceImpact": 2,
+      "measurementPlan": 2,
+      "rollbackPlan": 3
+    },
+    "totalScore": 24,
+    "readinessLevel": "Pilot carefully",
+    "recommendation": "Ready for automation pilot with draft-only review for overdue accounts."
+  },
+  "riskFlags": [
+    "Touches money",
+    "Touches customer communication",
+    "Touches sensitive/private data",
+    "Requires legal/compliance adherence"
+  ],
+  "recommendedAutomationModes": [
+    "Manual process only",
+    "Draft-only AI assist",
+    "Human approval before action",
+    "Exception review",
+    "Limited pilot automation",
+    "Ready for automation pilot"
+  ]
+}
