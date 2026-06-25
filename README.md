@@ -14,9 +14,11 @@ This repository supports a Custom GPT that helps small business owners, operator
 
 | Site | URL |
 | --- | --- |
+| `Web` | https://smb-ai-builder.vercel.app/ |
 | `ChatGPT` | https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder |
-| `Notion` | https://feimster.notion.site/smb-ai-builder |
 | `GitHub` | https://github.com/JFeimster/SMB-AI-Builder |
+| `Vercel` | https://vercel.com/jason-feimsters-projects/smb-ai-builder | 
+| `Notion` | https://feimster.notion.site/smb-ai-builder |
 
 ---
 
