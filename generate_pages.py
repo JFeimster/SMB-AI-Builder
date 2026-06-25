@@ -98,7 +98,7 @@ template = """<!DOCTYPE html>
   <meta property="og:description" content="Stop automating broken workflows. Score readiness, find what to automate first, and build a safe AI agent pilot plan for the {name}." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="../../../og-image-placeholder.png" />
-  <link rel="canonical" href="https://example.com/pages/seo/workflows/{filename}" />
+  <link rel="canonical" href="https://smb-ai-builder.vercel.app/pages/seo/workflows/{filename}" />
 
   <link rel="stylesheet" href="../../../styles.css" />
   <script defer src="../../../script.js"></script>
