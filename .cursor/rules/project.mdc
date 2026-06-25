@@ -1,6 +1,6 @@
 ---
 description: Project-wide rules for SMB AI Workflow & Agent Builder
-globs: "*"
+alwaysApply: true
 ---
 
 # Project-Wide Rules
