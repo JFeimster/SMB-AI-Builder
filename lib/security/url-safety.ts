@@ -84,6 +84,9 @@ export async function assertSafePublicUrl(rawUrl: string, options: PublicUrlOpti
   return parsed;
 }
 
+// Backward-compatible name used by existing route implementations.
+export const assertPublicHttpUrl = assertSafePublicUrl;
+
 export async function fetchPublicText(rawUrl: string, options: PublicUrlOptions = {}): Promise<{ text: string; finalUrl: string; contentType: string | null; truncated: boolean }> {
   const maxRedirects = options.maxRedirects ?? DEFAULT_MAX_REDIRECTS;
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
