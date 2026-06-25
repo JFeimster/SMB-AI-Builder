@@ -9,10 +9,10 @@ The user interacts with the ChatGPT interface. Based on its instructions and the
 The GPT references the OpenAPI schema (imported during setup) to understand what data the Action requires and formats a JSON payload.
 
 ## 3. Vercel route
-The GPT sends an HTTPS POST request to our Vercel-hosted API route (e.g., `https://smb-ai-builder.vercel.app/api/score-readiness`).
+The GPT sends an HTTPS POST request to our Vercel-hosted API route (e.g., `https://smb-ai-builder.vercel.app/api/readiness-score`).
 
 ## 4. Request validation
-The Vercel route receives the request and immediately validates the JSON payload against a strict schema (e.g., using Zod). If validation fails, it returns a 400 Bad Request.
+The Vercel route receives the request and immediately validates the JSON payload against a strict schema. If validation fails, it returns a 400 Bad Request.
 
 ## 5. Deterministic logic
 The Vercel route executes the core logic. For example, it calculates the readiness score based on the provided JSON variables. It does not call other LLMs; it relies on hardcoded, deterministic rules.
