@@ -15,6 +15,13 @@ const RESPONSE_HEADERS = {
   "Cache-Control": "no-store",
 };
 
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: RESPONSE_HEADERS,
+  });
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
