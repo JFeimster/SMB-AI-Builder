@@ -1,0 +1,30 @@
+# SMB AI Workflow & Agent Builder
+
+## What It Does
+This tool audits business workflows, scores automation readiness, identifies automation opportunities, designs AI-powered workflows, and builds safe AI agent pilot plans.
+
+## Who It Serves
+It is designed for small business owners, operators, freelancers, agencies, consultants, and automation builders.
+
+## Main Use Cases
+- Auditing existing business workflows for AI readiness.
+- Scoring automation readiness of specific processes.
+- Identifying and planning safe AI automation opportunities.
+- Designing AI-powered workflows and AI agent pilot plans.
+- Discovering "human in the loop" strategies to reduce risks.
+
+## Key URLs
+- Product CTA: https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder
+- Notion Resource: https://feimster.notion.site/smb-ai-builder
+- GitHub Resource: https://github.com/JFeimster/SMB-AI-Builder
+- Site Home: https://smb-ai-builder.vercel.app/
+
+## Link List to Major Page Clusters
+- Home: https://smb-ai-builder.vercel.app/
+- Core site pages: https://smb-ai-builder.vercel.app/pages/site/
+- SEO guide pages: https://smb-ai-builder.vercel.app/pages/seo/
+- Workflow pages: https://smb-ai-builder.vercel.app/pages/seo/workflows/
+- Comparison pages: https://smb-ai-builder.vercel.app/pages/seo/comparisons/
+
+## Safety Guidelines & Disclaimer
+This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, or compliance advice. Sensitive decisions should stay under qualified human review.

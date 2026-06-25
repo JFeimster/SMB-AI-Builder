@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this just another AI automation chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it is a structured planning assistant designed to help you audit existing business workflows and design safe AI agent pilot plans before you start building."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of workflow should I start with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with repetitive, low-risk, internal workflows that consume a lot of manual time but do not require complex, nuanced human judgment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my process is messy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A messy process should be mapped and standardized before applying AI automation. The builder helps identify these gaps so you can structure your workflow first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this build the automation for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, this tool provides audits, readiness scores, and pilot plans. You or your developer will need to build the actual automation based on the structured plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it help me design a Custom GPT or AI agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it assists in designing the specifications, instructions, and guardrails for Custom GPTs and AI agents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it connect directly to my tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, the builder is a planning and advisory tool. It does not integrate directly into your software stack."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this safe for customer-facing workflows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Customer-facing AI requires strict guardrails. The tool helps you plan 'human in the loop' safeguards and pilot phases to manage risks before deployment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can agencies use this with clients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, agencies and consultants can use this tool to structure client discovery, audit client workflows, and generate professional automation readiness assessments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get after using it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You will receive an automation readiness score, an identified list of automation opportunities, and a structured, safe AI agent pilot plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this legal, financial, tax, or compliance advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, this tool supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, or compliance advice. Sensitive decisions must remain under qualified human review."
+      }
+    }
+  ]
+}
