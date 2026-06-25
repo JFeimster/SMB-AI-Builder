@@ -555,6 +555,14 @@ score-automation-readiness.openapi.json
 
 ---
 
+## Sites
+
+| Site | URL |
+| --- | --- |
+| `ChatGPT` | https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder |
+| `Notion` | https://feimster.notion.site/smb-ai-builder |
+| `GitHub` | https://github.com/JFeimster/SMB-AI-Builder |
+
 ## License
 
 Choose a license before publishing publicly.
