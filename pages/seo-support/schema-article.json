@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{PLACEHOLDER_HEADLINE}}",
+  "description": "{{PLACEHOLDER_DESCRIPTION}}",
+  "datePublished": "{{PLACEHOLDER_DATE_PUBLISHED}}",
+  "dateModified": "{{PLACEHOLDER_DATE_MODIFIED}}",
+  "author": {
+    "@type": "Person",
+    "name": "{{PLACEHOLDER_AUTHOR}}"
+  },
+  "url": "{{PLACEHOLDER_URL}}",
+  "image": "{{PLACEHOLDER_IMAGE_URL}}"
+}
