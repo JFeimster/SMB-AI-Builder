@@ -67,8 +67,8 @@ interface CategoryMeta {
   label: string;
   description: string;
   improvementTip: string;
-  scoreMeanings: Record<ScoreValue, string>;
   blockerPriority: number;
+  scoreMeanings: Record<ScoreValue, string>;
 }
 
 export class ValidationError extends Error {
@@ -94,12 +94,18 @@ export const CATEGORY_KEYS: ReadinessCategoryKey[] = [
   "rollbackPlan",
 ];
 
+export const SCORE_LABELS: Record<ScoreValue, string> = {
+  0: "Not ready",
+  1: "Needs cleanup",
+  2: "Mostly ready",
+  3: "Ready for pilot",
+};
+
 export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   workflowClarity: {
     label: "Workflow clarity",
     description: "How clearly the current workflow, steps, triggers, and outputs are defined.",
-    improvementTip:
-      "Document the trigger, major steps, decision points, owner, required inputs, and expected output before automating.",
+    improvementTip: "Document the trigger, major steps, decision points, owner, required inputs, and expected output before automating.",
     blockerPriority: 3,
     scoreMeanings: {
       0: "The workflow is unclear or mostly undocumented.",
@@ -111,8 +117,7 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   processConsistency: {
     label: "Process consistency",
     description: "How repeatable the process is from one case, customer, or task to the next.",
-    improvementTip:
-      "Standardize the process into a repeatable path with named exceptions before adding automation.",
+    improvementTip: "Standardize the process into a repeatable path with named exceptions before adding automation.",
     blockerPriority: 4,
     scoreMeanings: {
       0: "The process changes case by case and is not ready for automation.",
@@ -124,8 +129,7 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   dataQuality: {
     label: "Data quality",
     description: "Whether the required data is complete, reliable, accessible, and consistently formatted.",
-    improvementTip:
-      "Clean up missing fields, inconsistent naming, duplicate records, or scattered data sources before relying on AI output.",
+    improvementTip: "Clean up missing fields, inconsistent naming, duplicate records, or scattered data sources before relying on AI output.",
     blockerPriority: 1,
     scoreMeanings: {
       0: "Required data is missing, unreliable, or inaccessible.",
@@ -136,9 +140,8 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   },
   toolAccess: {
     label: "Tool access",
-    description: "Whether the workflow’s systems, forms, files, or apps are available for safe integration or manual upload.",
-    improvementTip:
-      "Confirm which systems hold the needed data and whether the automation will use exports, forms, shared folders, or integrations.",
+    description: "Whether the workflow systems, forms, files, or apps are available for safe integration or manual upload.",
+    improvementTip: "Confirm which systems hold the needed data and whether the automation will use exports, forms, shared folders, or integrations.",
     blockerPriority: 7,
     scoreMeanings: {
       0: "The required tools or data sources are not accessible.",
@@ -150,8 +153,7 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   ownership: {
     label: "Ownership",
     description: "Whether a person or team clearly owns the workflow, exceptions, approvals, and maintenance.",
-    improvementTip:
-      "Assign an owner for workflow changes, review queues, exceptions, metrics, and rollback decisions.",
+    improvementTip: "Assign an owner for workflow changes, review queues, exceptions, metrics, and rollback decisions.",
     blockerPriority: 5,
     scoreMeanings: {
       0: "No clear owner is responsible for this workflow.",
@@ -162,10 +164,8 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   },
   riskLevel: {
     label: "Risk level",
-    description:
-      "How safe the workflow is to automate. Higher scores mean lower operational, customer, financial, legal, or compliance risk.",
-    improvementTip:
-      "For customer-facing, financial, legal, HR, medical, compliance, or sensitive workflows, use draft-only or approval-first automation.",
+    description: "How safe the workflow is to automate. Higher scores mean lower operational, customer, financial, legal, or compliance risk.",
+    improvementTip: "For customer-facing, financial, legal, HR, medical, compliance, or sensitive workflows, use draft-only or approval-first automation.",
     blockerPriority: 0,
     scoreMeanings: {
       0: "High risk; automation could create serious customer, financial, legal, HR, medical, or compliance issues.",
@@ -177,8 +177,7 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   humanReviewPlan: {
     label: "Human review plan",
     description: "Whether the workflow has clear approval, escalation, exception, and review rules.",
-    improvementTip:
-      "Define what AI can draft, what requires approval, who reviews it, and when the workflow escalates to a person.",
+    improvementTip: "Define what AI can draft, what requires approval, who reviews it, and when the workflow escalates to a person.",
     blockerPriority: 2,
     scoreMeanings: {
       0: "There is no human review plan.",
@@ -190,8 +189,7 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   customerExperienceImpact: {
     label: "Customer experience impact",
     description: "Whether the automation is likely to improve the customer experience without creating confusion or friction.",
-    improvementTip:
-      "Test customer-facing drafts, timing, tone, and escalation paths before automating external messages.",
+    improvementTip: "Test customer-facing drafts, timing, tone, and escalation paths before automating external messages.",
     blockerPriority: 8,
     scoreMeanings: {
       0: "Automation could harm the customer experience or create confusion.",
@@ -203,8 +201,7 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   measurementPlan: {
     label: "Measurement plan",
     description: "Whether success metrics, baseline performance, and pilot review criteria are defined.",
-    improvementTip:
-      "Define baseline time, error rate, response time, cost, conversion rate, or customer satisfaction before the pilot.",
+    improvementTip: "Define baseline time, error rate, response time, cost, conversion rate, or customer satisfaction before the pilot.",
     blockerPriority: 9,
     scoreMeanings: {
       0: "No clear success metric exists.",
@@ -216,8 +213,7 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
   rollbackPlan: {
     label: "Rollback plan",
     description: "Whether the team knows how to pause, reverse, or safely disable the automation.",
-    improvementTip:
-      "Create a simple rollback plan: how to pause automation, who decides, what happens to in-flight items, and how work resumes manually.",
+    improvementTip: "Create a simple rollback plan: how to pause automation, who decides, what happens to in-flight items, and how work resumes manually.",
     blockerPriority: 6,
     scoreMeanings: {
       0: "No rollback or pause plan exists.",
@@ -226,13 +222,6 @@ export const CATEGORY_META: Record<ReadinessCategoryKey, CategoryMeta> = {
       3: "Rollback steps, owner, and manual fallback are clearly defined.",
     },
   },
-};
-
-export const SCORE_LABELS: Record<ScoreValue, string> = {
-  0: "Not ready",
-  1: "Needs cleanup",
-  2: "Mostly ready",
-  3: "Ready for pilot",
 };
 
 function isPlainObject(value: unknown): value is Record<string, unknown> {
@@ -271,13 +260,11 @@ function parseScore(value: unknown, key: ReadinessCategoryKey): ScoreValue {
 
 function validateCategoryNotes(value: unknown): Partial<Record<ReadinessCategoryKey, string>> | undefined {
   if (value === undefined || value === null) return undefined;
-
   if (!isPlainObject(value)) {
     throw new ValidationError("categoryNotes must be an object when provided.");
   }
 
   const cleaned: Partial<Record<ReadinessCategoryKey, string>> = {};
-
   for (const key of CATEGORY_KEYS) {
     const note = cleanOptionalString(value[key], `categoryNotes.${key}`);
     if (note) cleaned[key] = note;
@@ -296,13 +283,14 @@ export function validateReadinessRequest(input: unknown): ReadinessScoreRequest 
   const userGoal = cleanOptionalString(input.userGoal, "userGoal");
   const notes = cleanOptionalString(input.notes, "notes");
   const categoryNotes = validateCategoryNotes(input.categoryNotes);
+  const rawScores = input.scores;
 
-  if (!isPlainObject(input.scores)) {
+  if (!isPlainObject(rawScores)) {
     throw new ValidationError("scores is required and must be an object.");
   }
 
   const scores = CATEGORY_KEYS.reduce((accumulator, key) => {
-    accumulator[key] = parseScore(input.scores[key], key);
+    accumulator[key] = parseScore(rawScores[key], key);
     return accumulator;
   }, {} as ReadinessScores);
 
@@ -325,10 +313,8 @@ function getReadinessBand(totalScore: number): Pick<
       readinessLevel: "0-10: Do not automate yet",
       recommendationCategory: "Do not automate yet",
       recommendedAutomationMode: "Do not automate yet",
-      interpretation:
-        "This workflow is not ready for automation. It likely needs documentation, ownership, data cleanup, or safer human review before AI should be introduced.",
-      nextStep:
-        "Document the current workflow, assign an owner, clean up critical inputs, and rerun the score before designing automation.",
+      interpretation: "This workflow is not ready for automation. It likely needs documentation, ownership, data cleanup, or safer human review before AI should be introduced.",
+      nextStep: "Document the current workflow, assign an owner, clean up critical inputs, and rerun the score before designing automation.",
     };
   }
 
@@ -337,10 +323,8 @@ function getReadinessBand(totalScore: number): Pick<
       readinessLevel: "11-20: Clean up first",
       recommendationCategory: "Clean up first",
       recommendedAutomationMode: "Process cleanup only",
-      interpretation:
-        "This workflow has automation potential, but the process should be cleaned up before launching an AI-assisted pilot.",
-      nextStep:
-        "Fix the lowest-scoring categories first, then test a narrow draft-only version with sample data.",
+      interpretation: "This workflow has automation potential, but the process should be cleaned up before launching an AI-assisted pilot.",
+      nextStep: "Fix the lowest-scoring categories first, then test a narrow draft-only version with sample data.",
     };
   }
 
@@ -349,10 +333,8 @@ function getReadinessBand(totalScore: number): Pick<
       readinessLevel: "21-26: Pilot carefully",
       recommendationCategory: "Pilot carefully",
       recommendedAutomationMode: "Limited pilot with human approval",
-      interpretation:
-        "This workflow is a reasonable candidate for a controlled pilot, but it still needs clear human review and monitoring.",
-      nextStep:
-        "Build a limited pilot with test data, approval checkpoints, exception handling, success metrics, and a rollback plan.",
+      interpretation: "This workflow is a reasonable candidate for a controlled pilot, but it still needs clear human review and monitoring.",
+      nextStep: "Build a limited pilot with test data, approval checkpoints, exception handling, success metrics, and a rollback plan.",
     };
   }
 
@@ -360,10 +342,8 @@ function getReadinessBand(totalScore: number): Pick<
     readinessLevel: "27-30: Ready for automation pilot",
     recommendationCategory: "Ready for automation pilot",
     recommendedAutomationMode: "Automation pilot with monitoring",
-    interpretation:
-      "This workflow appears ready for a limited automation pilot with monitoring, documented review rules, and clear rollback steps.",
-    nextStep:
-      "Launch a small pilot, monitor results against the baseline, review edge cases, and expand only after the pilot meets success criteria.",
+    interpretation: "This workflow appears ready for a limited automation pilot with monitoring, documented review rules, and clear rollback steps.",
+    nextStep: "Launch a small pilot, monitor results against the baseline, review edge cases, and expand only after the pilot meets success criteria.",
   };
 }
 
@@ -371,33 +351,19 @@ function buildRiskFlags(scores: ReadinessScores, totalScore: number): string[] {
   const flags: string[] = [];
 
   if (scores.riskLevel <= 1) {
-    flags.push(
-      "Risk level is low-scoring. Use draft-only mode or approval-first automation; do not allow fully autonomous action.",
-    );
+    flags.push("Risk level is low-scoring. Use draft-only mode or approval-first automation; do not allow fully autonomous action.");
   }
-
   if (scores.humanReviewPlan <= 1) {
-    flags.push(
-      "Human review is weak or undefined. Define approval, escalation, and exception rules before piloting.",
-    );
+    flags.push("Human review is weak or undefined. Define approval, escalation, and exception rules before piloting.");
   }
-
   if (scores.dataQuality <= 1) {
-    flags.push(
-      "Data quality is a blocker. Clean or standardize required inputs before relying on AI-generated outputs.",
-    );
+    flags.push("Data quality is a blocker. Clean or standardize required inputs before relying on AI-generated outputs.");
   }
-
   if (scores.rollbackPlan <= 1) {
-    flags.push(
-      "Rollback plan is weak. Document how to pause the automation and return to the manual process.",
-    );
+    flags.push("Rollback plan is weak. Document how to pause the automation and return to the manual process.");
   }
-
   if (totalScore < 21) {
-    flags.push(
-      "Overall readiness is below pilot level. Focus on process cleanup before implementing automation.",
-    );
+    flags.push("Overall readiness is below pilot level. Focus on process cleanup before implementing automation.");
   }
 
   return flags;
@@ -408,7 +374,7 @@ function chooseBiggestBlocker(lowestScoringCategories: CategoryResult[]): string
     (a, b) => CATEGORY_META[a.key].blockerPriority - CATEGORY_META[b.key].blockerPriority,
   )[0];
 
-  return `${primary.label}: ${primary.improvementTip}`;
+  return primary ? `${primary.label}: ${primary.improvementTip}` : "No blocker detected.";
 }
 
 export function scoreAutomationReadiness(input: ReadinessScoreRequest): ReadinessScoreResponse {
@@ -433,19 +399,11 @@ export function scoreAutomationReadiness(input: ReadinessScoreRequest): Readines
   const lowestScore = Math.min(...categoryResults.map((category) => category.score));
   const lowestScoringCategories = categoryResults.filter((category) => category.score === lowestScore);
   const riskFlags = buildRiskFlags(input.scores, totalScore);
-
   const humanReviewRequired =
     input.scores.riskLevel <= 2 ||
     input.scores.humanReviewPlan <= 2 ||
     input.scores.customerExperienceImpact <= 1 ||
     totalScore < 27;
-
-  const assumptions = [
-    "Scores use a 0-3 readiness scale where 0 means not ready and 3 means ready for pilot.",
-    "For riskLevel, a higher score means lower risk and stronger suitability for a controlled pilot.",
-    "This action does not make final business, legal, financial, HR, medical, tax, or compliance decisions.",
-    "Sensitive or customer-facing workflows should keep a human approval step unless separately reviewed.",
-  ];
 
   return {
     workflowName: input.workflowName,
@@ -459,7 +417,12 @@ export function scoreAutomationReadiness(input: ReadinessScoreRequest): Readines
     categoryResults,
     humanReviewRequired,
     riskFlags,
-    assumptions,
+    assumptions: [
+      "Scores use a 0-3 readiness scale where 0 means not ready and 3 means ready for pilot.",
+      "For riskLevel, a higher score means lower risk and stronger suitability for a controlled pilot.",
+      "This action does not make final business, legal, financial, HR, medical, tax, or compliance decisions.",
+      "Sensitive or customer-facing workflows should keep a human approval step unless separately reviewed.",
+    ],
     notes: input.notes,
   };
 }
