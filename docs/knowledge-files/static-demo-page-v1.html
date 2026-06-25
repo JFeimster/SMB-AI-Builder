@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMB Workflow Audit Demo</title>
+    <link rel="stylesheet" href="workflow-demo-styles-v1.css">
+    <meta name="description" content="A static demo of the SMB Workflow Audit and Readiness Score calculator.">
+</head>
+<body>
+    <div class="layout-wrapper">
+        <header class="hero">
+            <h1>SMB Workflow Audit Demo</h1>
+            <p>Stop automating broken workflows. Score the mess before AI touches it.</p>
+        </header>
+
+        <main>
+            <section class="card workflow-overview">
+                <h2>Workflow Audit: Lead Follow-up</h2>
+                <div class="current-workflow">
+                    <h3>Current State</h3>
+                    <p>Website inquiry received &rarr; Owner reads email at night &rarr; Types manual reply.</p>
+                </div>
+                <div class="pain-points">
+                    <h3>Pain Points</h3>
+                    <ul>
+                        <li>Delayed response time (6+ hours).</li>
+                        <li>Inconsistent pricing quotes.</li>
+                        <li>Owner manually typing repetitive emails.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card readiness-calculator-section">
+                <h2>Readiness Score Calculator</h2>
+                <p>Rate the workflow on a scale of 0-3 for each category.</p>
+                <form id="readiness-form">
+                    <div class="form-group">
+                        <label for="workflowClarity">Workflow Clarity (Is the process clear?)</label>
+                        <select id="workflowClarity" name="workflowClarity">
+                            <option value="0">0 - Not ready</option>
+                            <option value="1">1 - Needs cleanup</option>
+                            <option value="2" selected>2 - Mostly ready</option>
+                            <option value="3">3 - Ready for pilot</option>
+                        </select>
+                    </div>
+                    <!-- Simplified form for demo purposes, JS will handle full 10 logic -->
+                    <div class="form-group">
+                        <label for="dataQuality">Data Quality (Is the data clean?)</label>
+                        <select id="dataQuality" name="dataQuality">
+                            <option value="0">0 - Not ready</option>
+                            <option value="1">1 - Needs cleanup</option>
+                            <option value="2">2 - Mostly ready</option>
+                            <option value="3" selected>3 - Ready for pilot</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="riskLevel">Risk Level (Is it safe?)</label>
+                        <select id="riskLevel" name="riskLevel">
+                            <option value="0">0 - High Risk (Not ready)</option>
+                            <option value="1">1 - Medium Risk</option>
+                            <option value="2" selected>2 - Low Risk</option>
+                            <option value="3">3 - Negligible Risk</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn" id="calculate-btn">Calculate Score</button>
+                </form>
+
+                <div id="results-panel" class="results-panel hidden">
+                    <h3>Readiness Score: <span id="total-score">0</span>/30</h3>
+                    <div id="readiness-badge" class="badge">Not Ready</div>
+                    <p id="recommendation-text"></p>
+                </div>
+            </section>
+
+            <section class="card ai-agent-idea">
+                <h2>AI Agent Pilot Idea</h2>
+                <p><strong>Agent:</strong> Draft-Only Lead Responder</p>
+                <p><strong>Action:</strong> AI reads the form submission and drafts an email in Gmail based on standard pricing. It does NOT send.</p>
+                <div class="warning-callout">
+                    <strong>Human Review Warning:</strong> Because this touches customer communication, the pilot must use draft-only mode. A human must click send.
+                </div>
+                <div class="pilot-checklist">
+                    <h3>Pilot Checklist</h3>
+                    <ul>
+                        <li><input type="checkbox" disabled checked> Define trigger (Form submit)</li>
+                        <li><input type="checkbox" disabled checked> Set up AI Draft action</li>
+                        <li><input type="checkbox" disabled> Run 5 test data scenarios</li>
+                        <li><input type="checkbox" disabled> Train owner to review drafts</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Ready to audit your real workflows?</h2>
+                <p>Build an AI agent plan your business can survive.</p>
+                <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Launch SMB AI Workflow & Agent Builder</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>This demo supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.</p>
+        </footer>
+    </div>
+    <script src="readiness-score-calculator-v1.js"></script>
+</body>
+</html>

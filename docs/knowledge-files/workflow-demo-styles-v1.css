@@ -1,0 +1,210 @@
+/* Clean SMB Automation Audit Demo Styles */
+
+:root {
+  --bg-color: #0f172a; /* Ink black background */
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-lime: #a3e635; /* Acid lime accent */
+  --accent-cyan: #22d3ee;
+  --accent-orange: #fb923c;
+  --border-color: #334155;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.layout-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--accent-lime);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+select:focus {
+  outline: 2px solid var(--accent-lime);
+  border-color: var(--accent-lime);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--border-color);
+  color: var(--text-main);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #475569;
+}
+
+.btn:focus {
+  outline: 2px solid var(--accent-lime);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: var(--accent-lime);
+  color: var(--bg-color);
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #84cc16;
+}
+
+.results-panel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(34, 211, 238, 0.1);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.badge.ready {
+  background-color: var(--accent-lime);
+  color: var(--bg-color);
+}
+
+.badge.warning {
+  background-color: var(--accent-orange);
+  color: var(--bg-color);
+}
+
+.badge.danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.warning-callout {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid var(--danger);
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pilot-checklist ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pilot-checklist input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  border: 2px solid var(--accent-lime);
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
