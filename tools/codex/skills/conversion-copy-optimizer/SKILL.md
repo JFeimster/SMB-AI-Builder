@@ -1,78 +1,31 @@
+---
+name: conversion-copy-optimizer
+description: Use when improving SMB AI Builder copy for clarity, conversion, directness, anti-hype positioning, CTA strength, and safety-aware operator language.
+---
+
 # Conversion Copy Optimizer
 
 ## Purpose
+Improve copy while preserving the repo voice: direct, anti-hype, operator-friendly, practical, and safety-aware.
 
-Improve copy for clarity, trust, and conversion, ensuring adherence to the project's direct, anti-hype voice.
-
-## When to use this skill
-
-- When refining landing pages or tools.
-- When reviewing drafted content.
-
-## When not to use this skill
-
-- For technical documentation.
-
-## Inputs Codex should collect
-
-- Existing copy.
-- Target audience.
-
-## Files and folders this skill may touch
-
-- `pages/site/*.html`
-- `pages/seo/**/*.html`
+## Use this skill when
+- Rewriting hero sections, CTA bands, page intros, FAQ answers, or embed copy.
+- Removing generic SaaS language.
+- Making copy more useful without adding unsupported claims.
 
 ## Source-of-truth files to read first
-
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/copy-rules.md`
+- `tools/jules/style-guide.md`
 
 ## Process
+1. Identify weak, vague, or hype-heavy copy.
+2. Replace it with concrete workflow-planning language.
+3. Keep CTAs action-oriented and tied to the GPT URL.
+4. Preserve required disclaimers on sensitive pages.
+5. Return changed snippets and any remaining risks.
 
-1. Remove generic AI/SaaS language and banned phrases.
-2. Improve hero clarity and CTA specificity.
-3. Add safety stances and disclaimers where relevant.
-4. Strengthen operator-friendly tone.
-5. Preserve factual accuracy without inventing proof.
-6. Provide a before/after rewrite pattern for review.
-
-## Output requirements
-
-Optimized copy applied to the files.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-- Do not invent proof. Maintain factual accuracy.
-
-## QA checklist
-
-- [ ] Banned phrases removed.
-- [ ] Tone is direct and no-BS.
-- [ ] Safety stance included.
-
-## Common mistakes to avoid
-
-- Over-promising automation results.
-- Using hype words like 'revolutionize' or 'seamless'.
-
-## Final response format
-
-Provide the before/after copy changes.
+## Guardrails
+- Do not add fake urgency, fake social proof, guarantees, or revenue/compliance promises.
+- Do not use banned phrases from `tools/jules/copy-rules.md`.
