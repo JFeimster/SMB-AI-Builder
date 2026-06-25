@@ -21,7 +21,8 @@ When using Gemini as an SEO Critic for the SMB AI Builder project, enforce these
 - **Anchor Text**: Use descriptive, context-rich anchor text.
 
 ## 5. FAQs
-- Ensure each SEO and workflow audit page includes a section with 4-6 highly relevant FAQs.
+- General SEO and comparison pages should include 4-6 highly relevant FAQs.
+- Workflow audit pages under `pages/seo/workflows/` should include 3-5 highly relevant FAQs.
 - Answers should be concise, factual, and direct.
 
 ## 6. Schema Markup
