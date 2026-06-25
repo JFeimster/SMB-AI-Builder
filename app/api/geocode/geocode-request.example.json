@@ -1,6 +1,6 @@
 {
-  "query": "Example",
-  "count": 0,
-  "language": "Example",
-  "countryCode": "Example"
+  "query": "Washington, DC",
+  "count": 3,
+  "language": "en",
+  "countryCode": "US"
 }
