@@ -1,0 +1,14 @@
+{
+  "directories": {
+    "app": "Next.js App Router files (tsx, css).",
+    "pages/seo": "Static HTML SEO and workflow audit pages.",
+    "tools/cursor": "Cursor tool-ops layer documentation and rules.",
+    "docs/knowledge-files": "GPT knowledge files and self-contained demo assets.",
+    "embeds": "Partner embed static files."
+  },
+  "file_types": {
+    "*.mdc": "Cursor rule definitions.",
+    "*.html": "Static semantic HTML pages.",
+    "*.tsx": "Next.js React components."
+  }
+}

@@ -6,7 +6,7 @@ Use this template for creating workflow audit pages located in `pages/seo/workfl
 - **H1 Format:** 'Audit Your [Workflow] Before Automating It With AI'
 - **Sections:** Must include specific sections detailed below.
 - **FAQs:** 3-5 FAQs required per page.
-- **Safety:** For sensitive workflows (finance, HR, compliance), explicitly include the disclaimer below.
+- **Safety:** For any sensitive workflow, include the required disclaimer visibly near the safety, human review, or CTA section. Sensitive workflows include money, finance, billing, payment, private data, sensitive personal data, customer communication, document collection, legal, HR, medical, lending, underwriting, accounting, tax, compliance, client onboarding, customer support, refunds, pricing, business-critical decisions, or any workflow where an incorrect automated action could create customer, financial, legal, operational, or reputational risk.
 
 ## Required Disclaimer (For Sensitive Workflows)
 > "This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review."
@@ -85,7 +85,7 @@ Use this template for creating workflow audit pages located in `pages/seo/workfl
                 <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" class="button cta-primary" target="_blank" rel="noopener">Audit My First Workflow</a>
             </section>
 
-            <!-- Insert Disclaimer here if workflow is sensitive -->
+            <!-- Required for sensitive workflows: insert the full disclaimer visibly near the safety, human review, or CTA section. -->
 
         </article>
     </main>
