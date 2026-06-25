@@ -1,77 +1,34 @@
+---
+name: final-qa-runner
+description: Use before merge or final delivery to run cross-file QA for scope, paths, metadata, CTAs, accessibility, safety disclaimers, schema, and unsupported claims.
+---
+
 # Final QA Runner
 
 ## Purpose
+Run final cross-file QA before a task is called complete.
 
-Run the final cross-file QA checks before calling a task fully complete.
-
-## When to use this skill
-
-- Always, as the last step of any task modifying files.
-
-## When not to use this skill
-
-- In the middle of an incomplete task.
-
-## Inputs Codex should collect
-
-- Task requirements.
-- List of touched files.
-
-## Files and folders this skill may touch
-
-- (Read-only) All touched files.
+## Use this skill when
+- Reviewing a PR before merge.
+- Validating generated page clusters.
+- Checking docs, embeds, schemas, sitemap, robots, or skills before closure.
 
 ## Source-of-truth files to read first
-
-- JULES.md
-- jules.json
-- qa-checklist.md
-- style-guide.md
-- tools/jules/file-map.json
-- tools/jules/copy-rules.md
-- tools/jules/seo-rules.md
-- tools/jules/accessibility-checklist.md
+- `tools/jules/JULES.md`
+- `tools/jules/jules.json`
+- `tools/jules/qa-checklist.md`
+- `tools/jules/file-map.json`
+- `tools/jules/copy-rules.md`
+- `tools/jules/seo-rules.md`
+- `tools/jules/accessibility-checklist.md`
 
 ## Process
+1. Confirm the changed files match the requested scope.
+2. Check paths, metadata, CTAs, schema, accessibility, and safety language.
+3. Search for placeholder domains, fake proof, and unsupported claims.
+4. Verify sitemap/robots alignment if crawler files changed.
+5. Return merge recommendation: merge, patch, comment, close, or block.
 
-1. Verify expected file list.
-2. Validate JSON and XML where modified.
-3. Check relative paths.
-4. Check CTA URLs (`https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder`).
-5. Check metadata uniqueness and One-H1 rule.
-6. Scan for fake proof and banned phrases.
-7. Verify sensitive disclaimers.
-8. Summarize pass/fail findings.
-
-## Output requirements
-
-A final QA pass/fail report.
-
-## Safety and claims rules
-- **No fake proof:** Do not invent fake testimonials, reviews, ratings, logos, case studies, user counts, revenue numbers, guarantees, compliance claims, partner relationships, certifications, benchmarks, integrations, or unsupported competitor claims.
-- **Sensitive workflows:** For workflows involving customer-facing communication, money, finance, tax, accounting, legal, HR, medical, lending, underwriting, compliance, private data, or sensitive personal data, recommend:
-  - Draft-only mode
-  - Human approval before action
-  - Limited permissions
-  - Test data first
-  - Audit logs
-  - Escalation rules
-  - Rollback plan
-  - Qualified human review
-- **Safety stance:** Include the exact disclaimer visibly near the relevant safety/CTA section when handling sensitive workflows:
-  > This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.
-
-## QA checklist
-
-- [ ] All QA checks completed.
-- [ ] Links validated.
-- [ ] No fake proof.
-
-## Common mistakes to avoid
-
-- Skipping the QA step to save time.
-- Ignoring relative path errors.
-
-## Final response format
-
-Output the final QA report and confirm task readiness.
+## Guardrails
+- Do not approve pages with placeholder canonicals or fake claims.
+- Do not merge if required sensitive-workflow disclaimers are missing.
