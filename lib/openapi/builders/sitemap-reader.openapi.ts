@@ -12,10 +12,11 @@ export function getAnalyzeSitemapPathItem(): PathItem {
           "application/json": {
             schema: {
               type: "object",
-              required: ["url"],
+              required: ["domainOrSitemapUrl"],
               properties: {
-                url: { type: "string", description: "The URL of the sitemap XML." },
-                maxUrls: { type: "integer", default: 100, description: "Maximum number of URLs to analyze." },
+                domainOrSitemapUrl: { type: "string", description: "HTTPS domain or sitemap URL to analyze." },
+                maxUrls: { type: "integer", minimum: 1, maximum: 250, default: 50, description: "Maximum number of URLs to analyze." },
+                includePageTypeGuesses: { type: "boolean", description: "Whether to include simple page type guesses for discovered URLs." },
               },
             },
           },
@@ -29,22 +30,24 @@ export function getAnalyzeSitemapPathItem(): PathItem {
               schema: {
                 type: "object",
                 properties: {
-                  success: { type: "boolean" },
-                  data: {
-                    type: "object",
-                    properties: {
-                      totalUrls: { type: "integer" },
-                      analyzedUrls: { type: "integer" },
-                      likelyPageTypes: {
-                        type: "object",
-                        additionalProperties: { type: "integer" },
-                      },
-                      urls: {
-                        type: "array",
-                        items: { type: "string" },
-                      },
-                    },
+                  sitemapUrl: { type: "string" },
+                  urls: {
+                    type: "array",
+                    items: { type: "string" },
                   },
+                  pageTypeGuesses: {
+                    anyOf: [
+                      { type: "object", additionalProperties: true },
+                      { type: "null" },
+                    ],
+                  },
+                  likelyServicePages: { type: "array", items: { type: "string" } },
+                  likelyResourcePages: { type: "array", items: { type: "string" } },
+                  likelyContactPages: { type: "array", items: { type: "string" } },
+                  likelyOnboardingPages: { type: "array", items: { type: "string" } },
+                  warnings: { type: "array", items: { type: "string" } },
+                  sourceNote: { type: "string" },
+                  assumptions: { type: "array", items: { type: "string" } },
                 },
               },
             },
@@ -57,8 +60,9 @@ export function getAnalyzeSitemapPathItem(): PathItem {
               schema: {
                 type: "object",
                 properties: {
-                  success: { type: "boolean" },
                   error: { type: "string" },
+                  message: { type: "string" },
+                  details: { type: "object", additionalProperties: true },
                 },
               },
             },
