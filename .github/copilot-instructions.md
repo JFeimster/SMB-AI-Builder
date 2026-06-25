@@ -1,7 +1,5 @@
 # GitHub Copilot Instructions for SMB AI Builder
 
-Note: `tools/copilot/` files are extended reference docs, but the enforceable auto-loaded instructions are in `.github/copilot-instructions.md`.
-
 ## Project Purpose
 The SMB AI Workflow & Agent Builder helps users audit business workflows, score readiness, rank automation opportunities, and build safe AI agent pilot plans.
 
