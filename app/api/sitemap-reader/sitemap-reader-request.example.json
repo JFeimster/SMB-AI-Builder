@@ -1,0 +1,5 @@
+{
+  "domainOrSitemapUrl": "https://example.com/sitemap.xml",
+  "maxUrls": 25,
+  "includePageTypeGuesses": true
+}
