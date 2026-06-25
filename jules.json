@@ -1,0 +1,75 @@
+{
+  "project": "SMB AI Workflow & Agent Builder",
+  "primaryCtaUrl": "https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder",
+  "notionUrl": "https://feimster.notion.site/smb-ai-builder",
+  "githubUrl": "https://github.com/JFeimster/SMB-AI-Builder",
+  "style": "neobrutalist futurist fintech cyberpunk",
+  "rootCss": "styles.css",
+  "rootJs": "script.js",
+  "defaultCtas": [
+    "Audit My First Workflow",
+    "Score My Automation Readiness",
+    "Build My AI Agent Pilot Plan",
+    "Find What To Automate First"
+  ],
+  "forbiddenClaims": [
+    "fake testimonials",
+    "fake logos",
+    "fake revenue numbers",
+    "fake guarantees",
+    "fake compliance claims",
+    "fake user counts",
+    "fake ratings",
+    "fake reviews",
+    "fake partner relationships",
+    "fake case studies",
+    "fake integrations",
+    "unsupported competitor claims"
+  ],
+  "sensitiveWorkflowDisclaimer": "This GPT supports workflow planning and pilot design. It is not legal, financial, tax, HR, lending, accounting, medical, underwriting, or compliance advice. Sensitive decisions should stay under qualified human review.",
+  "audience": [
+    "Small business owners",
+    "SMB operators",
+    "Freelancers",
+    "Agencies",
+    "Consultants",
+    "AI automation builders",
+    "No-code builders",
+    "Workflow consultants",
+    "Creator-operators"
+  ],
+  "bannedPhrases": [
+    "unlock your potential",
+    "revolutionize your workflow",
+    "seamless experience",
+    "game-changing",
+    "cutting-edge",
+    "transform your business",
+    "leverage AI",
+    "AI-powered magic",
+    "effortless automation",
+    "fully autonomous business",
+    "set it and forget it"
+  ],
+  "approvedPhrases": [
+    "Stop automating broken workflows.",
+    "Audit the mess before you wire it into your business.",
+    "Score the workflow before AI touches it.",
+    "Know what to automate, what to clean up, and what should stay human.",
+    "Build a pilot plan your business can actually survive.",
+    "Use AI where it helps, keep people in the loop where it matters.",
+    "Plan the workflow before choosing the tool."
+  ],
+  "folders": {
+    "sitePages": "pages/site/",
+    "seoPages": "pages/seo/",
+    "comparisonPages": "pages/seo/comparisons/",
+    "workflowPages": "pages/seo/workflows/",
+    "seoSupport": "pages/seo-support/",
+    "embeds": "embeds/",
+    "julesPrompts": "prompts/jules/",
+    "julesTools": "tools/jules/",
+    "styles": "styles.css",
+    "scripts": "script.js"
+  }
+}
