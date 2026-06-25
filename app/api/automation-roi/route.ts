@@ -3,7 +3,7 @@ import {
   ValidationError,
   calculateAutomationROI,
   validateRoiRequest,
-} from "./automation-roi";
+} from "../../../lib/actions/automation-roi";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

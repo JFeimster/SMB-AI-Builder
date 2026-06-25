@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { buildReadinessOpenApiSchema } from "../../../lib/readiness-openapi";
+import { buildReadinessOpenApiSchema } from "./readiness-openapi";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

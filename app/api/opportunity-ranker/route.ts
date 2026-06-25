@@ -3,7 +3,7 @@ import {
   rankAutomationOpportunities,
   validateOpportunityRankerRequest,
   ValidationError,
-} from "../../../lib/automation-opportunity-ranker";
+} from "../../../lib/actions/automation-opportunity-ranker";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

@@ -3,7 +3,7 @@ import {
   ValidationError,
   validateAutomationBlueprint,
   validateBlueprintRequest,
-} from "./automation-blueprint-validator";
+} from "../../../lib/actions/blueprint-validator";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

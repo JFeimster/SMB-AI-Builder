@@ -1,1 +1,1 @@
-export * from "../app/api/readiness-score/automation-readiness";
+export * from "./actions/automation-readiness";

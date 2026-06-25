@@ -3,7 +3,7 @@ import {
   ValidationError,
   scoreAutomationReadiness,
   validateReadinessRequest,
-} from "../../../lib/automation-readiness";
+} from "../../../lib/actions/automation-readiness";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

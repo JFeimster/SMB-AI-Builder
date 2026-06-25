@@ -3,7 +3,7 @@ import {
   ValidationError,
   validateAgentBlueprint,
   validateAgentRequest,
-} from "./agent-blueprint-validator";
+} from "../../../lib/actions/agent-validator";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

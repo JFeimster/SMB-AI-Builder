@@ -3,7 +3,7 @@ import {
   ValidationError,
   generateWorkflowMap,
   validateWorkflowMapRequest,
-} from "./workflow-map";
+} from "../../../lib/actions/workflow-map";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

@@ -302,7 +302,7 @@ export function validateReadinessRequest(input: unknown): ReadinessScoreRequest 
   }
 
   const scores = CATEGORY_KEYS.reduce((accumulator, key) => {
-    accumulator[key] = parseScore(input.scores[key], key);
+    accumulator[key] = parseScore((input as any).scores[key], key);
     return accumulator;
   }, {} as ReadinessScores);
 
