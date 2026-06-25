@@ -16,6 +16,8 @@ A typical static deployment relies on these files existing relative to the root 
 
 ## QA Requirements Post-Deployment
 - Check that relative links work accurately after deployment.
-- Check that nested pages (e.g., `pages/seo/workflows/...`) load root-level CSS and JS correctly by correctly pathing `../../`.
+- Check that nested pages load root-level CSS and JS with the correct depth:
+  - `pages/site/*.html` and `pages/seo/*.html` should use `../../styles.css` and `../../script.js`.
+  - `pages/seo/workflows/*.html` and `pages/seo/comparisons/*.html` should use `../../../styles.css` and `../../../script.js`.
 - Check that iframe pages located in `embeds/` are standalone and do not throw console errors missing parent page elements.
 - Ensure absolutely no server-only features (e.g., server-side rendering, API routes) are assumed or called in the static files.
