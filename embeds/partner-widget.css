@@ -13,36 +13,37 @@
   --concrete: #D1D5DB;
   --paper: #FFFDF3;
   --muted: #3f3f46;
-
   --shadow: 8px 8px 0 var(--ink);
   --shadow-lg: 14px 14px 0 var(--ink);
   --radius: 18px;
   --radius-sm: 10px;
-
   --font-main: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
-  font-family: var(--font-main);
-  color: var(--ink);
-  line-height: 1.5;
   box-sizing: border-box;
-  margin: 0 auto;
+  width: 100%;
   max-width: 940px;
   max-height: 1200px;
-  overflow: hidden; /* Avoid overflow, widgets handle their own scrolling if needed or just fit */
+  margin: 0 auto;
+  padding: 16px;
+  overflow: hidden;
   position: relative;
-  background: var(--ink); /* Give a dark shell feeling, the card will be inside */
-  padding: 16px; /* A bit of breathing room outside the widget */
+  background: var(--ink);
+  color: var(--ink);
+  font-family: var(--font-main);
+  line-height: 1.5;
 }
 
-.smb-ai-builder-embed-wrapper * {
+.smb-ai-builder-embed-wrapper *,
+.smb-ai-builder-embed-wrapper *::before,
+.smb-ai-builder-embed-wrapper *::after {
   box-sizing: border-box;
 }
 
-/* Base resets within wrapper */
 .smb-ai-builder-embed-wrapper h1,
 .smb-ai-builder-embed-wrapper h2,
 .smb-ai-builder-embed-wrapper h3,
+.smb-ai-builder-embed-wrapper h4,
 .smb-ai-builder-embed-wrapper p,
 .smb-ai-builder-embed-wrapper ul {
   margin-top: 0;
@@ -50,7 +51,8 @@
 
 .smb-ai-builder-embed-wrapper h1,
 .smb-ai-builder-embed-wrapper h2,
-.smb-ai-builder-embed-wrapper h3 {
+.smb-ai-builder-embed-wrapper h3,
+.smb-ai-builder-embed-wrapper h4 {
   line-height: 1.1;
   letter-spacing: -0.05em;
   text-transform: uppercase;
@@ -75,8 +77,13 @@
   color: var(--off-white);
 }
 
-/* Widget Shell */
 .smb-ai-widget-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-height: calc(1200px - 32px);
+  overflow-y: auto;
+  padding: 24px;
   background:
     radial-gradient(circle at 10% 5%, rgba(255, 43, 214, 0.15), transparent 20rem),
     radial-gradient(circle at 92% 10%, rgba(0, 229, 255, 0.12), transparent 18rem),
@@ -84,19 +91,14 @@
   border: 5px solid var(--ink);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-height: calc(1200px - 32px);
-  overflow-y: auto;
 }
 
-/* Badges */
 .smb-ai-badge {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   padding: 6px 12px;
+  margin-bottom: 12px;
   background: var(--lime);
   border: 3px solid var(--ink);
   border-radius: 999px;
@@ -105,11 +107,8 @@
   font-size: 0.75rem;
   font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 12px;
-  align-self: flex-start;
 }
 
-/* Hero inside Widget */
 .smb-ai-hero {
   display: flex;
   flex-direction: column;
@@ -117,18 +116,17 @@
 }
 
 .smb-ai-hero h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
   margin-bottom: 8px;
+  font-size: clamp(2rem, 6vw, 3rem);
 }
 
 .smb-ai-hero p {
+  max-width: 600px;
+  color: var(--muted);
   font-size: clamp(1rem, 3vw, 1.2rem);
   font-weight: 700;
-  color: var(--muted);
-  max-width: 600px;
 }
 
-/* Questions */
 .smb-ai-questions {
   display: flex;
   flex-direction: column;
@@ -136,16 +134,16 @@
 }
 
 .smb-ai-question-card {
+  padding: 16px;
   background: var(--paper);
   border: 4px solid var(--ink);
   border-radius: var(--radius-sm);
-  padding: 16px;
   box-shadow: 4px 4px 0 var(--ink);
 }
 
 .smb-ai-question-card h3 {
-  font-size: 1.1rem;
   margin-bottom: 12px;
+  font-size: 1.1rem;
   text-transform: none;
 }
 
@@ -162,10 +160,10 @@
   background: var(--off-white);
   border: 3px solid var(--ink);
   border-radius: 8px;
+  font-size: 0.9rem;
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.9rem;
-  transition: all 150ms ease;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
 }
 
 .smb-ai-btn-answer:hover {
@@ -176,21 +174,20 @@
 
 .smb-ai-btn-answer.is-selected {
   background: var(--lime);
-  box-shadow: 3px 3px 0 var(--pink);
   transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--pink);
 }
 
-/* Result Panel */
 .smb-ai-result-panel {
-  background: var(--ink);
-  color: var(--off-white);
-  border: 5px solid var(--ink);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: 8px 8px 0 var(--pink);
-  display: none; /* hidden by default */
+  display: none;
   flex-direction: column;
   gap: 20px;
+  padding: 24px;
+  color: var(--off-white);
+  background: var(--ink);
+  border: 5px solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 8px 8px 0 var(--pink);
   transform: rotate(-0.5deg);
 }
 
@@ -205,22 +202,22 @@
 }
 
 .smb-ai-rec-label {
-  font-family: var(--font-mono);
-  font-weight: 900;
-  font-size: 0.85rem;
-  text-transform: uppercase;
   color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .smb-ai-rec-value {
   display: inline-block;
+  align-self: flex-start;
   padding: 8px 14px;
   border: 3px solid var(--ink);
   border-radius: 999px;
-  font-weight: 900;
   font-size: 1.2rem;
+  font-weight: 900;
   text-transform: uppercase;
-  align-self: flex-start;
 }
 
 .smb-ai-rec-value.automate-now { background: var(--lime); color: var(--ink); box-shadow: 4px 4px 0 var(--pink); }
@@ -230,34 +227,34 @@
 .smb-ai-rec-value.revisit-later { background: var(--orange); color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
 
 .smb-ai-gpt-features {
+  padding: 16px;
   background: #000;
   border: 3px solid var(--cyan);
   border-radius: 12px;
-  padding: 16px;
   font-family: var(--font-mono);
 }
 
 .smb-ai-gpt-features h4 {
-  color: var(--lime);
   margin-bottom: 12px;
+  color: var(--lime);
   font-size: 0.9rem;
 }
 
 .smb-ai-gpt-features ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .smb-ai-gpt-features li {
-  color: var(--off-white);
-  font-size: 0.8rem;
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--off-white);
+  font-size: 0.8rem;
 }
 
 .smb-ai-gpt-features li::before {
@@ -265,7 +262,6 @@
   color: var(--pink);
 }
 
-/* CTAs */
 .smb-ai-actions {
   display: flex;
   flex-direction: column;
@@ -280,11 +276,11 @@
   padding: 14px 20px;
   border: 4px solid var(--ink);
   border-radius: 12px;
-  font-weight: 900;
   font-size: 1rem;
-  text-transform: uppercase;
-  text-decoration: none;
+  font-weight: 900;
   text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
   transition: transform 140ms ease, box-shadow 140ms ease;
 }
 
@@ -305,48 +301,46 @@
   box-shadow: 6px 6px 0 var(--ink);
 }
 
-/* Trust / Attribution */
 .smb-ai-footer {
-  margin-top: auto;
-  border-top: 3px solid rgba(5,5,5,0.1);
-  padding-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-top: 16px;
+  margin-top: auto;
+  border-top: 3px solid rgba(5, 5, 5, 0.1);
 }
 
 .smb-ai-attribution {
-  font-family: var(--font-mono);
-  font-weight: 900;
-  font-size: 0.8rem;
   color: var(--pink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
 .smb-ai-disclaimer {
-  font-size: 0.75rem;
   color: var(--muted);
+  font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
-/* Affiliate Card (small snippet) */
 .smb-ai-affiliate-card {
-  background: var(--paper);
-  border: 4px solid var(--ink);
-  border-radius: var(--radius-sm);
-  box-shadow: 6px 6px 0 var(--ink);
-  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   max-width: 400px;
   margin: 0 auto;
+  padding: 20px;
+  background: var(--paper);
+  border: 4px solid var(--ink);
+  border-radius: var(--radius-sm);
+  box-shadow: 6px 6px 0 var(--ink);
 }
 
 .smb-ai-affiliate-card h2 {
-  font-size: 1.5rem;
   margin-bottom: 0;
+  font-size: 1.5rem;
 }
 
 .smb-ai-affiliate-card p {
@@ -354,55 +348,91 @@
   font-weight: 700;
 }
 
-/* Compact Iframe Layout */
-.smb-ai-embed-wrapper.is-compact {
-  max-width: 520px;
-  max-height: 720px;
+/* Compact Iframe Layout: must target the actual wrapper class used by iframe-compact.html. */
+.smb-ai-builder-embed-wrapper.is-compact {
+  max-width: 420px;
+  max-height: 680px;
+  padding: 10px;
 }
 
-.smb-ai-embed-wrapper.is-compact .smb-ai-widget-shell {
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-widget-shell {
+  gap: 14px;
+  max-height: calc(680px - 20px);
   padding: 16px;
-  gap: 16px;
+  overflow-y: auto;
 }
 
-.smb-ai-embed-wrapper.is-compact .smb-ai-hero h1 {
-  font-size: 1.6rem;
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-badge {
+  margin-bottom: 4px;
+  font-size: 0.68rem;
 }
 
-.smb-ai-embed-wrapper.is-compact .smb-ai-questions {
-  display: none; /* In compact, we just show bullet points and a launch CTA, or a mini version */
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-hero {
+  gap: 8px;
 }
 
-.smb-ai-embed-wrapper.is-compact .smb-ai-mini-features {
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-hero h1 {
+  font-size: clamp(1.35rem, 8vw, 1.7rem);
+}
+
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-hero p {
+  font-size: 0.9rem;
+}
+
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-questions {
+  display: none;
+}
+
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-mini-features {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin: 12px 0;
+  margin: 8px 0;
 }
 
-.smb-ai-embed-wrapper.is-compact .smb-ai-mini-features div {
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-mini-features div {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 800;
   font-size: 0.85rem;
+  font-weight: 800;
 }
 
-.smb-ai-embed-wrapper.is-compact .smb-ai-mini-features div::before {
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-mini-features div::before {
   content: "✔";
-  color: var(--ink);
-  background: var(--lime);
-  width: 20px;
-  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--ink);
+  background: var(--lime);
   border: 2px solid var(--ink);
   border-radius: 50%;
   font-size: 0.6rem;
+  flex: 0 0 20px;
 }
 
-/* Media Queries */
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-actions {
+  margin-top: 0;
+}
+
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-btn {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+}
+
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-footer {
+  gap: 8px;
+  padding-top: 12px;
+  margin-top: 10px;
+}
+
+.smb-ai-builder-embed-wrapper.is-compact .smb-ai-disclaimer {
+  font-size: 0.7rem;
+}
+
 @media (min-width: 600px) {
   .smb-ai-actions {
     flex-direction: row;
@@ -412,16 +442,20 @@
     flex: 1;
   }
 
-  .smb-ai-embed-wrapper {
+  .smb-ai-builder-embed-wrapper:not(.is-compact) {
     padding: 24px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .smb-ai-btn, .smb-ai-btn-answer {
+  .smb-ai-btn,
+  .smb-ai-btn-answer {
     transition: none;
   }
-  .smb-ai-btn:hover, .smb-ai-btn-answer:hover, .smb-ai-btn-answer.is-selected {
+
+  .smb-ai-btn:hover,
+  .smb-ai-btn-answer:hover,
+  .smb-ai-btn-answer.is-selected {
     transform: none;
   }
 }
