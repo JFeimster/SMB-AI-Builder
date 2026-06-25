@@ -1,0 +1,70 @@
+{
+  "businessName": "Example home services company",
+  "businessContext": "Small team handling website leads, scheduling, quotes, and invoice follow-up manually.",
+  "rankingGoal": "Find the safest first automation pilot.",
+  "topN": 3,
+  "opportunities": [
+    {
+      "workflowName": "Lead response after website inquiry",
+      "workflowDescription": "New inquiries are reviewed and answered manually by the owner.",
+      "currentTools": [
+        "Website form",
+        "Gmail",
+        "Google Sheets"
+      ],
+      "owner": "Owner",
+      "frequency": 3,
+      "timeSavedPotential": 3,
+      "revenueImpact": 3,
+      "customerExperienceImpact": 3,
+      "dataReadiness": 2,
+      "toolReadiness": 2,
+      "processClarity": 2,
+      "ownershipClarity": 3,
+      "riskLevel": 2,
+      "humanReviewPlan": 2,
+      "touchesCustomers": true,
+      "customerFacingFinalAction": true,
+      "notes": "Pilot should draft replies for approval before sending."
+    },
+    {
+      "workflowName": "Invoice reminder follow-up",
+      "workflowDescription": "Staff manually checks overdue invoices and sends reminder emails.",
+      "currentTools": [
+        "QuickBooks",
+        "Gmail"
+      ],
+      "owner": "Office manager",
+      "frequency": 2,
+      "timeSavedPotential": 2,
+      "revenueImpact": 3,
+      "customerExperienceImpact": 2,
+      "dataReadiness": 2,
+      "toolReadiness": 2,
+      "processClarity": 2,
+      "ownershipClarity": 3,
+      "riskLevel": 2,
+      "humanReviewPlan": 2,
+      "touchesCustomers": true,
+      "touchesMoney": true,
+      "customerFacingFinalAction": true
+    },
+    {
+      "workflowName": "Employee performance review summaries",
+      "workflowDescription": "Manager wants AI to summarize performance notes and suggest final ratings.",
+      "frequency": 1,
+      "timeSavedPotential": 2,
+      "revenueImpact": 1,
+      "customerExperienceImpact": 0,
+      "dataReadiness": 1,
+      "toolReadiness": 1,
+      "processClarity": 1,
+      "ownershipClarity": 2,
+      "riskLevel": 0,
+      "humanReviewPlan": 1,
+      "touchesSensitiveData": true,
+      "touchesHrEmployment": true,
+      "notes": "Should remain human-led; AI could only summarize notes for manager review."
+    }
+  ]
+}

@@ -1,0 +1,623 @@
+export function buildOpportunityRankerOpenApiSchema(serverUrl: string) {
+  const schema = {
+    "openapi": "3.1.0",
+    "info": {
+      "title": "SMB AI Workflow Actions - Opportunity Ranker",
+      "version": "1.0.0",
+      "description": "No-auth OpenAPI schema for ranking SMB workflow automation opportunities."
+    },
+    "servers": [
+      {
+        "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+        "description": "Replace with your deployed Vercel base URL."
+      }
+    ],
+    "paths": {
+      "/api/opportunity-ranker": {
+        "get": {
+          "operationId": "getOpportunityRankerActionInfo",
+          "summary": "Get opportunity ranker endpoint information.",
+          "description": "Returns basic information about the automation opportunity ranking action.",
+          "responses": {
+            "200": {
+              "description": "Endpoint metadata.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ActionInfo"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "operationId": "rankAutomationOpportunities",
+          "summary": "Rank SMB workflow automation opportunities.",
+          "description": "Ranks candidate workflows using frequency, time savings, revenue impact, customer experience impact, data readiness, tool readiness, process clarity, ownership, risk level, and human-review readiness. Returns safety-adjusted priority ranking and recommendations.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OpportunityRankerRequest"
+                },
+                "examples": {
+                  "serviceBusinessWorkflowRanking": {
+                    "summary": "Rank common SMB workflows",
+                    "value": {
+                      "businessName": "Example home services company",
+                      "businessContext": "Small team handling website leads, scheduling, quotes, and invoice follow-up manually.",
+                      "rankingGoal": "Find the safest first automation pilot.",
+                      "topN": 3,
+                      "opportunities": [
+                        {
+                          "workflowName": "Lead response after website inquiry",
+                          "workflowDescription": "New inquiries are reviewed and answered manually by the owner.",
+                          "currentTools": [
+                            "Website form",
+                            "Gmail",
+                            "Google Sheets"
+                          ],
+                          "owner": "Owner",
+                          "frequency": 3,
+                          "timeSavedPotential": 3,
+                          "revenueImpact": 3,
+                          "customerExperienceImpact": 3,
+                          "dataReadiness": 2,
+                          "toolReadiness": 2,
+                          "processClarity": 2,
+                          "ownershipClarity": 3,
+                          "riskLevel": 2,
+                          "humanReviewPlan": 2,
+                          "touchesCustomers": true,
+                          "customerFacingFinalAction": true,
+                          "notes": "Pilot should draft replies for approval before sending."
+                        },
+                        {
+                          "workflowName": "Invoice reminder follow-up",
+                          "workflowDescription": "Staff manually checks overdue invoices and sends reminder emails.",
+                          "currentTools": [
+                            "QuickBooks",
+                            "Gmail"
+                          ],
+                          "owner": "Office manager",
+                          "frequency": 2,
+                          "timeSavedPotential": 2,
+                          "revenueImpact": 3,
+                          "customerExperienceImpact": 2,
+                          "dataReadiness": 2,
+                          "toolReadiness": 2,
+                          "processClarity": 2,
+                          "ownershipClarity": 3,
+                          "riskLevel": 2,
+                          "humanReviewPlan": 2,
+                          "touchesCustomers": true,
+                          "touchesMoney": true,
+                          "customerFacingFinalAction": true
+                        },
+                        {
+                          "workflowName": "Employee performance review summaries",
+                          "workflowDescription": "Manager wants AI to summarize performance notes and suggest final ratings.",
+                          "frequency": 1,
+                          "timeSavedPotential": 2,
+                          "revenueImpact": 1,
+                          "customerExperienceImpact": 0,
+                          "dataReadiness": 1,
+                          "toolReadiness": 1,
+                          "processClarity": 1,
+                          "ownershipClarity": 2,
+                          "riskLevel": 0,
+                          "humanReviewPlan": 1,
+                          "touchesSensitiveData": true,
+                          "touchesHrEmployment": true,
+                          "notes": "Should remain human-led; AI could only summarize notes for manager review."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Ranked automation opportunity result.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/OpportunityRankerResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Unexpected server error.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "ScoreValue": {
+          "type": "integer",
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "description": "0 = not ready / very low; 1 = needs cleanup / low; 2 = mostly ready / medium; 3 = ready / high. For riskLevel, higher means lower risk."
+        },
+        "OpportunityFactorKey": {
+          "type": "string",
+          "enum": [
+            "frequency",
+            "timeSavedPotential",
+            "revenueImpact",
+            "customerExperienceImpact",
+            "dataReadiness",
+            "toolReadiness",
+            "processClarity",
+            "ownershipClarity",
+            "riskLevel",
+            "humanReviewPlan"
+          ]
+        },
+        "OpportunityWeights": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "frequency": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "timeSavedPotential": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "revenueImpact": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "customerExperienceImpact": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "dataReadiness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "toolReadiness": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "processClarity": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "ownershipClarity": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "riskLevel": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "humanReviewPlan": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 5
+            }
+          },
+          "description": "Optional overrides for ranking weights. Omitted weights use SMB-focused defaults."
+        },
+        "WorkflowOpportunityInput": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "workflowName"
+          ],
+          "properties": {
+            "workflowName": {
+              "type": "string",
+              "description": "Short name of the workflow opportunity."
+            },
+            "workflowDescription": {
+              "type": "string",
+              "description": "Brief description of the current workflow."
+            },
+            "currentTools": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Tools or systems currently involved."
+            },
+            "owner": {
+              "type": "string",
+              "description": "Person or team that owns the workflow."
+            },
+            "frequency": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "timeSavedPotential": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "revenueImpact": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "customerExperienceImpact": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "dataReadiness": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "toolReadiness": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "processClarity": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "ownershipClarity": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "riskLevel": {
+              "$ref": "#/components/schemas/ScoreValue",
+              "description": "Higher score means lower risk and stronger suitability for a controlled pilot."
+            },
+            "humanReviewPlan": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "touchesCustomers": {
+              "type": "boolean",
+              "description": "Whether the workflow touches customers or customer communications."
+            },
+            "touchesMoney": {
+              "type": "boolean",
+              "description": "Whether the workflow touches billing, pricing, payments, collections, or financial workflows."
+            },
+            "touchesSensitiveData": {
+              "type": "boolean",
+              "description": "Whether the workflow touches private, confidential, or sensitive data."
+            },
+            "touchesLegalCompliance": {
+              "type": "boolean",
+              "description": "Whether the workflow touches legal, contractual, regulatory, or compliance matters."
+            },
+            "touchesTaxAccounting": {
+              "type": "boolean",
+              "description": "Whether the workflow touches tax, accounting, bookkeeping, or financial reporting."
+            },
+            "touchesHrEmployment": {
+              "type": "boolean",
+              "description": "Whether the workflow touches HR, hiring, payroll, performance, or employment decisions."
+            },
+            "touchesMedicalHealth": {
+              "type": "boolean",
+              "description": "Whether the workflow touches medical, health, or wellness-related information or decisions."
+            },
+            "customerFacingFinalAction": {
+              "type": "boolean",
+              "description": "Whether the automation could send or perform a final customer-facing action."
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "description": "One workflow candidate to rank. Omitted factor scores default to 1, but better inputs produce better rankings."
+        },
+        "OpportunityRankerRequest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "opportunities"
+          ],
+          "properties": {
+            "businessName": {
+              "type": "string"
+            },
+            "businessContext": {
+              "type": "string"
+            },
+            "rankingGoal": {
+              "type": "string"
+            },
+            "opportunities": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 50,
+              "items": {
+                "$ref": "#/components/schemas/WorkflowOpportunityInput"
+              }
+            },
+            "weights": {
+              "$ref": "#/components/schemas/OpportunityWeights"
+            },
+            "topN": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "default": 3
+            }
+          }
+        },
+        "FactorBreakdown": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "$ref": "#/components/schemas/OpportunityFactorKey"
+            },
+            "label": {
+              "type": "string"
+            },
+            "score": {
+              "$ref": "#/components/schemas/ScoreValue"
+            },
+            "scoreLabel": {
+              "type": "string"
+            },
+            "weight": {
+              "type": "number"
+            },
+            "weightedScore": {
+              "type": "number"
+            },
+            "maxWeightedScore": {
+              "type": "number"
+            },
+            "interpretation": {
+              "type": "string"
+            }
+          }
+        },
+        "RankedOpportunity": {
+          "type": "object",
+          "properties": {
+            "rank": {
+              "type": "integer"
+            },
+            "workflowName": {
+              "type": "string"
+            },
+            "workflowDescription": {
+              "type": "string"
+            },
+            "currentTools": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "owner": {
+              "type": "string"
+            },
+            "totalWeightedScore": {
+              "type": "number"
+            },
+            "maxWeightedScore": {
+              "type": "number"
+            },
+            "scorePercent": {
+              "type": "number"
+            },
+            "priorityScore": {
+              "type": "number"
+            },
+            "recommendation": {
+              "type": "string",
+              "enum": [
+                "Automate now",
+                "Clean up first",
+                "Keep human",
+                "Revisit later"
+              ]
+            },
+            "automationFit": {
+              "type": "string",
+              "enum": [
+                "High",
+                "Medium",
+                "Low"
+              ]
+            },
+            "recommendedAutomationMode": {
+              "type": "string",
+              "enum": [
+                "Limited automation pilot with human approval",
+                "Draft-only AI assistance",
+                "Process cleanup before automation",
+                "Keep human-led; use AI only for drafts or summaries",
+                "Revisit after higher-priority workflows"
+              ]
+            },
+            "impactSummary": {
+              "type": "string"
+            },
+            "blockerSummary": {
+              "type": "string"
+            },
+            "nextStep": {
+              "type": "string"
+            },
+            "humanReviewRequired": {
+              "type": "boolean"
+            },
+            "riskFlags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "factorBreakdown": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FactorBreakdown"
+              }
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "PortfolioSummary": {
+          "type": "object",
+          "properties": {
+            "automateNowCount": {
+              "type": "integer"
+            },
+            "cleanUpFirstCount": {
+              "type": "integer"
+            },
+            "keepHumanCount": {
+              "type": "integer"
+            },
+            "revisitLaterCount": {
+              "type": "integer"
+            },
+            "bestFirstWorkflow": {
+              "type": "string"
+            },
+            "biggestPortfolioBlocker": {
+              "type": "string"
+            }
+          }
+        },
+        "OpportunityRankerResponse": {
+          "type": "object",
+          "properties": {
+            "businessName": {
+              "type": "string"
+            },
+            "businessContext": {
+              "type": "string"
+            },
+            "rankingGoal": {
+              "type": "string"
+            },
+            "totalOpportunities": {
+              "type": "integer"
+            },
+            "weightsUsed": {
+              "$ref": "#/components/schemas/OpportunityWeights"
+            },
+            "rankedOpportunities": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/RankedOpportunity"
+              }
+            },
+            "topRecommendations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/RankedOpportunity"
+              }
+            },
+            "portfolioSummary": {
+              "$ref": "#/components/schemas/PortfolioSummary"
+            },
+            "assumptions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ActionInfo": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "method": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "auth": {
+              "type": "string"
+            },
+            "requiredBodyFields": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "recommendationCategories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "scoreScale": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "ErrorResponse": {
+          "type": "object",
+          "properties": {
+            "error": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "details": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    }
+  } as const;
+
+  return {
+    ...schema,
+    servers: [
+      {
+        url: serverUrl,
+        description: "Current deployed server URL.",
+      },
+    ],
+  };
+}
