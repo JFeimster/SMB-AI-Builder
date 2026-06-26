@@ -1,0 +1,255 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow Actions - Risk Classifier",
+    "version": "1.0.0",
+    "description": "No-auth OpenAPI schema for classifying workflow automation risk and recommending safer modes."
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+      "description": "Replace with your deployed Vercel base URL."
+    }
+  ],
+  "paths": {
+    "/api/risk-classifier": {
+      "get": {
+        "operationId": "getRiskClassifierActionInfo",
+        "summary": "Get risk classifier endpoint information.",
+        "description": "Returns basic information about the workflow risk classifier action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                },
+                "example": {
+                  "riskLevel": "High",
+                  "riskFactors": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "classifyWorkflowRisk",
+        "summary": "Classify workflow risk and recommend a safer automation mode.",
+        "description": "Evaluates sensitive workflow characteristics to output a risk level, required human review stance, and safer operational patterns.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RiskClassifierRequest"
+              },
+              "example": {
+                "workflowName": "Automated Refund Processing",
+                "workflowDescription": "Customer requests a refund via email, AI checks policy and issues the refund via Stripe.",
+                "touchesCustomers": true,
+                "touchesMoney": true,
+                "touchesSensitiveData": false,
+                "failureImpact": "high"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Risk classification result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RiskClassifierResponse"
+                },
+                "example": {
+                  "riskLevel": "High",
+                  "riskFactors": []
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RiskClassifierRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "workflowName",
+          "workflowDescription",
+          "touchesCustomers",
+          "touchesMoney",
+          "touchesSensitiveData"
+        ],
+        "properties": {
+          "workflowName": {
+            "type": "string"
+          },
+          "workflowDescription": {
+            "type": "string"
+          },
+          "touchesCustomers": {
+            "type": "boolean"
+          },
+          "touchesMoney": {
+            "type": "boolean"
+          },
+          "touchesSensitiveData": {
+            "type": "boolean"
+          },
+          "touchesLegal": {
+            "type": "boolean"
+          },
+          "touchesHR": {
+            "type": "boolean"
+          },
+          "touchesMedical": {
+            "type": "boolean"
+          },
+          "touchesCompliance": {
+            "type": "boolean"
+          },
+          "touchesTaxAccountingOrFinance": {
+            "type": "boolean"
+          },
+          "touchesLendingCreditOrUnderwriting": {
+            "type": "boolean"
+          },
+          "failureImpact": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "requiresLicensedJudgment": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "RiskClassifierResponse": {
+        "type": "object",
+        "properties": {
+          "workflowName": {
+            "type": "string"
+          },
+          "riskLevel": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "riskReasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "riskFlags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "humanReviewRequired": {
+            "type": "boolean"
+          },
+          "recommendedAutomationMode": {
+            "type": "string"
+          },
+          "saferWorkflowPattern": {
+            "type": "string"
+          },
+          "notRecommendedActions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "nextStep": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ActionInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "auth": {
+            "type": "string"
+          },
+          "requiredBodyFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

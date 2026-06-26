@@ -429,14 +429,14 @@ docs/
 - [ ] `calculateAutomationROI`
 - [ ] `validateAutomationBlueprint`
 - [ ] `validateAgentBlueprint`
-- [ ] `generateWorkflowMap`
+- [x] `generateWorkflowMap`
 
 ### Phase 2 — Pilot and safety Actions
 
-- [ ] `buildPilotTestPlan`
+- [x] `buildPilotPlan`
 - [ ] `generateTestScenarios`
-- [ ] `classifyWorkflowRisk`
-- [ ] `suggestHumanReviewPattern`
+- [x] `classifyWorkflowRisk`
+- [x] `suggestHumanReviewPattern`
 
 ### Phase 3 — Public-data Actions
 
@@ -472,3 +472,6 @@ These Actions are lower risk, easier to test, and most aligned with the GPT’s 
 6. Validate the agent plan.
 7. Generate a workflow map.
 8. Build a limited, human-reviewed pilot.
+
+- [ ] `generateSystemPrompt`
+- [ ] `evaluateConnectorRisk`
