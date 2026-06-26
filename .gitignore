@@ -1,1 +1,4 @@
 node_modules/
+.next/
+npm_output.log
+tsconfig.tsbuildinfo
