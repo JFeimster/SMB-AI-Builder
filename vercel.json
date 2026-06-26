@@ -5,6 +5,6 @@
     "autoAlias": true
   },
   "git": {
-    "deploymentEnabled": false
+    "deploymentEnabled": true
   }
 }
