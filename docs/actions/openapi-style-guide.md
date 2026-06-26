@@ -59,3 +59,9 @@ Guidelines for writing and combining OpenAPI schemas for GPT Actions.
 ## GPT Builder compatibility
 - Keep the overall schema size small. Remove unnecessary boilerplate.
 - Avoid deeply nested objects if flat structures work just as well.
+
+## Setup Checklist and Example Payloads
+- Ensure all request/response schemas are safe.
+- Avoid private-data requirements for no-auth actions.
+- Include example request/response payloads in all OpenAPI files to assist generation and mocking.
+- Verify JSON syntax and ensure no broken schema references.

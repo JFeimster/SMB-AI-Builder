@@ -47,3 +47,8 @@ Use this checklist when configuring a new Action in the ChatGPT Custom GPT Build
 - **"Unrecognized schema"**: Ensure you are using OpenAPI 3.1.0 and valid JSON/YAML.
 - **Timeout**: The external server took too long. Optimize the Vercel function or reduce payload size.
 - **Action fails silently**: Check Vercel logs for unhandled exceptions or CORS issues.
+
+
+## Important Notes
+- Do not claim endpoints are live unless corresponding route/API files actually exist.
+- Use statuses like: Available, Planned, Template, Needs Setup.
