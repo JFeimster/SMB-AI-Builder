@@ -67,3 +67,30 @@
     window.addEventListener("resize", showAfter);
   }
 })();
+
+// Nav toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.site-nav-links');
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Copy buttons
+    document.querySelectorAll('.copy-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const codeBlock = button.nextElementSibling;
+            if (codeBlock && codeBlock.tagName === 'CODE') {
+                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    setTimeout(() => { button.textContent = originalText; }, 2000);
+                }).catch(err => {
+                    console.error('Copy failed', err);
+                });
+            }
+        });
+    });
+});
