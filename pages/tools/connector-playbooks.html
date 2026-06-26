@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Connector Playbooks for SMB Workflow Automation</title>
+<meta content="Connector playbooks for standard SMB automation tools to guide workflow setup." name="description"/>
+<meta content="#050505" name="theme-color"/>
+<meta content="Connector Playbooks for SMB Workflow Automation" property="og:title"/>
+<meta content="Connector playbooks for standard SMB automation tools to guide workflow setup." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://smb-ai-builder.vercel.app/pages/tools/connector-playbooks.html" property="og:url"/>
+<meta content="https://smb-ai-builder.vercel.app/og-image-placeholder.png" property="og:image"/>
+<link href="https://smb-ai-builder.vercel.app/pages/tools/connector-playbooks.html" rel="canonical"/>
+<link href="../../styles.css" rel="stylesheet"/>
+<script defer="" src="../../script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-sticky-header="">
+<div class="shell header-grid">
+<a aria-label="SMB AI Workflow and Agent Builder home" class="brand" href="../../index.html">
+<span aria-hidden="true" class="brand-mark">AI</span>
+<span class="brand-text">
+<strong>SMB AI Builder</strong>
+<small>workflow audit cockpit</small>
+</span>
+</a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="nav-toggle-line"></span>
+<span class="nav-toggle-line"></span>
+<span class="nav-toggle-line"></span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="../../index.html">Home</a>
+        <a href="../../pages/site/start-here.html">Start Here</a>
+        <a href="../../pages/site/use-cases.html">Use Cases</a>
+        <a href="../../pages/tools/prompts.html">Prompts</a>
+        <a href="../../pages/tools/actions.html">Actions</a>
+        <a href="../../pages/directories/gpt-stack.html">GPT Stack</a>
+        <a href="../../pages/site/packages.html">Packages</a>
+        <a href="../../pages/site/resources.html">Resources</a>
+        <a class="nav-cta" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">Launch GPT</a>
+      </nav>
+</div>
+</header>
+<main id="main">
+<div class="shell">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow punch">Connector Playbooks</p>
+      <h1 id="hero-title">Connector Playbooks for SMB Workflow Automation</h1>
+      <p>Use these playbooks to understand how to correctly and safely implement connectors for your business workflows.</p>
+    </div>
+  </div>
+</div>
+<div class="shell">
+  <h2>How to use a connector playbook</h2>
+  <p>Review the playbooks below before hooking up tools. Each playbook defines the best use cases, risky anti-patterns, and the amount of human review required to deploy it effectively.</p>
+
+  <h2>Connector Playbook Cards</h2>
+  <div class="bento-grid">
+    <div class="tool-card">
+      <h3>Google Drive</h3>
+      <p><strong>Best for:</strong> Document storage and template generation.</p>
+      <p><strong>Do not use for:</strong> Dynamic database operations.</p>
+      <p><strong>Common workflows:</strong> Client folder creation, PDF archiving.</p>
+      <p><strong>Human review required:</strong> Low.</p>
+      <p><strong>Risk notes:</strong> Watch out for permissions creep.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>Gmail</h3>
+      <p><strong>Best for:</strong> Drafting outbound messages and parsing simple inquiries.</p>
+      <p><strong>Do not use for:</strong> Fully automated unreviewed replies.</p>
+      <p><strong>Common workflows:</strong> Lead triage, support drafting.</p>
+      <p><strong>Human review required:</strong> High.</p>
+      <p><strong>Risk notes:</strong> Sending unreviewed emails can hurt reputation.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>Google Calendar</h3>
+      <p><strong>Best for:</strong> Scheduling blocks and syncing events.</p>
+      <p><strong>Do not use for:</strong> Overriding critical meetings.</p>
+      <p><strong>Common workflows:</strong> Discovery call booking.</p>
+      <p><strong>Human review required:</strong> Low.</p>
+      <p><strong>Risk notes:</strong> Double-booking risks if poorly configured.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>GitHub</h3>
+      <p><strong>Best for:</strong> Code syncing, issue tracking, and PR automation.</p>
+      <p><strong>Do not use for:</strong> Storing production secrets.</p>
+      <p><strong>Common workflows:</strong> Repo-to-deployment.</p>
+      <p><strong>Human review required:</strong> Medium.</p>
+      <p><strong>Risk notes:</strong> Ensure branch protection rules are active.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>Notion</h3>
+      <p><strong>Best for:</strong> Internal wikis, content calendars, and project tracking.</p>
+      <p><strong>Do not use for:</strong> High-volume transactional databases.</p>
+      <p><strong>Common workflows:</strong> Weekly reporting, task boards.</p>
+      <p><strong>Human review required:</strong> Low.</p>
+      <p><strong>Risk notes:</strong> API rate limits on heavy syncing.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>Airtable</h3>
+      <p><strong>Best for:</strong> Relational data mapping and complex ops tracking.</p>
+      <p><strong>Do not use for:</strong> Highly sensitive raw PII without field restrictions.</p>
+      <p><strong>Common workflows:</strong> CRM management, content production.</p>
+      <p><strong>Human review required:</strong> Medium.</p>
+      <p><strong>Risk notes:</strong> Exposing full base schemas accidentally.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>HubSpot</h3>
+      <p><strong>Best for:</strong> Lead scoring and marketing automation.</p>
+      <p><strong>Do not use for:</strong> Unreviewed massive email blasts via API.</p>
+      <p><strong>Common workflows:</strong> Lead follow-up, deal stage syncing.</p>
+      <p><strong>Human review required:</strong> Medium.</p>
+      <p><strong>Risk notes:</strong> Data duplication if matching rules fail.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>Vercel</h3>
+      <p><strong>Best for:</strong> Frontend deployment and serverless execution.</p>
+      <p><strong>Do not use for:</strong> Heavy long-running background tasks.</p>
+      <p><strong>Common workflows:</strong> Auto-deploy on merge, preview environments.</p>
+      <p><strong>Human review required:</strong> Medium.</p>
+      <p><strong>Risk notes:</strong> Accidental production pushes without QA.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>QuickBooks</h3>
+      <p><strong>Best for:</strong> Invoice generation and expense syncing.</p>
+      <p><strong>Do not use for:</strong> Automated payments without approval.</p>
+      <p><strong>Common workflows:</strong> Draft invoice creation.</p>
+      <p><strong>Human review required:</strong> High.</p>
+      <p><strong>Risk notes:</strong> Extremely high risk for automated financial actions.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+    <div class="tool-card">
+      <h3>Semrush</h3>
+      <p><strong>Best for:</strong> SEO audits and keyword tracking.</p>
+      <p><strong>Do not use for:</strong> Automated unreviewed content generation based solely on data.</p>
+      <p><strong>Common workflows:</strong> Competitor analysis, rank tracking.</p>
+      <p><strong>Human review required:</strong> Medium.</p>
+      <p><strong>Risk notes:</strong> API credit exhaustion.</p>
+      <p><strong>Starter prompt:</strong> Needs setup</p>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Open the SMB AI Builder GPT</a>
+  </div>
+
+  <div class="internal-links">
+    <a href="connectors.html">Connector Library</a> |
+    <a href="connector-risk-map.html">Connector Risk Map</a> |
+    <a href="actions.html">Actions</a> |
+    <a href="../directories/workflow-library.html">Workflow Library</a>
+  </div>
+</div>
+</main>
+<footer aria-labelledby="footer-title" class="site-footer">
+<div class="shell footer-grid">
+<div>
+<h2 id="footer-title">SMB AI Workflow &amp; Agent Builder</h2>
+<p>Stop automating broken workflows. Audit the mess first.</p>
+</div>
+<nav class="footer-links" aria-label="Footer links">
+        <a href="../../pages/directories/workflow-library.html">Workflow Library</a>
+        <a href="../../pages/directories/automation-patterns.html">Automation Patterns</a>
+        <a href="../../pages/watch/index.html">Watch</a>
+        <a href="../../pages/blog/index.html">Field Notes</a>
+        <a href="../../pages/legal/privacy.html">Legal</a>
+        <a href="../../pages/site/contact.html">Contact</a>
+        <a href="https://github.com/JFeimster/SMB-AI-Builder" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://feimster.notion.site/smb-ai-builder" target="_blank" rel="noopener">Notion</a>
+        <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">ChatGPT</a>
+      </nav>
+</div>
+<div class="shell footer-bottom">
+<small>Educational workflow planning aid. Not legal, financial, tax, HR, compliance, or professional advice.</small>
+<small>© <span data-current-year="">2024</span> SMB AI Workflow &amp; Agent Builder. All rights reserved.</small>
+</div>
+</footer>
+<div class="sticky-cta" data-sticky-cta="">
+<span>Score one messy workflow.</span>
+<a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" rel="noopener" target="_blank">Score My Automation Readiness</a>
+</div>
+</body>
+</html>
