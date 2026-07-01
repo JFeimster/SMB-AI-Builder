@@ -1,36 +1,43 @@
 # Supabase Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Provides guidance on interacting with Supabase for Postgres database management, authentication, and real-time data.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Managing relational data via PostgREST
+- Handling user authentication flows
+- Storing unstructured files in Storage
+- Setting up row-level security (RLS) policies
+- Triggering edge functions
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Storing extremely large binary objects in the database itself
+- Bypassing RLS policies inappropriately
+- Managing highly sensitive compliance data without auditing
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Generate a SQL schema migration
+- Query a table using the REST API
+- Configure a storage bucket
 
 ## Inputs Needed
-What the user must provide.
+- Table schemas
+- Query parameters
+- Authentication credentials
 
 ## Outputs
-What this tool layer should produce.
+- SQL scripts
+- JSON API responses
+- Configuration guidelines
 
 ## Skills
-List related skills in tools/supabase/skills/.
+List related skills in `tools/supabase/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/supabase/prompts/ if present.
+Point to `tools/supabase/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Never expose the service_role key publicly. Always enforce Row Level Security (RLS) for client-side access. Ensure proper indexing for performance.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

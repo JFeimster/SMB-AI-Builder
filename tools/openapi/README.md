@@ -1,36 +1,43 @@
 # OpenAPI Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Centralizes documentation, tools, and best practices for creating, validating, and managing OpenAPI specifications for AI agents.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Generating OpenAPI 3.1.0 schemas
+- Validating schema compliance
+- Testing API endpoints against schemas
+- Defining GPT Action interfaces
+- Managing schema versioning
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Defining internal business logic
+- Handling authentication implementations (schemas only define the requirement)
+- Generating frontend UI code directly
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Validate an action schema using the validation script
+- Convert a Next.js route into an OpenAPI path definition
+- Merge multiple schemas into a unified spec
 
 ## Inputs Needed
-What the user must provide.
+- API route logic
+- Request/Response types
+- Server URLs
 
 ## Outputs
-What this tool layer should produce.
+- Valid OpenAPI 3.1.0 JSON schemas
+- Validation error reports
+- Schema documentation
 
 ## Skills
-List related skills in tools/openapi/skills/.
+List related skills in `tools/openapi/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/openapi/prompts/ if present.
+Point to `tools/openapi/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Ensure `operationId` strictly matches the Action name. Validate all schemas against the 3.1.0 specification to prevent agent integration failures.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

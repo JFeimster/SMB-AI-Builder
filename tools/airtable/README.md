@@ -1,36 +1,43 @@
 # Airtable Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Guides AI operations for creating, reading, and updating records in Airtable bases to manage structured relational data.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Managing CRM data
+- Tracking inventory or assets
+- Handling form submissions
+- Syncing data with external applications
+- Generating automated reports from views
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Storing unstructured text documents
+- Complex nested hierarchical data structures
+- High-volume transactional systems
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Create a new CRM record
+- Fetch records from a specific view
+- Update the status of an existing record
 
 ## Inputs Needed
-What the user must provide.
+- Base ID
+- Table name
+- Record fields (JSON)
 
 ## Outputs
-What this tool layer should produce.
+- Record IDs
+- Retrieved row data
+- Update confirmations
 
 ## Skills
-List related skills in tools/airtable/skills/.
+List related skills in `tools/airtable/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/airtable/prompts/ if present.
+Point to `tools/airtable/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Respect Airtable's API rate limits (5 requests per second). Ensure field types match the schema to avoid validation errors.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

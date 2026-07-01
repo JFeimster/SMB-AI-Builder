@@ -1,36 +1,43 @@
 # Semrush Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Provides instructions for utilizing the Semrush API to gather SEO data, keyword research, and domain analytics.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Conducting keyword research
+- Analyzing domain authority
+- Tracking backlink profiles
+- Generating SEO audit reports
+- Monitoring competitor rankings
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Automating link building outreach
+- Making automated changes to website content without review
+- Exceeding API call limits unintentionally
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Retrieve search volume for a list of keywords
+- Get domain overview metrics
+- Find related keywords
 
 ## Inputs Needed
-What the user must provide.
+- Target keywords
+- Domain names
+- Database/location (e.g., 'us')
 
 ## Outputs
-What this tool layer should produce.
+- Keyword metrics (volume, KD)
+- Domain analytics (traffic, backlinks)
+- Formatted SEO reports
 
 ## Skills
-List related skills in tools/semrush/skills/.
+List related skills in `tools/semrush/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/semrush/prompts/ if present.
+Point to `tools/semrush/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Semrush API calls cost API units; optimize requests to minimize costs. Cache results where possible. Do not expose API keys.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

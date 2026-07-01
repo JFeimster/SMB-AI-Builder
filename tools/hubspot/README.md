@@ -1,36 +1,43 @@
 # Hubspot Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Defines the workflows and best practices for interacting with the HubSpot API for marketing, sales, and CRM automation.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Creating and updating contacts
+- Logging sales activities (calls, emails)
+- Managing deals and pipelines
+- Syncing lead information
+- Retrieving company data
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Bulk data extraction bypassing standard reporting
+- Modifying core CRM property definitions
+- Sending unauthorized marketing emails
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Create a new contact from a form submission
+- Update a deal stage
+- Log a meeting on a contact timeline
 
 ## Inputs Needed
-What the user must provide.
+- Contact details (email, name)
+- Deal properties
+- Activity metadata
 
 ## Outputs
-What this tool layer should produce.
+- Contact IDs
+- Deal IDs
+- JSON representations of CRM objects
 
 ## Skills
-List related skills in tools/hubspot/skills/.
+List related skills in `tools/hubspot/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/hubspot/prompts/ if present.
+Point to `tools/hubspot/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Handle OAuth or Private App tokens securely. Be cautious with bulk updates to avoid unintended overwrites of CRM data.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

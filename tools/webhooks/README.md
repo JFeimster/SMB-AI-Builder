@@ -1,36 +1,43 @@
 # Webhooks Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Guidelines and tooling for receiving, verifying, and processing incoming webhooks from external services.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Triggering workflows on external events
+- Receiving payment confirmations
+- Processing form submissions
+- Handling repository activity alerts
+- Integrating asynchronous APIs
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Synchronous data fetching
+- Handling high-volume streams without queuing mechanisms
+- Processing unverified requests
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Create a webhook verification middleware
+- Define a payload schema for an incoming event
+- Route webhook events to specific actions
 
 ## Inputs Needed
-What the user must provide.
+- Webhook payload schemas
+- Verification secrets
+- Event types
 
 ## Outputs
-What this tool layer should produce.
+- Verification logic
+- Routing handlers
+- Processing confirmation logs
 
 ## Skills
-List related skills in tools/webhooks/skills/.
+List related skills in `tools/webhooks/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/webhooks/prompts/ if present.
+Point to `tools/webhooks/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Always verify webhook signatures to prevent spoofing. Handle events idempotently to avoid duplicate processing. Respond quickly (e.g., 200 OK) before processing complex logic.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

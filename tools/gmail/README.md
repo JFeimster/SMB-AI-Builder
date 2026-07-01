@@ -1,36 +1,44 @@
 # Gmail Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Outlines how AI agents should draft, read, and manage emails via the Gmail API to facilitate communication workflows.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Drafting client update emails
+- Parsing incoming support requests
+- Sending automated alerts
+- Organizing inbox with labels
+- Scheduling summary emails
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Sending mass marketing campaigns (spam)
+- Processing highly sensitive personal data without consent
+- Automated deletion of important correspondence
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Draft an email based on a summary
+- Read unread emails with a specific label
+- Reply to a support ticket automatically
 
 ## Inputs Needed
-What the user must provide.
+- Recipient addresses
+- Email subject lines
+- Body content
+- Search filters
 
 ## Outputs
-What this tool layer should produce.
+- Draft IDs
+- Sent email confirmations
+- Parsed email data (JSON)
 
 ## Skills
-List related skills in tools/gmail/skills/.
+List related skills in `tools/gmail/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/gmail/prompts/ if present.
+Point to `tools/gmail/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Requires strict OAuth scopes. Avoid sending unreviewed drafts for critical communications. Be aware of Gmail sending limits.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

@@ -1,36 +1,43 @@
 # Google Drive Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Provides rules and guidelines for interacting with Google Drive to store, organize, and retrieve files for SMB AI workflows.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Storing generated reports
+- Retrieving template documents
+- Organizing shared assets
+- Backing up structured data exports
+- Managing folder hierarchies for client assets
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Storing highly sensitive credentials
+- Real-time database operations
+- Hosting public-facing static sites
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Create a folder structure for a new project
+- Upload a generated PDF report
+- Search for a specific document by name
 
 ## Inputs Needed
-What the user must provide.
+- File metadata (name, mimeType)
+- Parent folder IDs
+- Search queries
 
 ## Outputs
-What this tool layer should produce.
+- File links
+- Folder IDs
+- Upload confirmation logs
 
 ## Skills
-List related skills in tools/google-drive/skills/.
+List related skills in `tools/google-drive/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/google-drive/prompts/ if present.
+Point to `tools/google-drive/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Handle OAuth tokens securely. Do not change global sharing permissions unintentionally. Be cautious of storage quotas.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

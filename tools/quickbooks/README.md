@@ -1,36 +1,43 @@
 # Quickbooks Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Defines protocols for integrating with the QuickBooks Online API to handle accounting and financial workflows safely.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Creating invoices automatically
+- Syncing customer data
+- Logging expenses
+- Retrieving payment statuses
+- Generating basic financial summaries
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Performing complex tax calculations without accountant review
+- Handling payroll operations
+- Authorizing actual fund transfers
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Draft a new invoice for a client
+- Create a new customer profile
+- Query the status of an unpaid invoice
 
 ## Inputs Needed
-What the user must provide.
+- Customer details
+- Line items and amounts
+- Invoice dates
 
 ## Outputs
-What this tool layer should produce.
+- Invoice IDs
+- Customer IDs
+- Financial data representations (JSON)
 
 ## Skills
-List related skills in tools/quickbooks/skills/.
+List related skills in `tools/quickbooks/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/quickbooks/prompts/ if present.
+Point to `tools/quickbooks/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Extreme caution required. Must include disclaimers that AI does not provide financial advice. Handle OAuth 2.0 flow securely. Never automate final invoice sending without human approval.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

@@ -1,39 +1,48 @@
 # Vercel Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Durable deployment documentation and QA checklists for running the SMB AI Workflow & Agent Builder repository on Vercel.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Managing automated deployments
+- Configuring preview environments
+- Setting up production domains
+- Reviewing deployment logs
+- Handling environment variables securely
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Managing non-Vercel infrastructure
+- Modifying core application logic
+- Directly altering database schemas
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Review deployment checklist before shipping
+- Analyze build failure logs
+- Configure custom domain settings
 
 ## Inputs Needed
-What the user must provide.
+- Deployment mode (Static vs Next.js)
+- Environment variable values
+- Project settings
 
 ## Outputs
-What this tool layer should produce.
+- Deployment URLs
+- Build logs
+- Configuration plans
 
 ## Skills
-List related skills in tools/vercel/skills/.
+List related skills in `tools/vercel/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/vercel/prompts/ if present.
+Point to `tools/vercel/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Avoid hardcoding production secrets. Do not enable automatic deployments until QA processes are fully complete. Monitor usage to avoid unexpected billing.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.
+
+---
 
 This directory contains durable deployment documentation and QA checklists for running the **SMB AI Workflow & Agent Builder** repository on Vercel.
 

@@ -1,36 +1,44 @@
 # GitHub Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Provides internal configuration, guidelines, and documentation for interacting with the GitHub API to manage repositories, pull requests, issues, and deployments.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Automating PR creation and reviews
+- Managing issue lifecycle
+- Triggering GitHub Actions
+- Synchronizing code with external tools
+- Analyzing repository metrics
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Directly pushing code without review
+- Managing organizational billing
+- Handling personal access tokens (PATs) insecurely
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Generate a PR template
+- Create an issue from a bug report
+- Review code diffs
 
 ## Inputs Needed
-What the user must provide.
+- Repository name
+- Branch name
+- PR details
+- Issue descriptions
 
 ## Outputs
-What this tool layer should produce.
+- Markdown formatted PR bodies
+- JSON payloads for API requests
+- Status summaries
 
 ## Skills
-List related skills in tools/github/skills/.
+List related skills in `tools/github/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/github/prompts/ if present.
+Point to `tools/github/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Avoid exposing sensitive credentials. Do not bypass branch protection rules. Ensure automated actions have clear audit trails.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

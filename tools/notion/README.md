@@ -1,36 +1,43 @@
 # Notion Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Provides documentation and instructions for integrating with Notion to manage knowledge bases, databases, and project tracking.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Creating dynamic database entries
+- Updating project tasks
+- Generating documentation pages
+- Syncing notes from other platforms
+- Building internal wikis
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Real-time high-frequency data processing
+- Storing large binary files (use Drive instead)
+- Complex relational database queries not supported by Notion API
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Add a new row to a project database
+- Create a new page with structured content
+- Update a task's status property
 
 ## Inputs Needed
-What the user must provide.
+- Database IDs
+- Page properties (JSON)
+- Block content arrays
 
 ## Outputs
-What this tool layer should produce.
+- Created page URLs
+- Database query results
+- Success confirmations
 
 ## Skills
-List related skills in tools/notion/skills/.
+List related skills in `tools/notion/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/notion/prompts/ if present.
+Point to `tools/notion/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Notion API rate limits apply. Ensure proper parent page/database IDs are used. Handle block limitations carefully.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

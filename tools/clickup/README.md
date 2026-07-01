@@ -1,36 +1,43 @@
 # Clickup Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Instructions and guidelines for managing tasks, lists, and spaces in ClickUp to support project management workflows.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Creating automated tasks
+- Updating task statuses
+- Adding comments to tasks
+- Managing custom fields
+- Organizing sprint work items
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Managing overarching workspace configurations
+- Handling sensitive HR tasks without restricted access
+- Extensive document storage
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Create a task in a specific list
+- Update a custom field on a task
+- Change a task's assignee
 
 ## Inputs Needed
-What the user must provide.
+- List IDs
+- Task details (name, description, assignees)
+- Status updates
 
 ## Outputs
-What this tool layer should produce.
+- Task IDs
+- Task URLs
+- Updated task JSON
 
 ## Skills
-List related skills in tools/clickup/skills/.
+List related skills in `tools/clickup/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/clickup/prompts/ if present.
+Point to `tools/clickup/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Ensure proper hierarchy traversal (Workspace -> Space -> Folder -> List). Be mindful of API rate limits.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.

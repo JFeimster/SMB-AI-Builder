@@ -9,6 +9,9 @@ The `tools/` directory contains the "tool-ops layer" for the SMB AI Builder. It 
 
 ## Folder Pattern
 Each tool should have its own folder following this consistent structure:
+
+Note: Subfolders (`prompts/`, `docs/`, `examples/`, `skills/`) are created only when needed because Git does not preserve empty directories.
+
 ```
 tools/{tool-name}/
 ├── README.md

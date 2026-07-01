@@ -1,36 +1,43 @@
 # Google Calendar Tool-Ops Layer
 
 ## Purpose
-What this tool helps with inside SMB AI Builder.
+Manages calendar operations for scheduling, reading events, and coordinating timelines via the Google Calendar API.
 
 ## Best Used For
-- Use case 1
-- Use case 2
-- Use case 3
-- Use case 4
-- Use case 5
+- Scheduling client meetings
+- Checking team availability
+- Creating recurring events
+- Sending calendar invitations
+- Generating daily agenda summaries
 
 ## Not For
-Where this tool should not be used or should require human review.
+- Deleting events created by other users without permission
+- Managing complex resource booking (like conference rooms) without proper setup
+- Overriding user-defined working hours
 
 ## Common Tasks
-- Task 1
-- Task 2
+- Create a new calendar event
+- Find a free time slot
+- Update an event's description
 
 ## Inputs Needed
-What the user must provide.
+- Event start/end times
+- Attendees list
+- Event summary and description
 
 ## Outputs
-What this tool layer should produce.
+- Event IDs
+- Calendar links
+- Availability status
 
 ## Skills
-List related skills in tools/google-calendar/skills/.
+List related skills in `tools/google-calendar/skills/`. Note: Subfolders are created only when needed since Git does not preserve empty directories.
 
 ## Prompts
-Point to tools/google-calendar/prompts/ if present.
+Point to `tools/google-calendar/prompts/` if present.
 
 ## Risk Notes
-Mention privacy, auth, destructive actions, sensitive workflows, or deployment risks.
+Ensure proper timezone handling. Be careful when sending updates to all attendees to avoid spamming.
 
 ## Related Site Pages
-Link to relevant static pages.
+- Relevant documentation or capability pages will be linked here.
