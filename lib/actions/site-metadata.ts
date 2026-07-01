@@ -45,13 +45,13 @@ export async function extractWebsiteMetadata(url: string): Promise<ActionResult<
     // CTAs (buttons or links containing typical CTA text)
     const ctaText: string[] = [];
     const buttonLinksRegex = /<(?:button|a)[^>]*>([\s\S]*?)<\/(?:button|a)>/gi;
-    const commonCtaWords = ['contact', 'sign up', 'get started', 'buy', 'learn more', 'subscribe', 'download', 'book'];
+    const commonCtaRegex = /contact|sign up|get started|buy|learn more|subscribe|download|book/;
 
     let ctaCount = 0;
     while ((match = buttonLinksRegex.exec(html)) !== null && ctaCount < 10) {
       const text = match[1].replace(/<[^>]+>/g, '').trim();
       const lowerText = text.toLowerCase();
-      if (text.length > 2 && text.length < 30 && commonCtaWords.some(word => lowerText.includes(word))) {
+      if (text.length > 2 && text.length < 30 && commonCtaRegex.test(lowerText)) {
         if (!ctaText.includes(text)) {
            ctaText.push(text);
            ctaCount++;
