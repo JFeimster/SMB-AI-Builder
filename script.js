@@ -81,9 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Copy buttons
     document.querySelectorAll('.copy-button').forEach(button => {
         button.addEventListener('click', () => {
-            const codeBlock = button.nextElementSibling;
-            if (codeBlock && codeBlock.tagName === 'CODE') {
-                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+            let textToCopy = '';
+
+            const prevSibling = button.previousElementSibling;
+            if (prevSibling && prevSibling.tagName === 'CODE') {
+                textToCopy = prevSibling.textContent;
+            } else {
+                const promptCard = button.closest('.prompt-card');
+                if (promptCard) {
+                    const codeEl = promptCard.querySelector('code');
+                    if (codeEl) {
+                        textToCopy = codeEl.textContent;
+                    }
+                }
+            }
+
+            if (textToCopy) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
                     const originalText = button.textContent;
                     button.textContent = 'Copied!';
                     setTimeout(() => { button.textContent = originalText; }, 2000);
