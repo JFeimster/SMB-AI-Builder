@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smb-ai-builder.vercel.app/</loc>
@@ -172,4 +172,4 @@
     <loc>https://smb-ai-builder.vercel.app/pages/seo/comparisons/custom-gpt-vs-ai-agent-for-smb.html</loc>
     <priority>0.6</priority>
   </url>
-</urlset>
+<url><loc>https://smb-ai-builder.vercel.app/pages/directories/connector-library.html</loc><priority>0.7</priority></url><url><loc>https://smb-ai-builder.vercel.app/pages/directories/tool-ops-library.html</loc><priority>0.7</priority></url><url><loc>https://smb-ai-builder.vercel.app/pages/tools/github-ops.html</loc><priority>0.7</priority></url><url><loc>https://smb-ai-builder.vercel.app/pages/tools/google-workspace.html</loc><priority>0.7</priority></url><url><loc>https://smb-ai-builder.vercel.app/pages/tools/notion-airtable.html</loc><priority>0.7</priority></url><url><loc>https://smb-ai-builder.vercel.app/pages/tools/crm-ops.html</loc><priority>0.7</priority></url><url><loc>https://smb-ai-builder.vercel.app/pages/tools/vercel-deployment.html</loc><priority>0.7</priority></url><url><loc>https://smb-ai-builder.vercel.app/pages/tools/openapi-builder.html</loc><priority>0.7</priority></url></urlset>
