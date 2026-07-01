@@ -13,6 +13,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://smb-ai-builder.vercel.app/pages/directories/skills-library.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smb-ai-builder.vercel.app/pages/site/automation-opportunity-matrix.html</loc>
     <priority>0.8</priority>
   </url>
