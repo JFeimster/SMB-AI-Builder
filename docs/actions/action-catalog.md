@@ -61,7 +61,7 @@ The goal is to move the GPT from advice-only workflow consulting into structured
 | `validateAutomationBlueprint` | `/api/blueprint-validator` | Check whether an automation blueprint is complete before pilot. | Trigger, inputs, systems, AI tasks, review points, outputs, exceptions, metrics, rollback. | Missing fields, risk warnings, pilot readiness status. | None | Very high |
 | `validateAgentBlueprint` | `/api/agent-validator` | Review an AI agent concept for missing instructions, weak permissions, or testing gaps. | Agent role, inputs, outputs, instructions, guardrails, permissions, handoffs, tests. | Validation report, safety warnings, launch readiness. | None | Very high |
 | `generateWorkflowMap` | `/api/workflow-map` | Convert structured steps into a current-state or future-state workflow map. | Process name, steps, owners, tools, handoffs, decision points. | Plain-English map, Mermaid diagram, bottleneck markers. | None | Very high |
-| `buildPilotTestPlan` | `/api/pilot-plan` | Turn a proposed automation into a structured pilot plan. | Workflow name, automation goal, risk level, users, test period, success metrics. | Scope, test cases, go/no-go criteria, rollback checklist. | None | High |
+| `buildPilotPlan` | `/api/pilot-plan` | Turn a proposed automation into a structured pilot plan. | Workflow name, automation goal, risk level, users, test period, success metrics. | Scope, test cases, go/no-go criteria, rollback checklist. | None | High |
 | `generateTestScenarios` | `/api/test-scenarios` | Create standard test cases for an AI agent or automation. | Workflow type, risk level, inputs, outputs, edge cases. | Normal, missing-data, ambiguous, sensitive, escalation, and failure scenarios. | None | High |
 | `classifyWorkflowRisk` | `/api/risk-classifier` | Classify workflow risk and recommend a safer automation mode. | Workflow description and sensitivity flags. | Risk level, reason, review requirement, safer mode. | None | High |
 | `suggestHumanReviewPattern` | `/api/human-review-pattern` | Recommend the right approval model for a workflow. | Risk level, customer-facing status, sensitivity, failure impact. | Draft-only, approve-before-send, exception review, audit log, escalation model. | None | High |
@@ -429,14 +429,14 @@ docs/
 - [ ] `calculateAutomationROI`
 - [ ] `validateAutomationBlueprint`
 - [ ] `validateAgentBlueprint`
-- [ ] `generateWorkflowMap`
+- [x] `generateWorkflowMap`
 
 ### Phase 2 — Pilot and safety Actions
 
-- [ ] `buildPilotTestPlan`
+- [x] `buildPilotPlan`
 - [ ] `generateTestScenarios`
-- [ ] `classifyWorkflowRisk`
-- [ ] `suggestHumanReviewPattern`
+- [x] `classifyWorkflowRisk`
+- [x] `suggestHumanReviewPattern`
 
 ### Phase 3 — Public-data Actions
 
@@ -472,3 +472,6 @@ These Actions are lower risk, easier to test, and most aligned with the GPT’s 
 6. Validate the agent plan.
 7. Generate a workflow map.
 8. Build a limited, human-reviewed pilot.
+
+- [ ] `generateSystemPrompt`
+- [ ] `evaluateConnectorRisk`

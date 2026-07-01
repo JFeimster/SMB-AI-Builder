@@ -55,18 +55,46 @@
     </div>
   </div>
 </div>
+
 <div class="shell">
 <div class="terminal-panel">
-<code>
-openapi: 3.1.0
-info:
-  title: SMB Workflow Actions
-  version: 1.0.0
-paths:
-  /draft:
-    post:
-      summary: Drafts a document.
-                </code>
+    <h2>Available Schemas</h2>
+    <ul>
+        <li><a href="../../openapi/readiness-score.openapi.json">scoreAutomationReadiness</a></li>
+        <li><a href="../../openapi/opportunity-ranker.openapi.json">rankAutomationOpportunities</a></li>
+        <li><a href="../../openapi/workflow-map.openapi.json">generateWorkflowMap</a></li>
+        <li><a href="../../openapi/pilot-plan.openapi.json">buildPilotPlan</a></li>
+        <li><a href="../../openapi/risk-classifier.openapi.json">classifyWorkflowRisk</a></li>
+        <li><a href="../../openapi/human-review-pattern.openapi.json">suggestHumanReviewPattern</a></li>
+    </ul>
+
+    <h2>Planned Schemas</h2>
+    <ul>
+        <li>generateSystemPrompt (Needs Setup)</li>
+        <li>evaluateConnectorRisk (Needs Setup)</li>
+    </ul>
+
+    <h2>Setup Checklist</h2>
+    <ul>
+        <li>Review documentation and safe use cases.</li>
+        <li>Do not claim endpoints are live unless route exists.</li>
+        <li>No invented production server unless existing deployment URL is intended.</li>
+    </ul>
+
+    <h2>Risk Notes</h2>
+    <p>Do not use no-auth actions for private-data requirements. Do not imply live endpoint behavior if only documentation exists. No fake claims.</p>
+
+    <h2>Links to Action Docs</h2>
+    <ul>
+        <li><a href="../../docs/actions/readiness-score.md">Readiness Score</a></li>
+        <li><a href="../../docs/actions/opportunity-ranker.md">Opportunity Ranker</a></li>
+        <li><a href="../../docs/actions/workflow-map.md">Workflow Map</a></li>
+        <li><a href="../../docs/actions/pilot-plan.md">Pilot Plan</a></li>
+        <li><a href="../../docs/actions/risk-classifier.md">Risk Classifier</a></li>
+        <li><a href="../../docs/actions/human-review-pattern.md">Human Review Pattern</a></li>
+        <li><a href="../../docs/actions/prompt-generator.md">Prompt Generator</a></li>
+        <li><a href="../../docs/actions/connector-risk.md">Connector Risk</a></li>
+    </ul>
 </div>
 <div class="bento-grid">
 <div class="tool-card"><h3>1. Copy Schema</h3><p>Copy the schema above.</p></div>
@@ -75,8 +103,9 @@ paths:
 </div>
 <div class="cta-band">
 <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Open the SMB AI Builder GPT</a></div>
-<div class="internal-links"><a href="actions.html">Actions</a> | <a href="no-auth-actions.html">No-Auth</a> | <a href="../site/automation-builders.html">Builders</a></div>
+<div class="internal-links"><a href="actions.html">Actions</a> | <a href="../../docs/actions/no-auth-actions.md">No-Auth</a> | <a href="../site/automation-builders.html">Builders</a></div>
 </div>
+
 </main>
 <footer aria-labelledby="footer-title" class="site-footer">
 <div class="shell footer-grid">
