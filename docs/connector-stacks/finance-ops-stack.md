@@ -57,7 +57,7 @@ Do not invent any numbers. If a value is unclear, state "Unclear".
 ## Success Criteria
 - Time spent on manual data entry for receipts is significantly reduced.
 - The books are kept up-to-date weekly rather than in a frantic rush at month-end.
-- All ledger entries maintain 100% accuracy due to the required human review step.
+- Human review is intended to reduce categorization and ledger-entry errors, but accuracy is not guaranteed.
 
 ## Related Docs
 - [Connectors Directory](../connectors/README.md)
