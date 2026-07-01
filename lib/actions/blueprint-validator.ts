@@ -143,7 +143,7 @@ export function validateBlueprintRequest(input: unknown): AutomationBlueprintReq
   };
 }
 
-export function validateAutomationBlueprint(input: AutomationBlueprintRequest): AutomationBlueprintResponse {
+export function validateBlueprint(input: AutomationBlueprintRequest): AutomationBlueprintResponse {
     const missingFields: string[] = [];
     const weakFields: string[] = [];
     const riskWarnings: string[] = [];

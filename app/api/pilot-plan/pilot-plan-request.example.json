@@ -1,0 +1,14 @@
+{
+  "workflowName": "Customer Support Ticket Routing",
+  "automationGoal": "Automatically categorize and route incoming support tickets to the right department based on email content.",
+  "riskLevel": "medium",
+  "users": ["Support Team Lead", "Tier 1 Agent"],
+  "testPeriodDays": 14,
+  "successMetrics": [
+    "90% routing accuracy",
+    "Reduce manual triage time by 5 hours/week"
+  ],
+  "touchesCustomers": true,
+  "sampleDataDescription": "Export of 200 resolved tickets from the last month, with PII redacted.",
+  "rollbackPlan": "Turn off routing rule in Zendesk, resume manual triage by Support Team Lead."
+}

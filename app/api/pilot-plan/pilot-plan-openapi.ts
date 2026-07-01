@@ -1,0 +1,241 @@
+export function buildPilotPlanOpenApiSchema(serverUrl: string) {
+  const schema = {
+    "openapi": "3.1.0",
+    "info": {
+      "title": "SMB AI Workflow Actions - Pilot Plan Builder",
+      "version": "1.0.0",
+      "description": "No-auth OpenAPI schema for generating structured SMB automation pilot plans."
+    },
+    "servers": [
+      {
+        "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+        "description": "Replace with your deployed Vercel base URL."
+      }
+    ],
+    "paths": {
+      "/api/pilot-plan": {
+        "get": {
+          "operationId": "getPilotPlanActionInfo",
+          "summary": "Get pilot plan builder endpoint information.",
+          "description": "Returns basic information about the pilot plan builder action.",
+          "responses": {
+            "200": {
+              "description": "Endpoint metadata.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ActionInfo"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "operationId": "buildPilotTestPlan",
+          "summary": "Turn a proposed automation into a structured SMB automation pilot plan.",
+          "description": "Generates a comprehensive pilot plan including test scope, duration, test cases, go/no-go criteria, and rollback instructions.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PilotPlanRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Generated pilot plan.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PilotPlanResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Unexpected server error.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "PilotPlanRequest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "workflowName",
+            "automationGoal",
+            "riskLevel",
+            "successMetrics"
+          ],
+          "properties": {
+            "workflowName": {
+              "type": "string"
+            },
+            "automationGoal": {
+              "type": "string"
+            },
+            "riskLevel": {
+              "type": "string",
+              "enum": ["low", "medium", "high"]
+            },
+            "users": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "testPeriodDays": {
+              "type": "integer"
+            },
+            "successMetrics": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "failureCriteria": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "humanReviewPoints": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "rollbackPlan": {
+              "type": "string"
+            },
+            "sampleDataDescription": {
+              "type": "string"
+            },
+            "touchesCustomers": {
+              "type": "boolean"
+            },
+            "touchesMoney": {
+              "type": "boolean"
+            },
+            "touchesSensitiveData": {
+              "type": "boolean"
+            },
+            "touchesLegalComplianceHRMedicalOrFinance": {
+              "type": "boolean"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "TestCase": {
+          "type": "object",
+          "properties": {
+            "scenario": { "type": "string" },
+            "input": { "type": "string" },
+            "expectedOutcome": { "type": "string" },
+            "type": { "type": "string" }
+          }
+        },
+        "PilotPlanResponse": {
+          "type": "object",
+          "properties": {
+            "workflowName": { "type": "string" },
+            "pilotScope": { "type": "string" },
+            "testPeriod": { "type": "string" },
+            "testUsers": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "sampleDataGuidance": { "type": "string" },
+            "successMetrics": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "failureCriteria": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "requiredHumanReview": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "testCases": {
+              "type": "array",
+              "items": { "$ref": "#/components/schemas/TestCase" }
+            },
+            "goNoGoCriteria": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "rollbackChecklist": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "riskWarnings": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "recommendedAutomationMode": { "type": "string" },
+            "nextStep": { "type": "string" },
+            "assumptions": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "ActionInfo": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "description": { "type": "string" },
+            "method": { "type": "string" },
+            "path": { "type": "string" },
+            "auth": { "type": "string" },
+            "requiredBodyFields": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "ErrorResponse": {
+          "type": "object",
+          "properties": {
+            "error": { "type": "string" },
+            "message": { "type": "string" },
+            "details": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    }
+  } as const;
+
+  return {
+    ...schema,
+    servers: [
+      {
+        url: serverUrl,
+        description: "Current deployed server URL.",
+      },
+    ],
+  };
+}

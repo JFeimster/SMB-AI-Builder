@@ -1,0 +1,22 @@
+---
+description: Hard rule against fake proof, testimonials, and claims
+alwaysApply: true
+---
+
+# No Fake Proof Rule
+
+**Strict Rule:** Do not invent or generate fake proof elements under any circumstances.
+
+This includes:
+- Fake testimonials
+- Fake logos
+- Fake ratings
+- Fake reviews
+- Fake revenue claims
+- Fake compliance claims
+- Fake guarantees
+- Fake user counts
+- Fake partner names
+- Fake screenshots or UI output
+
+Use evidence-based language only. If a claim cannot be proven from repo content or user-provided source material, do not include it.

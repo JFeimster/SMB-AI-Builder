@@ -1,0 +1,12 @@
+---
+description: Accessibility rules for UI files
+globs: "**/*.{html,tsx,jsx}"
+---
+
+# Accessibility Rules
+
+- Ensure semantic HTML tags are used for their intended purpose.
+- Ensure all interactive elements have visible focus states.
+- Ensure all CTA links and buttons are accessible (e.g., proper aria-labels if needed, high contrast).
+- Follow WCAG guidelines for color contrast.
+- Ensure proper form labels and structural markup.

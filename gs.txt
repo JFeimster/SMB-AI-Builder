@@ -1,0 +1,408 @@
+On branch jules-16885998157411646840-903f781f
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	new file:   .cursor/rules/accessibility.mdc
+	new file:   .cursor/rules/design-system.mdc
+	new file:   .cursor/rules/embeds.mdc
+	new file:   .cursor/rules/next-app-router.mdc
+	new file:   .cursor/rules/no-fake-proof.mdc
+	new file:   .cursor/rules/project.mdc
+	new file:   .cursor/rules/seo-pages.mdc
+	new file:   .cursor/rules/static-html.mdc
+	new file:   .github/ISSUE_TEMPLATE/bug-report.md
+	new file:   .github/ISSUE_TEMPLATE/embed-request.md
+	new file:   .github/ISSUE_TEMPLATE/page-request.md
+	new file:   .github/ISSUE_TEMPLATE/qa-task.md
+	new file:   .github/ISSUE_TEMPLATE/seo-page-request.md
+	new file:   .github/copilot-instructions.md
+	new file:   .github/pull_request_template.md
+	modified:   .gitignore
+	new file:   app/api/human-review-pattern/README.md
+	new file:   app/api/human-review-pattern/human-review-pattern-openapi.ts
+	new file:   app/api/human-review-pattern/human-review-pattern-request.example.json
+	new file:   app/api/human-review-pattern/human-review-pattern.openapi.json
+	new file:   app/api/human-review-pattern/human-review-pattern.ts
+	new file:   app/api/human-review-pattern/route (optional-endpoints).ts
+	new file:   app/api/human-review-pattern/route.ts
+	modified:   app/api/opportunity-ranker/route (optional-endpoints).ts
+	new file:   app/api/pilot-plan/README.md
+	new file:   app/api/pilot-plan/pilot-plan-openapi.ts
+	new file:   app/api/pilot-plan/pilot-plan-request.example.json
+	new file:   app/api/pilot-plan/pilot-plan.openapi.json
+	new file:   app/api/pilot-plan/pilot-plan.ts
+	new file:   app/api/pilot-plan/route (optional-endpoints).ts
+	new file:   app/api/pilot-plan/route.ts
+	new file:   app/api/risk-classifier/README.md
+	new file:   app/api/risk-classifier/risk-classifier-openapi.ts
+	new file:   app/api/risk-classifier/risk-classifier-request.example.json
+	new file:   app/api/risk-classifier/risk-classifier.openapi.json
+	new file:   app/api/risk-classifier/risk-classifier.ts
+	new file:   app/api/risk-classifier/route (optional-endpoints).ts
+	new file:   app/api/risk-classifier/route.ts
+	new file:   app/api/test-scenarios/README.md
+	new file:   app/api/test-scenarios/route (optional-endpoints).ts
+	new file:   app/api/test-scenarios/route.ts
+	new file:   app/api/test-scenarios/test-scenarios-openapi.ts
+	new file:   app/api/test-scenarios/test-scenarios-request.example.json
+	new file:   app/api/test-scenarios/test-scenarios.openapi.json
+	new file:   app/api/test-scenarios/test-scenarios.ts
+	new file:   docs/actions/action-index.md
+	modified:   embeds/affiliate-card.html
+	modified:   embeds/iframe-compact.html
+	modified:   embeds/iframe.html
+	modified:   embeds/partner-widget.html
+	new file:   examples/actions/agent-validator-request.example.json
+	new file:   examples/actions/automation-roi-request.example.json
+	new file:   examples/actions/bls-series-request.example.json
+	new file:   examples/actions/blueprint-validator-request.example.json
+	new file:   examples/actions/crossref-lookup-request.example.json
+	new file:   examples/actions/currency-convert-request.example.json
+	new file:   examples/actions/geocode-request.example.json
+	new file:   examples/actions/human-review-pattern-request.example.json
+	new file:   examples/actions/openapi-helper-request.example.json
+	new file:   examples/actions/opportunity-ranker-request.example.json
+	new file:   examples/actions/pilot-plan-request.example.json
+	new file:   examples/actions/public-holidays-request.example.json
+	new file:   examples/actions/readiness-score-request.example.json
+	new file:   examples/actions/risk-classifier-request.example.json
+	new file:   examples/actions/robots-check-request.example.json
+	new file:   examples/actions/site-metadata-request.example.json
+	new file:   examples/actions/sitemap-reader-request.example.json
+	new file:   examples/actions/test-scenarios-request.example.json
+	new file:   examples/actions/weather-request.example.json
+	new file:   examples/actions/workflow-map-request.example.json
+	new file:   generate_claude_skills.py
+	modified:   index.html
+	new file:   lib/actions/_fetch.ts
+	modified:   lib/actions/automation-readiness.ts
+	new file:   lib/actions/geocode.ts
+	modified:   lib/actions/index.ts
+	new file:   lib/actions/public-holidays.ts
+	new file:   lib/actions/robots-check.ts
+	new file:   lib/actions/site-metadata.ts
+	new file:   lib/actions/sitemap-reader.ts
+	new file:   lib/actions/weather.ts
+	new file:   lib/openapi/builders/agent-validator.openapi.ts
+	new file:   lib/openapi/builders/automation-roi.openapi.ts
+	new file:   lib/openapi/builders/blueprint-validator.openapi.ts
+	new file:   lib/openapi/builders/geocode.openapi.ts
+	new file:   lib/openapi/builders/human-review-pattern.openapi.ts
+	new file:   lib/openapi/builders/index.ts
+	new file:   lib/openapi/builders/opportunity-ranker.openapi.ts
+	new file:   lib/openapi/builders/pilot-plan.openapi.ts
+	new file:   lib/openapi/builders/public-holidays.openapi.ts
+	new file:   lib/openapi/builders/readiness.openapi.ts
+	new file:   lib/openapi/builders/risk-classifier.openapi.ts
+	new file:   lib/openapi/builders/robots-check.openapi.ts
+	new file:   lib/openapi/builders/site-metadata.openapi.ts
+	new file:   lib/openapi/builders/sitemap-reader.openapi.ts
+	new file:   lib/openapi/builders/test-scenarios.openapi.ts
+	new file:   lib/openapi/builders/weather.openapi.ts
+	new file:   lib/openapi/builders/workflow-map.openapi.ts
+	new file:   lib/openapi/combined-openapi.ts
+	new file:   lib/opportunity-ranker-openapi.ts
+	new file:   lib/readiness-openapi.ts
+	modified:   lib/security/url-safety.ts
+	modified:   lib/types/actions.ts
+	new file:   lib/types/openapi.ts
+	modified:   next-env.d.ts
+	new file:   openapi/README.md
+	new file:   openapi/actions/agent-validator.openapi.json
+	new file:   openapi/actions/automation-roi.openapi.json
+	new file:   openapi/actions/bls-series.openapi.json
+	new file:   openapi/actions/blueprint-validator.openapi.json
+	new file:   openapi/actions/crossref-lookup.openapi.json
+	new file:   openapi/actions/currency-convert.openapi.json
+	new file:   openapi/actions/geocode.openapi.json
+	new file:   openapi/actions/human-review-pattern.openapi.json
+	new file:   openapi/actions/openapi-helper.openapi.json
+	new file:   openapi/actions/pilot-plan.openapi.json
+	new file:   openapi/actions/public-holidays.openapi.json
+	new file:   openapi/actions/rank-automation-opportunities.openapi.json
+	new file:   openapi/actions/risk-classifier.openapi.json
+	new file:   openapi/actions/robots-check.openapi.json
+	new file:   openapi/actions/score-automation-readiness.openapi.json
+	new file:   openapi/actions/site-metadata.openapi.json
+	new file:   openapi/actions/sitemap-reader.openapi.json
+	new file:   openapi/actions/test-scenarios.openapi.json
+	new file:   openapi/actions/weather.openapi.json
+	new file:   openapi/actions/workflow-map.openapi.json
+	new file:   openapi/combined/combined-smb-actions.openapi.json
+	new file:   package-lock.json
+	modified:   package.json
+	modified:   pages/blog/index.html
+	modified:   pages/directories/automation-patterns.html
+	modified:   pages/directories/gpt-stack.html
+	modified:   pages/directories/workflow-library.html
+	modified:   pages/legal/ai-safety.html
+	modified:   pages/legal/disclaimers.html
+	modified:   pages/legal/human-review-policy.html
+	modified:   pages/legal/privacy.html
+	modified:   pages/legal/terms.html
+	modified:   pages/seo/ai-agent-blueprint-template.html
+	modified:   pages/seo/ai-agent-pilot-plan-for-small-business.html
+	modified:   pages/seo/ai-automation-discovery-template.html
+	modified:   pages/seo/ai-automation-for-agencies.html
+	modified:   pages/seo/ai-automation-readiness-scorecard.html
+	modified:   pages/seo/best-gpt-for-smb-workflow-automation.html
+	modified:   pages/seo/client-onboarding-ai-automation.html
+	modified:   pages/seo/comparisons/ai-agent-vs-automation-workflow.html
+	modified:   pages/seo/comparisons/custom-gpt-vs-ai-agent-for-smb.html
+	modified:   pages/seo/comparisons/make-vs-ai-agent-workflows.html
+	modified:   pages/seo/comparisons/workflow-audit-vs-automation-build.html
+	modified:   pages/seo/comparisons/zapier-vs-ai-agent-for-small-business.html
+	modified:   pages/seo/custom-gpt-for-business-process-automation.html
+	modified:   pages/seo/document-collection-workflow-automation.html
+	modified:   pages/seo/how-to-audit-a-workflow-before-automation.html
+	modified:   pages/seo/human-in-the-loop-ai-workflow.html
+	modified:   pages/seo/lead-follow-up-ai-agent.html
+	modified:   pages/seo/quote-follow-up-automation.html
+	modified:   pages/seo/smb-process-automation-checklist.html
+	modified:   pages/seo/what-to-automate-first-in-a-small-business.html
+	modified:   pages/seo/workflows/client-onboarding-workflow-audit.html
+	modified:   pages/seo/workflows/crm-task-creation-workflow-audit.html
+	modified:   pages/seo/workflows/document-collection-workflow-audit.html
+	modified:   pages/seo/workflows/faq-response-drafting-workflow-audit.html
+	modified:   pages/seo/workflows/internal-status-reporting-workflow-audit.html
+	modified:   pages/seo/workflows/invoice-reminder-workflow-audit.html
+	modified:   pages/seo/workflows/lead-follow-up-workflow-audit.html
+	modified:   pages/seo/workflows/proposal-drafting-workflow-audit.html
+	modified:   pages/seo/workflows/quote-follow-up-workflow-audit.html
+	modified:   pages/seo/workflows/weekly-finance-summary-workflow-audit.html
+	modified:   pages/site/about.html
+	modified:   pages/site/agencies.html
+	modified:   pages/site/ai-agent-blueprint.html
+	modified:   pages/site/automation-builders.html
+	modified:   pages/site/automation-opportunity-matrix.html
+	modified:   pages/site/consultants.html
+	modified:   pages/site/contact.html
+	modified:   pages/site/freelancers.html
+	modified:   pages/site/local-business.html
+	modified:   pages/site/operator-map.html
+	modified:   pages/site/packages.html
+	modified:   pages/site/pricing.html
+	modified:   pages/site/readiness-scorecard.html
+	modified:   pages/site/resources.html
+	modified:   pages/site/services.html
+	modified:   pages/site/start-here.html
+	modified:   pages/site/use-cases.html
+	modified:   pages/site/workflow-audit.html
+	modified:   pages/tools/actions.html
+	modified:   pages/tools/agent-prompts.html
+	modified:   pages/tools/agent-stack-builder.html
+	modified:   pages/tools/audit-prompts.html
+	modified:   pages/tools/follow-up-prompts.html
+	modified:   pages/tools/integration-map.html
+	modified:   pages/tools/jules.html
+	modified:   pages/tools/no-auth-actions.html
+	modified:   pages/tools/openapi.html
+	modified:   pages/tools/pilot-plan-builder.html
+	modified:   pages/tools/prompts.html
+	modified:   pages/tools/risk-classifier.html
+	modified:   pages/tools/workflow-map-generator.html
+	modified:   pages/watch/index.html
+	new file:   scripts/actions/build-combined-openapi.ts
+	new file:   scripts/actions/generate-action-index.ts
+	new file:   scripts/actions/test-actions.ts
+	new file:   scripts/validation/validate-openapi.ts
+	modified:   styles.css
+	new file:   tests/actions/automation-readiness.test.ts
+	new file:   tests/actions/automation-roi.test.ts
+	new file:   tests/actions/blueprint-validator.test.ts
+	new file:   tests/actions/opportunity-ranker.test.ts
+	new file:   tests/fixtures/actions/agent-validator-valid.json
+	new file:   tests/fixtures/actions/automation-roi-valid.json
+	new file:   tests/fixtures/actions/blueprint-validator-valid.json
+	new file:   tests/fixtures/actions/opportunities-sensitive-workflow.json
+	new file:   tests/fixtures/actions/opportunities-valid.json
+	new file:   tests/fixtures/actions/pilot-plan-valid.json
+	new file:   tests/fixtures/actions/readiness-invalid.json
+	new file:   tests/fixtures/actions/readiness-valid.json
+	new file:   tests/fixtures/actions/test-scenarios-valid.json
+	new file:   tests/fixtures/actions/workflow-map-valid.json
+	new file:   tools/chatgpt/README.md
+	new file:   tools/chatgpt/chatgpt-agent-profile.md
+	new file:   tools/chatgpt/chatgpt-changelog.md
+	new file:   tools/chatgpt/chatgpt-conversation-starters.md
+	new file:   tools/chatgpt/chatgpt-copy-rules.md
+	new file:   tools/chatgpt/chatgpt-custom-gpt-notes.md
+	new file:   tools/chatgpt/chatgpt-embed-generation-rules.md
+	new file:   tools/chatgpt/chatgpt-output-formats.md
+	new file:   tools/chatgpt/chatgpt-page-generation-rules.md
+	new file:   tools/chatgpt/chatgpt-project-context.md
+	new file:   tools/chatgpt/chatgpt-prompt-library.md
+	new file:   tools/chatgpt/chatgpt-qa-checklist.md
+	new file:   tools/chatgpt/chatgpt-seo-rules.md
+	new file:   tools/claude/skills/agent-instructions-writing/SKILL.md
+	new file:   tools/claude/skills/claude-orientation/SKILL.md
+	new file:   tools/claude/skills/comparison-guide-writing/SKILL.md
+	new file:   tools/claude/skills/editing-and-tightening/SKILL.md
+	new file:   tools/claude/skills/final-claude-qa/SKILL.md
+	new file:   tools/claude/skills/knowledge-file-writing/SKILL.md
+	new file:   tools/claude/skills/longform-planning/SKILL.md
+	new file:   tools/claude/skills/page-copywriting/SKILL.md
+	new file:   tools/claude/skills/prompt-engineering/SKILL.md
+	new file:   tools/claude/skills/research-synthesis/SKILL.md
+	new file:   tools/claude/skills/safety-review/SKILL.md
+	new file:   tools/claude/skills/seo-brief-writing/SKILL.md
+	new file:   tools/claude/skills/workflow-blueprint-writing/SKILL.md
+	new file:   tools/content/README.md
+	new file:   tools/content/approved-language.md
+	new file:   tools/content/audience-personas.md
+	new file:   tools/content/content-qa-checklist.md
+	new file:   tools/content/content-refresh-log.md
+	new file:   tools/content/cta-library.md
+	new file:   tools/content/disclaimer-library.md
+	new file:   tools/content/faq-library.md
+	new file:   tools/content/forbidden-phrases.md
+	new file:   tools/content/page-section-library.md
+	new file:   tools/content/positioning.md
+	new file:   tools/content/use-case-library.md
+	new file:   tools/content/voice-and-tone.md
+	new file:   tools/copilot/README.md
+	new file:   tools/copilot/copilot-accessibility-rules.md
+	new file:   tools/copilot/copilot-changelog.md
+	new file:   tools/copilot/copilot-code-style.md
+	new file:   tools/copilot/copilot-pr-rules.md
+	new file:   tools/copilot/copilot-prompt-snippets.md
+	new file:   tools/copilot/copilot-review-checklist.md
+	new file:   tools/copilot/copilot-seo-rules.md
+	new file:   tools/copilot/skills/api-route-implementation/SKILL.md
+	new file:   tools/copilot/skills/code-completion-guidance/SKILL.md
+	new file:   tools/copilot/skills/copilot-orientation/SKILL.md
+	new file:   tools/copilot/skills/example-fixture-builder/SKILL.md
+	new file:   tools/copilot/skills/final-copilot-qa/SKILL.md
+	new file:   tools/copilot/skills/nextjs-component-builder/SKILL.md
+	new file:   tools/copilot/skills/openapi-schema-implementation/SKILL.md
+	new file:   tools/copilot/skills/pr-review-checklist/SKILL.md
+	new file:   tools/copilot/skills/refactor-assistant/SKILL.md
+	new file:   tools/copilot/skills/security-review-helper/SKILL.md
+	new file:   tools/copilot/skills/static-html-helper/SKILL.md
+	new file:   tools/copilot/skills/test-scaffold-builder/SKILL.md
+	new file:   tools/copilot/skills/typescript-implementation/SKILL.md
+	new file:   tools/cursor/README.md
+	new file:   tools/cursor/cursor-changelog.md
+	new file:   tools/cursor/cursor-component-rules.md
+	new file:   tools/cursor/cursor-copy-rules.md
+	new file:   tools/cursor/cursor-file-map.json
+	new file:   tools/cursor/cursor-prompts.md
+	new file:   tools/cursor/cursor-qa.md
+	new file:   tools/cursor/cursor-seo-rules.md
+	new file:   tools/cursor/skills/accessibility-fix-pass/SKILL.md
+	new file:   tools/cursor/skills/api-route-editing/SKILL.md
+	new file:   tools/cursor/skills/context-gathering/SKILL.md
+	new file:   tools/cursor/skills/cursor-orientation/SKILL.md
+	new file:   tools/cursor/skills/docs-and-readme-editing/SKILL.md
+	new file:   tools/cursor/skills/final-cursor-qa/SKILL.md
+	new file:   tools/cursor/skills/git-diff-review/SKILL.md
+	new file:   tools/cursor/skills/multi-file-edit-planning/SKILL.md
+	new file:   tools/cursor/skills/nextjs-editing/SKILL.md
+	new file:   tools/cursor/skills/openapi-editing/SKILL.md
+	new file:   tools/cursor/skills/prompt-file-editing/SKILL.md
+	new file:   tools/cursor/skills/refactor-without-regression/SKILL.md
+	new file:   tools/cursor/skills/search-and-replace-safety/SKILL.md
+	new file:   tools/cursor/skills/static-html-editing/SKILL.md
+	new file:   tools/jules/skills/accessibility-pass/SKILL.md
+	new file:   tools/jules/skills/claims-safety-pass/SKILL.md
+	new file:   tools/jules/skills/conversion-copy-pass/SKILL.md
+	new file:   tools/jules/skills/embed-generation/SKILL.md
+	new file:   tools/jules/skills/final-jules-qa/SKILL.md
+	new file:   tools/jules/skills/jules-orientation/SKILL.md
+	new file:   tools/jules/skills/jules-task-router/SKILL.md
+	new file:   tools/jules/skills/page-generation/SKILL.md
+	new file:   tools/jules/skills/prompt-generation/SKILL.md
+	new file:   tools/jules/skills/repo-file-map-maintenance/SKILL.md
+	new file:   tools/jules/skills/seo-generation/SKILL.md
+	new file:   tools/jules/skills/source-of-truth-sync/SKILL.md
+	new file:   tools/jules/skills/style-system-enforcement/SKILL.md
+	new file:   tools/jules/skills/tool-docs-generation/SKILL.md
+	new file:   tools/powershell/README.md
+	new file:   tools/powershell/examples/run-all-checks.ps1
+	new file:   tools/powershell/examples/sample-output.md
+	new file:   tools/powershell/powershell-release-checklist.md
+	new file:   tools/powershell/powershell-safety-rules.md
+	new file:   tools/powershell/powershell-script-index.md
+	new file:   tools/powershell/powershell-usage.md
+	new file:   tools/powershell/scripts/build-static-zip.ps1
+	new file:   tools/powershell/scripts/check-cta-links.ps1
+	new file:   tools/powershell/scripts/check-embed-files.ps1
+	new file:   tools/powershell/scripts/check-file-structure.ps1
+	new file:   tools/powershell/scripts/check-links.ps1
+	new file:   tools/powershell/scripts/check-metadata.ps1
+	new file:   tools/powershell/scripts/check-placeholders.ps1
+	new file:   tools/powershell/scripts/check-sitemap-paths.ps1
+	new file:   tools/powershell/skills/build-and-test-runner/SKILL.md
+	new file:   tools/powershell/skills/bulk-file-audit/SKILL.md
+	new file:   tools/powershell/skills/file-generation-scripts/SKILL.md
+	new file:   tools/powershell/skills/final-powershell-qa/SKILL.md
+	new file:   tools/powershell/skills/json-validation/SKILL.md
+	new file:   tools/powershell/skills/link-checking/SKILL.md
+	new file:   tools/powershell/skills/openapi-validation/SKILL.md
+	new file:   tools/powershell/skills/powershell-orientation/SKILL.md
+	new file:   tools/powershell/skills/sitemap-generation/SKILL.md
+	new file:   tools/powershell/skills/static-site-qa/SKILL.md
+	new file:   tools/powershell/skills/vercel-preflight/SKILL.md
+	new file:   tools/powershell/skills/windows-repo-setup/SKILL.md
+	new file:   tools/powershell/skills/xml-validation/SKILL.md
+	new file:   tools/qa/README.md
+	new file:   tools/qa/accessibility-checklist.md
+	new file:   tools/qa/content-claims-checklist.md
+	new file:   tools/qa/embed-checklist.md
+	new file:   tools/qa/link-checklist.md
+	new file:   tools/qa/master-qa-checklist.md
+	new file:   tools/qa/metadata-checklist.md
+	new file:   tools/qa/mobile-layout-checklist.md
+	new file:   tools/qa/performance-checklist.md
+	new file:   tools/qa/qa-report-template.md
+	new file:   tools/qa/regression-qa.md
+	new file:   tools/qa/release-qa.md
+	new file:   tools/qa/seo-checklist.md
+	new file:   tools/seo/README.md
+	new file:   tools/seo/comparison-page-template.md
+	new file:   tools/seo/internal-link-map.md
+	new file:   tools/seo/keyword-map.md
+	new file:   tools/seo/metadata-rules.md
+	new file:   tools/seo/no-fake-schema.md
+	new file:   tools/seo/robots-llms-notes.md
+	new file:   tools/seo/schema-rules.md
+	new file:   tools/seo/seo-page-template.md
+	new file:   tools/seo/seo-qa-checklist.md
+	new file:   tools/seo/seo-refresh-log.md
+	new file:   tools/seo/sitemap-checklist.md
+	new file:   tools/seo/skills/comparison-seo-builder/SKILL.md
+	new file:   tools/seo/skills/content-refresh-audit/SKILL.md
+	new file:   tools/seo/skills/faq-builder/SKILL.md
+	new file:   tools/seo/skills/final-seo-qa/SKILL.md
+	new file:   tools/seo/skills/internal-linking-builder/SKILL.md
+	new file:   tools/seo/skills/jsonld-schema-builder/SKILL.md
+	new file:   tools/seo/skills/keyword-map-builder/SKILL.md
+	new file:   tools/seo/skills/metadata-optimizer/SKILL.md
+	new file:   tools/seo/skills/search-intent-brief-builder/SKILL.md
+	new file:   tools/seo/skills/seo-claims-safety-review/SKILL.md
+	new file:   tools/seo/skills/seo-orientation/SKILL.md
+	new file:   tools/seo/skills/seo-page-builder/SKILL.md
+	new file:   tools/seo/skills/sitemap-robots-llms-builder/SKILL.md
+	new file:   tools/seo/skills/workflow-seo-builder/SKILL.md
+	new file:   tools/seo/workflow-page-template.md
+	new file:   tools/vercel/skills/api-routes-deploy/SKILL.md
+	new file:   tools/vercel/skills/build-error-debugging/SKILL.md
+	new file:   tools/vercel/skills/deployment-readiness-qa/SKILL.md
+	new file:   tools/vercel/skills/domain-readiness/SKILL.md
+	new file:   tools/vercel/skills/environment-variables/SKILL.md
+	new file:   tools/vercel/skills/nextjs-app-router-deploy/SKILL.md
+	new file:   tools/vercel/skills/openapi-endpoints/SKILL.md
+	new file:   tools/vercel/skills/performance-checklist/SKILL.md
+	new file:   tools/vercel/skills/privacy-terms-routes/SKILL.md
+	new file:   tools/vercel/skills/project-config-audit/SKILL.md
+	new file:   tools/vercel/skills/robots-sitemap-llms/SKILL.md
+	new file:   tools/vercel/skills/security-headers/SKILL.md
+	new file:   tools/vercel/skills/static-site-deploy/SKILL.md
+	new file:   tools/vercel/skills/vercel-orientation/SKILL.md
+	new file:   tsconfig.tsbuildinfo
+	modified:   vercel.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	gs.txt

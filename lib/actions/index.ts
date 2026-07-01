@@ -1,10 +1,11 @@
+<<<<<<< HEAD
 export type ActionResult<T> = T; // Enforces the type signature externally
 
 // Import and re-export with ActionResult wrapped types
 import { scoreAutomationReadiness as internal_scoreAutomationReadiness, ReadinessScoreRequest, ReadinessScoreResponse } from "./automation-readiness";
 import { rankAutomationOpportunities as internal_rankAutomationOpportunities, OpportunityRankerRequest, OpportunityRankerResponse } from "./automation-opportunity-ranker";
 import { calculateAutomationROI as internal_calculateAutomationROI, AutomationRoiRequest, AutomationRoiResponse } from "./automation-roi";
-import { validateAutomationBlueprint as internal_validateBlueprint, AutomationBlueprintRequest, AutomationBlueprintResponse } from "./blueprint-validator";
+import { validateBlueprint as internal_validateBlueprint, AutomationBlueprintRequest, AutomationBlueprintResponse } from "./blueprint-validator";
 import { validateAgentBlueprint as internal_validateAgentBlueprint, AgentBlueprintRequest, AgentBlueprintResponse } from "./agent-validator";
 import { generateWorkflowMap as internal_generateWorkflowMap, WorkflowMapRequest, WorkflowMapResponse } from "./workflow-map";
 import { buildPilotTestPlan as internal_buildPilotTestPlan, PilotPlanRequest, PilotPlanResponse } from "./pilot-plan";
@@ -25,3 +26,35 @@ export function suggestHumanReviewPattern(req: ReviewPatternRequest): ActionResu
 
 // Re-export specific types safely without conflicts
 export type { ReadinessScoreRequest, ReadinessScoreResponse, OpportunityRankerRequest, OpportunityRankerResponse, AutomationRoiRequest, AutomationRoiResponse, AutomationBlueprintRequest, AutomationBlueprintResponse, AgentBlueprintRequest, AgentBlueprintResponse, WorkflowMapRequest, WorkflowMapResponse, PilotPlanRequest, PilotPlanResponse, TestScenarioRequest, TestScenarioResponse, RiskClassifierRequest, RiskClassifierResponse, ReviewPatternRequest, ReviewPatternResponse };
+=======
+export * from "./public-holidays";
+export * from "./weather";
+export * from "./geocode";
+export * from "./site-metadata";
+export * from "./sitemap-reader";
+export * from "./robots-check";
+
+export * from "../automation-readiness";
+
+export {
+  DEFAULT_WEIGHTS,
+  FACTOR_KEYS,
+  FACTOR_META,
+  ValidationError as OpportunityRankerValidationError,
+  rankAutomationOpportunities,
+  validateOpportunityRankerRequest,
+} from "../automation-opportunity-ranker";
+
+export type {
+  FactorBreakdown,
+  OpportunityFactorKey,
+  OpportunityRankerRequest,
+  OpportunityRankerResponse,
+  OpportunityScores,
+  RankedOpportunity,
+  RecommendationCategory,
+  RecommendedAutomationMode,
+  ScoreValue as OpportunityScoreValue,
+  WorkflowOpportunityInput,
+} from "../automation-opportunity-ranker";
+>>>>>>> origin/main

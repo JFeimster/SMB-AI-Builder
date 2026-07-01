@@ -1,0 +1,2685 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SMB AI Workflow Actions",
+    "version": "1.0.0",
+    "description": "Combined no-auth actions."
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-VERCEL-DOMAIN.vercel.app",
+      "description": "Replace with your deployed Vercel base URL."
+    }
+  ],
+  "paths": {
+    "/api/agent-validator": {
+      "post": {
+        "operationId": "validateAgentBlueprint",
+        "summary": "Execute agent-validator",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/automation-roi": {
+      "post": {
+        "operationId": "calculateAutomationROI",
+        "summary": "Execute automation-roi",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bls-series": {
+      "get": {
+        "operationId": "getGetLaborMarketSeriesActionInfo",
+        "summary": "Get bls-series endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "getLaborMarketSeries",
+        "summary": "Pull public labor/economic series for staffing, wage, or market-context discussions.",
+        "description": "Pull public labor/economic series for staffing, wage, or market-context discussions.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetLaborMarketSeriesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetLaborMarketSeriesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/blueprint-validator": {
+      "post": {
+        "operationId": "validateAutomationBlueprint",
+        "summary": "Execute blueprint-validator",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/crossref-lookup": {
+      "get": {
+        "operationId": "getLookupPublicationMetadataActionInfo",
+        "summary": "Get crossref-lookup endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "lookupPublicationMetadata",
+        "summary": "Retrieve public citation metadata for articles, reports, DOI references, or research sources.",
+        "description": "Retrieve public citation metadata for articles, reports, DOI references, or research sources.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LookupPublicationMetadataRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LookupPublicationMetadataResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/currency-convert": {
+      "get": {
+        "operationId": "getConvertCurrencyEstimateActionInfo",
+        "summary": "Get currency-convert endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "convertCurrencyEstimate",
+        "summary": "Estimate converted amounts across currencies for international SMB planning.",
+        "description": "Estimate converted amounts across currencies for international SMB planning.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConvertCurrencyEstimateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConvertCurrencyEstimateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/geocode": {
+      "get": {
+        "operationId": "getGeocodeLocationActionInfo",
+        "summary": "Get geocode endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "geocodeLocation",
+        "summary": "Convert city, postal code, or address-like location text into coordinates for weather or local planning Actions.",
+        "description": "Convert city, postal code, or address-like location text into coordinates for weather or local planning Actions.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GeocodeLocationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeocodeLocationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/human-review-pattern": {
+      "post": {
+        "operationId": "suggestHumanReviewPattern",
+        "summary": "Execute human-review-pattern",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/openapi-helper": {
+      "get": {
+        "operationId": "getGenerateActionSpecFromEndpointActionInfo",
+        "summary": "Get openapi-helper endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "generateActionSpecFromEndpoint",
+        "summary": "Help the builder turn a plain endpoint definition into an OpenAPI Action schema draft.",
+        "description": "Help the builder turn a plain endpoint definition into an OpenAPI Action schema draft.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateActionSpecFromEndpointRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateActionSpecFromEndpointResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/pilot-plan": {
+      "post": {
+        "operationId": "buildPilotTestPlan",
+        "summary": "Execute pilot-plan",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/public-holidays": {
+      "get": {
+        "operationId": "getGetPublicHolidaysActionInfo",
+        "summary": "Get public-holidays endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "getPublicHolidays",
+        "summary": "Return public holidays to help plan follow-ups, reminders, staffing, campaigns, and due dates.",
+        "description": "Return public holidays to help plan follow-ups, reminders, staffing, campaigns, and due dates.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetPublicHolidaysRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPublicHolidaysResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/opportunity-ranker": {
+      "get": {
+        "operationId": "getOpportunityRankerActionInfo",
+        "summary": "Get opportunity ranker endpoint information.",
+        "description": "Returns basic information about the automation opportunity ranking action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "rankAutomationOpportunities",
+        "summary": "Rank SMB workflow automation opportunities.",
+        "description": "Ranks candidate workflows using frequency, time savings, revenue impact, customer experience impact, data readiness, tool readiness, process clarity, ownership, risk level, and human-review readiness. Returns safety-adjusted priority ranking and recommendations.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OpportunityRankerRequest"
+              },
+              "examples": {
+                "serviceBusinessWorkflowRanking": {
+                  "summary": "Rank common SMB workflows",
+                  "value": {
+                    "businessName": "Example home services company",
+                    "businessContext": "Small team handling website leads, scheduling, quotes, and invoice follow-up manually.",
+                    "rankingGoal": "Find the safest first automation pilot.",
+                    "topN": 3,
+                    "opportunities": [
+                      {
+                        "workflowName": "Lead response after website inquiry",
+                        "workflowDescription": "New inquiries are reviewed and answered manually by the owner.",
+                        "currentTools": [
+                          "Website form",
+                          "Gmail",
+                          "Google Sheets"
+                        ],
+                        "owner": "Owner",
+                        "frequency": 3,
+                        "timeSavedPotential": 3,
+                        "revenueImpact": 3,
+                        "customerExperienceImpact": 3,
+                        "dataReadiness": 2,
+                        "toolReadiness": 2,
+                        "processClarity": 2,
+                        "ownershipClarity": 3,
+                        "riskLevel": 2,
+                        "humanReviewPlan": 2,
+                        "touchesCustomers": true,
+                        "customerFacingFinalAction": true,
+                        "notes": "Pilot should draft replies for approval before sending."
+                      },
+                      {
+                        "workflowName": "Invoice reminder follow-up",
+                        "workflowDescription": "Staff manually checks overdue invoices and sends reminder emails.",
+                        "currentTools": [
+                          "QuickBooks",
+                          "Gmail"
+                        ],
+                        "owner": "Office manager",
+                        "frequency": 2,
+                        "timeSavedPotential": 2,
+                        "revenueImpact": 3,
+                        "customerExperienceImpact": 2,
+                        "dataReadiness": 2,
+                        "toolReadiness": 2,
+                        "processClarity": 2,
+                        "ownershipClarity": 3,
+                        "riskLevel": 2,
+                        "humanReviewPlan": 2,
+                        "touchesCustomers": true,
+                        "touchesMoney": true,
+                        "customerFacingFinalAction": true
+                      },
+                      {
+                        "workflowName": "Employee performance review summaries",
+                        "workflowDescription": "Manager wants AI to summarize performance notes and suggest final ratings.",
+                        "frequency": 1,
+                        "timeSavedPotential": 2,
+                        "revenueImpact": 1,
+                        "customerExperienceImpact": 0,
+                        "dataReadiness": 1,
+                        "toolReadiness": 1,
+                        "processClarity": 1,
+                        "ownershipClarity": 2,
+                        "riskLevel": 0,
+                        "humanReviewPlan": 1,
+                        "touchesSensitiveData": true,
+                        "touchesHrEmployment": true,
+                        "notes": "Should remain human-led; AI could only summarize notes for manager review."
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ranked automation opportunity result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OpportunityRankerResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/risk-classifier": {
+      "post": {
+        "operationId": "classifyWorkflowRisk",
+        "summary": "Execute risk-classifier",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/robots-check": {
+      "get": {
+        "operationId": "getCheckRobotsTxtActionInfo",
+        "summary": "Get robots-check endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "checkRobotsTxt",
+        "summary": "Check public robots.txt before suggesting crawl-like automations.",
+        "description": "Check public robots.txt before suggesting crawl-like automations.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckRobotsTxtRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckRobotsTxtResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/readiness-score": {
+      "get": {
+        "operationId": "getReadinessScoreActionInfo",
+        "summary": "Get readiness score endpoint information.",
+        "description": "Returns basic information about the readiness scoring action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "scoreAutomationReadiness",
+        "summary": "Calculate automation readiness score for an SMB workflow.",
+        "description": "Scores a workflow across ten readiness categories using a 0-3 scale and returns total score, readiness band, blockers, risk flags, and recommended next step.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadinessScoreRequest"
+              },
+              "examples": {
+                "leadFollowUp": {
+                  "summary": "Lead follow-up workflow",
+                  "value": {
+                    "workflowName": "Lead follow-up after website inquiry",
+                    "workflowDescription": "A new website inquiry is reviewed, qualified, and followed up by email.",
+                    "userGoal": "Respond faster while keeping human approval before customer-facing replies.",
+                    "scores": {
+                      "workflowClarity": 2,
+                      "processConsistency": 2,
+                      "dataQuality": 2,
+                      "toolAccess": 2,
+                      "ownership": 3,
+                      "riskLevel": 2,
+                      "humanReviewPlan": 2,
+                      "customerExperienceImpact": 3,
+                      "measurementPlan": 1,
+                      "rollbackPlan": 1
+                    },
+                    "categoryNotes": {
+                      "measurementPlan": "No baseline response-time metric yet.",
+                      "rollbackPlan": "Manual fallback exists but is not documented."
+                    },
+                    "notes": "Initial pilot should be draft-only."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Readiness score result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessScoreResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/site-metadata": {
+      "get": {
+        "operationId": "getExtractWebsiteMetadataActionInfo",
+        "summary": "Get site-metadata endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "extractWebsiteMetadata",
+        "summary": "Fetch public website metadata for SMB website and lead-flow audits.",
+        "description": "Fetch public website metadata for SMB website and lead-flow audits.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExtractWebsiteMetadataRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtractWebsiteMetadataResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sitemap-reader": {
+      "get": {
+        "operationId": "getAnalyzeSitemapActionInfo",
+        "summary": "Get sitemap-reader endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "analyzeSitemap",
+        "summary": "Read a public sitemap to help understand a business website structure.",
+        "description": "Read a public sitemap to help understand a business website structure.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeSitemapRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyzeSitemapResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/test-scenarios": {
+      "post": {
+        "operationId": "generateTestScenarios",
+        "summary": "Execute test-scenarios",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/weather": {
+      "get": {
+        "operationId": "getGetWeatherByLocationActionInfo",
+        "summary": "Get weather endpoint information.",
+        "description": "Returns basic information about the action.",
+        "responses": {
+          "200": {
+            "description": "Endpoint metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActionInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "getWeatherByLocation",
+        "summary": "Look up weather for scheduling-sensitive SMB workflows such as field service, landscaping, construction, delivery, and events.",
+        "description": "Look up weather for scheduling-sensitive SMB workflows such as field service, landscaping, construction, delivery, and events.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetWeatherByLocationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWeatherByLocationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/workflow-map": {
+      "post": {
+        "operationId": "generateWorkflowMap",
+        "summary": "Execute workflow-map",
+        "description": "No-auth, stateless, planning-oriented Action.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dummy": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dummy": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetLaborMarketSeriesRequest": {
+        "type": "object",
+        "required": [
+          "seriesId",
+          "startYear",
+          "endYear"
+        ],
+        "properties": {
+          "seriesId": {
+            "type": "string"
+          },
+          "startYear": {
+            "type": "number"
+          },
+          "endYear": {
+            "type": "number"
+          }
+        }
+      },
+      "GetLaborMarketSeriesResponse": {
+        "type": "object",
+        "properties": {
+          "seriesId": {
+            "type": "string"
+          },
+          "startYear": {
+            "type": "number"
+          },
+          "endYear": {
+            "type": "number"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "latestValue": {
+            "type": "number",
+            "nullable": true
+          },
+          "trendSummary": {
+            "type": "string"
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ActionInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object"
+          }
+        }
+      },
+      "LookupPublicationMetadataRequest": {
+        "type": "object",
+        "properties": {
+          "doi": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "rows": {
+            "type": "number"
+          }
+        }
+      },
+      "LookupPublicationMetadataResponse": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "matches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "bestMatch": {
+            "type": "object",
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "publicationDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "doi": {
+            "type": "string",
+            "nullable": true
+          },
+          "publisher": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ConvertCurrencyEstimateRequest": {
+        "type": "object",
+        "required": [
+          "amount",
+          "fromCurrency",
+          "toCurrency"
+        ],
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "fromCurrency": {
+            "type": "string"
+          },
+          "toCurrency": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      },
+      "ConvertCurrencyEstimateResponse": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "fromCurrency": {
+            "type": "string"
+          },
+          "toCurrency": {
+            "type": "string"
+          },
+          "convertedAmount": {
+            "type": "number",
+            "nullable": true
+          },
+          "exchangeRate": {
+            "type": "number",
+            "nullable": true
+          },
+          "rateDate": {
+            "type": "string"
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "disclaimer": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GeocodeLocationRequest": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "language": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          }
+        }
+      },
+      "GeocodeLocationResponse": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "matches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "bestMatch": {
+            "type": "object",
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GenerateActionSpecFromEndpointRequest": {
+        "type": "object",
+        "required": [
+          "actionName",
+          "route",
+          "method",
+          "summary",
+          "description",
+          "inputs",
+          "outputs"
+        ],
+        "properties": {
+          "actionName": {
+            "type": "string"
+          },
+          "route": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "array"
+          },
+          "outputs": {
+            "type": "array"
+          },
+          "serverUrl": {
+            "type": "string"
+          },
+          "authentication": {
+            "type": "string"
+          }
+        }
+      },
+      "GenerateActionSpecFromEndpointResponse": {
+        "type": "object",
+        "properties": {
+          "operationId": {
+            "type": "string"
+          },
+          "pathObject": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "openapiDraft": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "nextStep": {
+            "type": "string"
+          }
+        }
+      },
+      "GetPublicHolidaysRequest": {
+        "type": "object",
+        "required": [
+          "countryCode",
+          "year"
+        ],
+        "properties": {
+          "countryCode": {
+            "type": "string"
+          },
+          "year": {
+            "type": "number"
+          },
+          "region": {
+            "type": "string"
+          }
+        }
+      },
+      "GetPublicHolidaysResponse": {
+        "type": "object",
+        "properties": {
+          "countryCode": {
+            "type": "string"
+          },
+          "year": {
+            "type": "number"
+          },
+          "holidays": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "businessDayWarnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ScoreValue": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 3,
+        "description": "0 = Not ready, 1 = Needs cleanup, 2 = Mostly ready, 3 = Ready for pilot. For riskLevel, higher means lower risk."
+      },
+      "OpportunityFactorKey": {
+        "type": "string",
+        "enum": [
+          "frequency",
+          "timeSavedPotential",
+          "revenueImpact",
+          "customerExperienceImpact",
+          "dataReadiness",
+          "toolReadiness",
+          "processClarity",
+          "ownershipClarity",
+          "riskLevel",
+          "humanReviewPlan"
+        ]
+      },
+      "OpportunityWeights": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "frequency": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "timeSavedPotential": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "revenueImpact": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "customerExperienceImpact": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "dataReadiness": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "toolReadiness": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "processClarity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "ownershipClarity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "riskLevel": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "humanReviewPlan": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          }
+        },
+        "description": "Optional overrides for ranking weights. Omitted weights use SMB-focused defaults."
+      },
+      "WorkflowOpportunityInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "workflowName"
+        ],
+        "properties": {
+          "workflowName": {
+            "type": "string",
+            "description": "Short name of the workflow opportunity."
+          },
+          "workflowDescription": {
+            "type": "string",
+            "description": "Brief description of the current workflow."
+          },
+          "currentTools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tools or systems currently involved."
+          },
+          "owner": {
+            "type": "string",
+            "description": "Person or team that owns the workflow."
+          },
+          "frequency": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "timeSavedPotential": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "revenueImpact": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "customerExperienceImpact": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "dataReadiness": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "toolReadiness": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "processClarity": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "ownershipClarity": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "riskLevel": {
+            "$ref": "#/components/schemas/ScoreValue",
+            "description": "Higher score means lower risk and stronger suitability for a controlled pilot."
+          },
+          "humanReviewPlan": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "touchesCustomers": {
+            "type": "boolean",
+            "description": "Whether the workflow touches customers or customer communications."
+          },
+          "touchesMoney": {
+            "type": "boolean",
+            "description": "Whether the workflow touches billing, pricing, payments, collections, or financial workflows."
+          },
+          "touchesSensitiveData": {
+            "type": "boolean",
+            "description": "Whether the workflow touches private, confidential, or sensitive data."
+          },
+          "touchesLegalCompliance": {
+            "type": "boolean",
+            "description": "Whether the workflow touches legal, contractual, regulatory, or compliance matters."
+          },
+          "touchesTaxAccounting": {
+            "type": "boolean",
+            "description": "Whether the workflow touches tax, accounting, bookkeeping, or financial reporting."
+          },
+          "touchesHrEmployment": {
+            "type": "boolean",
+            "description": "Whether the workflow touches HR, hiring, payroll, performance, or employment decisions."
+          },
+          "touchesMedicalHealth": {
+            "type": "boolean",
+            "description": "Whether the workflow touches medical, health, or wellness-related information or decisions."
+          },
+          "customerFacingFinalAction": {
+            "type": "boolean",
+            "description": "Whether the automation could send or perform a final customer-facing action."
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "description": "One workflow candidate to rank. Omitted factor scores default to 1, but better inputs produce better rankings."
+      },
+      "OpportunityRankerRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "opportunities"
+        ],
+        "properties": {
+          "businessName": {
+            "type": "string"
+          },
+          "businessContext": {
+            "type": "string"
+          },
+          "rankingGoal": {
+            "type": "string"
+          },
+          "opportunities": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 50,
+            "items": {
+              "$ref": "#/components/schemas/WorkflowOpportunityInput"
+            }
+          },
+          "weights": {
+            "$ref": "#/components/schemas/OpportunityWeights"
+          },
+          "topN": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "default": 3
+          }
+        }
+      },
+      "FactorBreakdown": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/OpportunityFactorKey"
+          },
+          "label": {
+            "type": "string"
+          },
+          "score": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "scoreLabel": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "weightedScore": {
+            "type": "number"
+          },
+          "maxWeightedScore": {
+            "type": "number"
+          },
+          "interpretation": {
+            "type": "string"
+          }
+        }
+      },
+      "RankedOpportunity": {
+        "type": "object",
+        "properties": {
+          "rank": {
+            "type": "integer"
+          },
+          "workflowName": {
+            "type": "string"
+          },
+          "workflowDescription": {
+            "type": "string"
+          },
+          "currentTools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "owner": {
+            "type": "string"
+          },
+          "totalWeightedScore": {
+            "type": "number"
+          },
+          "maxWeightedScore": {
+            "type": "number"
+          },
+          "scorePercent": {
+            "type": "number"
+          },
+          "priorityScore": {
+            "type": "number"
+          },
+          "recommendation": {
+            "type": "string",
+            "enum": [
+              "Automate now",
+              "Clean up first",
+              "Keep human",
+              "Revisit later"
+            ]
+          },
+          "automationFit": {
+            "type": "string",
+            "enum": [
+              "High",
+              "Medium",
+              "Low"
+            ]
+          },
+          "recommendedAutomationMode": {
+            "type": "string",
+            "enum": [
+              "Limited automation pilot with human approval",
+              "Draft-only AI assistance",
+              "Process cleanup before automation",
+              "Keep human-led; use AI only for drafts or summaries",
+              "Revisit after higher-priority workflows"
+            ]
+          },
+          "impactSummary": {
+            "type": "string"
+          },
+          "blockerSummary": {
+            "type": "string"
+          },
+          "nextStep": {
+            "type": "string"
+          },
+          "humanReviewRequired": {
+            "type": "boolean"
+          },
+          "riskFlags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "factorBreakdown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FactorBreakdown"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "PortfolioSummary": {
+        "type": "object",
+        "properties": {
+          "automateNowCount": {
+            "type": "integer"
+          },
+          "cleanUpFirstCount": {
+            "type": "integer"
+          },
+          "keepHumanCount": {
+            "type": "integer"
+          },
+          "revisitLaterCount": {
+            "type": "integer"
+          },
+          "bestFirstWorkflow": {
+            "type": "string"
+          },
+          "biggestPortfolioBlocker": {
+            "type": "string"
+          }
+        }
+      },
+      "OpportunityRankerResponse": {
+        "type": "object",
+        "properties": {
+          "businessName": {
+            "type": "string"
+          },
+          "businessContext": {
+            "type": "string"
+          },
+          "rankingGoal": {
+            "type": "string"
+          },
+          "totalOpportunities": {
+            "type": "integer"
+          },
+          "weightsUsed": {
+            "$ref": "#/components/schemas/OpportunityWeights"
+          },
+          "rankedOpportunities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RankedOpportunity"
+            }
+          },
+          "topRecommendations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RankedOpportunity"
+            }
+          },
+          "portfolioSummary": {
+            "$ref": "#/components/schemas/PortfolioSummary"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CheckRobotsTxtRequest": {
+        "type": "object",
+        "required": [
+          "domain"
+        ],
+        "properties": {
+          "domain": {
+            "type": "string"
+          },
+          "userAgent": {
+            "type": "string"
+          }
+        }
+      },
+      "CheckRobotsTxtResponse": {
+        "type": "object",
+        "properties": {
+          "robotsUrl": {
+            "type": "string"
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "allowedSummary": {
+            "type": "string"
+          },
+          "disallowedPaths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sitemapLinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "crawlWarnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ReadinessCategoryKey": {
+        "type": "string",
+        "enum": [
+          "workflowClarity",
+          "processConsistency",
+          "dataQuality",
+          "toolAccess",
+          "ownership",
+          "riskLevel",
+          "humanReviewPlan",
+          "customerExperienceImpact",
+          "measurementPlan",
+          "rollbackPlan"
+        ]
+      },
+      "ReadinessScores": {
+        "type": "object",
+        "required": [
+          "workflowClarity",
+          "processConsistency",
+          "dataQuality",
+          "toolAccess",
+          "ownership",
+          "riskLevel",
+          "humanReviewPlan",
+          "customerExperienceImpact",
+          "measurementPlan",
+          "rollbackPlan"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "workflowClarity": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "processConsistency": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "dataQuality": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "toolAccess": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "ownership": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "riskLevel": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "humanReviewPlan": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "customerExperienceImpact": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "measurementPlan": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "rollbackPlan": {
+            "$ref": "#/components/schemas/ScoreValue"
+          }
+        }
+      },
+      "CategoryNotes": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "workflowClarity": {
+            "type": "string"
+          },
+          "processConsistency": {
+            "type": "string"
+          },
+          "dataQuality": {
+            "type": "string"
+          },
+          "toolAccess": {
+            "type": "string"
+          },
+          "ownership": {
+            "type": "string"
+          },
+          "riskLevel": {
+            "type": "string"
+          },
+          "humanReviewPlan": {
+            "type": "string"
+          },
+          "customerExperienceImpact": {
+            "type": "string"
+          },
+          "measurementPlan": {
+            "type": "string"
+          },
+          "rollbackPlan": {
+            "type": "string"
+          }
+        }
+      },
+      "ReadinessScoreRequest": {
+        "type": "object",
+        "required": [
+          "workflowName",
+          "scores"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "workflowName": {
+            "type": "string",
+            "description": "Name of the workflow being scored."
+          },
+          "workflowDescription": {
+            "type": "string",
+            "description": "Brief description of the current workflow."
+          },
+          "userGoal": {
+            "type": "string",
+            "description": "What the user wants to improve or automate."
+          },
+          "scores": {
+            "$ref": "#/components/schemas/ReadinessScores"
+          },
+          "categoryNotes": {
+            "$ref": "#/components/schemas/CategoryNotes"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Optional general notes about the workflow or scoring assumptions."
+          }
+        }
+      },
+      "CategoryResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/ReadinessCategoryKey"
+          },
+          "label": {
+            "type": "string"
+          },
+          "score": {
+            "$ref": "#/components/schemas/ScoreValue"
+          },
+          "scoreLabel": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "interpretation": {
+            "type": "string"
+          },
+          "improvementTip": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      },
+      "ReadinessScoreResponse": {
+        "type": "object",
+        "properties": {
+          "workflowName": {
+            "type": "string"
+          },
+          "workflowDescription": {
+            "type": "string"
+          },
+          "userGoal": {
+            "type": "string"
+          },
+          "totalScore": {
+            "type": "integer"
+          },
+          "maxScore": {
+            "type": "integer",
+            "const": 30
+          },
+          "readinessLevel": {
+            "type": "string"
+          },
+          "recommendationCategory": {
+            "type": "string",
+            "enum": [
+              "Do not automate yet",
+              "Clean up first",
+              "Pilot carefully",
+              "Ready for automation pilot"
+            ]
+          },
+          "interpretation": {
+            "type": "string"
+          },
+          "biggestBlocker": {
+            "type": "string"
+          },
+          "lowestScoringCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CategoryResult"
+            }
+          },
+          "categoryResults": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CategoryResult"
+            }
+          },
+          "humanReviewRequired": {
+            "type": "boolean"
+          },
+          "recommendedAutomationMode": {
+            "type": "string",
+            "enum": [
+              "Do not automate yet",
+              "Process cleanup only",
+              "Draft-only AI assistance",
+              "Limited pilot with human approval",
+              "Automation pilot with monitoring"
+            ]
+          },
+          "nextStep": {
+            "type": "string"
+          },
+          "riskFlags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "ExtractWebsiteMetadataRequest": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "includeHeadings": {
+            "type": "boolean"
+          },
+          "includeFormsDetected": {
+            "type": "boolean"
+          },
+          "includeContactLinks": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ExtractWebsiteMetadataResponse": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "finalUrl": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "metaDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "headings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "formsDetected": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "ctaText": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "contactLinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "socialLinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "AnalyzeSitemapRequest": {
+        "type": "object",
+        "required": [
+          "domainOrSitemapUrl"
+        ],
+        "properties": {
+          "domainOrSitemapUrl": {
+            "type": "string"
+          },
+          "maxUrls": {
+            "type": "number"
+          },
+          "includePageTypeGuesses": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AnalyzeSitemapResponse": {
+        "type": "object",
+        "properties": {
+          "sitemapUrl": {
+            "type": "string"
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pageTypeGuesses": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyServicePages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyResourcePages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyContactPages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "likelyOnboardingPages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetWeatherByLocationRequest": {
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "locationName": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "endDate": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          }
+        }
+      },
+      "GetWeatherByLocationResponse": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "forecastSummary": {
+            "type": "string"
+          },
+          "dailyForecast": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "operationalImpactFlags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceNote": {
+            "type": "string"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

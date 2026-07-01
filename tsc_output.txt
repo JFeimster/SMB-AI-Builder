@@ -1,0 +1,12 @@
+app/api/opportunity-ranker/route (optional-endpoints).ts(2,1): error TS1185: Merge conflict marker encountered.
+app/api/opportunity-ranker/route (optional-endpoints).ts(4,1): error TS1185: Merge conflict marker encountered.
+app/api/opportunity-ranker/route (optional-endpoints).ts(6,1): error TS1185: Merge conflict marker encountered.
+lib/actions/automation-readiness.ts(293,1): error TS1185: Merge conflict marker encountered.
+lib/actions/automation-readiness.ts(295,1): error TS1185: Merge conflict marker encountered.
+lib/actions/automation-readiness.ts(297,1): error TS1185: Merge conflict marker encountered.
+lib/actions/index.ts(1,1): error TS1185: Merge conflict marker encountered.
+lib/actions/index.ts(29,1): error TS1185: Merge conflict marker encountered.
+lib/actions/index.ts(60,1): error TS1185: Merge conflict marker encountered.
+lib/types/actions.ts(1,1): error TS1185: Merge conflict marker encountered.
+lib/types/actions.ts(4,1): error TS1185: Merge conflict marker encountered.
+lib/types/actions.ts(88,1): error TS1185: Merge conflict marker encountered.

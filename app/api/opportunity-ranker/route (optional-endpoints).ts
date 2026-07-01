@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+<<<<<<< HEAD
 import { buildOpportunityRankerOpenApiSchema } from "./opportunity-ranker-openapi";
+=======
+import { buildOpportunityRankerOpenApiSchema } from "../../../lib/opportunity-ranker-openapi";
+>>>>>>> origin/main
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
