@@ -172,4 +172,22 @@
     <loc>https://smb-ai-builder.vercel.app/pages/seo/comparisons/custom-gpt-vs-ai-agent-for-smb.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://smb-ai-builder.vercel.app/pages/tools/connectors.html</loc>
+    <lastmod>2024-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smb-ai-builder.vercel.app/pages/tools/connector-playbooks.html</loc>
+    <lastmod>2024-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://smb-ai-builder.vercel.app/pages/tools/connector-risk-map.html</loc>
+    <lastmod>2024-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

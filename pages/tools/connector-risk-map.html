@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Connector Risk Map for AI Workflow Automation</title>
+<meta content="Risk map for common SMB connectors and how to mitigate risks when deploying AI workflows." name="description"/>
+<meta content="#050505" name="theme-color"/>
+<meta content="Connector Risk Map for AI Workflow Automation" property="og:title"/>
+<meta content="Risk map for common SMB connectors and how to mitigate risks when deploying AI workflows." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://smb-ai-builder.vercel.app/pages/tools/connector-risk-map.html" property="og:url"/>
+<meta content="https://smb-ai-builder.vercel.app/og-image-placeholder.png" property="og:image"/>
+<link href="https://smb-ai-builder.vercel.app/pages/tools/connector-risk-map.html" rel="canonical"/>
+<link href="../../styles.css" rel="stylesheet"/>
+<script defer="" src="../../script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-sticky-header="">
+<div class="shell header-grid">
+<a aria-label="SMB AI Workflow and Agent Builder home" class="brand" href="../../index.html">
+<span aria-hidden="true" class="brand-mark">AI</span>
+<span class="brand-text">
+<strong>SMB AI Builder</strong>
+<small>workflow audit cockpit</small>
+</span>
+</a>
+<button aria-controls="site-nav" aria-expanded="false" class="nav-toggle" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="nav-toggle-line"></span>
+<span class="nav-toggle-line"></span>
+<span class="nav-toggle-line"></span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="../../index.html">Home</a>
+        <a href="../../pages/site/start-here.html">Start Here</a>
+        <a href="../../pages/site/use-cases.html">Use Cases</a>
+        <a href="../../pages/tools/prompts.html">Prompts</a>
+        <a href="../../pages/tools/actions.html">Actions</a>
+        <a href="../../pages/directories/gpt-stack.html">GPT Stack</a>
+        <a href="../../pages/site/packages.html">Packages</a>
+        <a href="../../pages/site/resources.html">Resources</a>
+        <a class="nav-cta" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">Launch GPT</a>
+      </nav>
+</div>
+</header>
+<main id="main">
+<div class="shell">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow punch">Risk Map</p>
+      <h1 id="hero-title">Connector Risk Map for AI Workflow Automation</h1>
+      <p>Assess the risk of your connector stack before providing full access to AI agents.</p>
+    </div>
+  </div>
+</div>
+<div class="shell">
+  <h2>Risk Tiers</h2>
+  <div class="bento-grid">
+    <div class="tool-card warning-panel" style="border-left: 4px solid var(--cyan);">
+      <h3>Low Risk</h3>
+      <p>Public docs, templates, sample workflows.</p>
+    </div>
+    <div class="tool-card warning-panel" style="border-left: 4px solid var(--lime);">
+      <h3>Medium Risk</h3>
+      <p>Internal docs, CRM notes, meeting summaries.</p>
+    </div>
+    <div class="tool-card warning-panel" style="border-left: 4px solid var(--pink);">
+      <h3>High Risk</h3>
+      <p>Financial, HR, legal, lending, customer-impacting actions.</p>
+    </div>
+  </div>
+
+  <h2>Connector Risk Table</h2>
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Connector</th>
+          <th>Typical Data Touched</th>
+          <th>Risk Level</th>
+          <th>Human Review Requirement</th>
+          <th>Safe Pilot Idea</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>QuickBooks</td>
+          <td>Financials, invoices, payroll</td>
+          <td><span class="punch" style="color: var(--pink);">High</span></td>
+          <td>Mandatory before action</td>
+          <td>Draft-only invoice creation</td>
+        </tr>
+        <tr>
+          <td>Gmail</td>
+          <td>Emails, PII, internal comms</td>
+          <td><span class="punch" style="color: var(--lime);">Medium/High</span></td>
+          <td>Mandatory before send</td>
+          <td>Drafting lead responses</td>
+        </tr>
+        <tr>
+          <td>HubSpot</td>
+          <td>CRM data, lead stages</td>
+          <td><span class="punch" style="color: var(--lime);">Medium</span></td>
+          <td>Periodic audit</td>
+          <td>Tagging lead sources</td>
+        </tr>
+        <tr>
+          <td>Notion</td>
+          <td>Internal wikis, project boards</td>
+          <td><span class="punch" style="color: var(--cyan);">Low/Medium</span></td>
+          <td>Minimal</td>
+          <td>Generating weekly summaries</td>
+        </tr>
+        <tr>
+          <td>Semrush</td>
+          <td>Public SEO data</td>
+          <td><span class="punch" style="color: var(--cyan);">Low</span></td>
+          <td>Minimal</td>
+          <td>Pulling weekly keyword rank changes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Human Review Rules</h2>
+  <p>Never bypass human review for workflows that affect customers, money, or compliance. See our full <a href="../legal/human-review-policy.html">Human Review Policy</a>.</p>
+
+  <div class="cta-band">
+    <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder">Map My Risks</a>
+  </div>
+
+  <div class="internal-links">
+    <a href="risk-classifier.html">Risk Classifier</a> |
+    <a href="no-auth-actions.html">No-Auth Actions</a> |
+    <a href="openapi.html">OpenAPI Schema</a> |
+    <a href="../legal/human-review-policy.html">Human Review Policy</a>
+  </div>
+</div>
+</main>
+<footer aria-labelledby="footer-title" class="site-footer">
+<div class="shell footer-grid">
+<div>
+<h2 id="footer-title">SMB AI Workflow &amp; Agent Builder</h2>
+<p>Stop automating broken workflows. Audit the mess first.</p>
+</div>
+<nav class="footer-links" aria-label="Footer links">
+        <a href="../../pages/directories/workflow-library.html">Workflow Library</a>
+        <a href="../../pages/directories/automation-patterns.html">Automation Patterns</a>
+        <a href="../../pages/watch/index.html">Watch</a>
+        <a href="../../pages/blog/index.html">Field Notes</a>
+        <a href="../../pages/legal/privacy.html">Legal</a>
+        <a href="../../pages/site/contact.html">Contact</a>
+        <a href="https://github.com/JFeimster/SMB-AI-Builder" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://feimster.notion.site/smb-ai-builder" target="_blank" rel="noopener">Notion</a>
+        <a href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" target="_blank" rel="noopener">ChatGPT</a>
+      </nav>
+</div>
+<div class="shell footer-bottom">
+<small>Educational workflow planning aid. Not legal, financial, tax, HR, compliance, or professional advice.</small>
+<small>© <span data-current-year="">2024</span> SMB AI Workflow &amp; Agent Builder. All rights reserved.</small>
+</div>
+</footer>
+<div class="sticky-cta" data-sticky-cta="">
+<span>Score one messy workflow.</span>
+<a class="btn btn-primary" href="https://chatgpt.com/g/g-6a3cac9b87f08191af3f98ab42ad55ae-smb-ai-workflow-agent-builder" rel="noopener" target="_blank">Score My Automation Readiness</a>
+</div>
+</body>
+</html>
