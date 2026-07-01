@@ -61,7 +61,7 @@ export async function extractWebsiteMetadata(url: string): Promise<ActionResult<
 
     // Contact/Social links
     const contactLinks: string[] = [];
-    const socialLinks: string[] = [];
+    const socialLinks = new Set<string>();
 
     const hrefRegex = /href=["']([^"']+)["']/gi;
     while ((match = hrefRegex.exec(html)) !== null) {
@@ -71,8 +71,8 @@ export async function extractWebsiteMetadata(url: string): Promise<ActionResult<
           contactLinks.push(href);
         }
       } else if (href.includes('twitter.com') || href.includes('facebook.com') || href.includes('linkedin.com') || href.includes('instagram.com')) {
-        if (!socialLinks.includes(href) && socialLinks.length < 5) {
-          socialLinks.push(href);
+        if (socialLinks.size < 5 && !socialLinks.has(href)) {
+          socialLinks.add(href);
         }
       }
     }
@@ -89,7 +89,7 @@ export async function extractWebsiteMetadata(url: string): Promise<ActionResult<
         formsDetected,
         ctaText,
         contactLinks,
-        socialLinks,
+        socialLinks: Array.from(socialLinks),
       },
     };
   } catch (error) {
