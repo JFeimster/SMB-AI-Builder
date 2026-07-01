@@ -62,7 +62,5 @@ I want to use AI to read my customer support inbox in Gmail. I get the same 5 qu
 ```
 
 ## Related Pages
-- [../../pages/tools/connectors.html](../../pages/tools/connectors.html)
-- [../../pages/tools/connector-risk-map.html](../../pages/tools/connector-risk-map.html)
 - [../../pages/tools/integration-map.html](../../pages/tools/integration-map.html)
 - [../../pages/directories/workflow-library.html](../../pages/directories/workflow-library.html)

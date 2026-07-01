@@ -62,7 +62,5 @@ I need to automate deal tracking in HubSpot. When a contract is signed in our es
 ```
 
 ## Related Pages
-- [../../pages/tools/connectors.html](../../pages/tools/connectors.html)
-- [../../pages/tools/connector-risk-map.html](../../pages/tools/connector-risk-map.html)
 - [../../pages/tools/integration-map.html](../../pages/tools/integration-map.html)
 - [../../pages/directories/workflow-library.html](../../pages/directories/workflow-library.html)

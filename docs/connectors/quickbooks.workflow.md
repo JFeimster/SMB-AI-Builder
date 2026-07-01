@@ -66,7 +66,5 @@ I want to speed up my invoicing. When a project is marked 'Complete' in my proje
 ```
 
 ## Related Pages
-- [../../pages/tools/connectors.html](../../pages/tools/connectors.html)
-- [../../pages/tools/connector-risk-map.html](../../pages/tools/connector-risk-map.html)
 - [../../pages/tools/integration-map.html](../../pages/tools/integration-map.html)
 - [../../pages/directories/workflow-library.html](../../pages/directories/workflow-library.html)

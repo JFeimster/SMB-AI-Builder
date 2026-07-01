@@ -61,7 +61,5 @@ I need a workflow to handle my initial sales calls. When a lead fills out my int
 ```
 
 ## Related Pages
-- [../../pages/tools/connectors.html](../../pages/tools/connectors.html)
-- [../../pages/tools/connector-risk-map.html](../../pages/tools/connector-risk-map.html)
 - [../../pages/tools/integration-map.html](../../pages/tools/integration-map.html)
 - [../../pages/directories/workflow-library.html](../../pages/directories/workflow-library.html)

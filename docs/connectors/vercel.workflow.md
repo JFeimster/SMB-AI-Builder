@@ -60,7 +60,5 @@ I need to map out the deployment workflow for our new GPT Action API. The code l
 ```
 
 ## Related Pages
-- [../../pages/tools/connectors.html](../../pages/tools/connectors.html)
-- [../../pages/tools/connector-risk-map.html](../../pages/tools/connector-risk-map.html)
 - [../../pages/tools/integration-map.html](../../pages/tools/integration-map.html)
 - [../../pages/directories/workflow-library.html](../../pages/directories/workflow-library.html)
